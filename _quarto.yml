@@ -1,0 +1,10 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Introducción a la Inteligencia Artificial"
+
+format:
+  html:
+    toc: false
