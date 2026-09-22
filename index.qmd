@@ -11,4 +11,6 @@ subtitle: "Material de la asignatura"
 
 ## Diapositivas
 
-Las diapositivas estarán disponibles en línea desde esta misma página. 
+Las diapositivas estarán disponibles en línea desde esta misma página.
+
+- [Conceptos básicos](slides/01-conceptos-basicos.html)

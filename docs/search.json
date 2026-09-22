@@ -21,32 +21,25 @@
     "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página."
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#ia-vs-ml-vs-dl-vs-genai",
-    "href": "slides/01-conceptos-basicos.html#ia-vs-ml-vs-dl-vs-genai",
-    "title": "Conceptos Básicos",
-    "section": "IA vs ML vs DL vs GenAI",
-    "text": "IA vs ML vs DL vs GenAI\n¿Por qué tantos términos? ¿Qué significan? ¿Cómo se relacionan entre sí?"
+    "objectID": "READINGS.html",
+    "href": "READINGS.html",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "En este archivo se listan los materiales de estudio de cada semana. El estudiante debe revisar los materiales antes de cada clase.\n\n\n\nLeer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje).\n\n\n\n\n\nLeer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#dos-formas-de-resolver-un-problema",
-    "href": "slides/01-conceptos-basicos.html#dos-formas-de-resolver-un-problema",
-    "title": "Conceptos Básicos",
-    "section": "Dos formas de resolver un problema",
-    "text": "Dos formas de resolver un problema\n\n\n\n\n\n\n\n\n\nproblema\n\nProblema\n\n\n\nreglas\n\nReglas explícitas\n\n\n\nproblema-&gt;reglas\n\n\n\n\n\ndatos\n\nDatos\n\n\n\nproblema-&gt;datos\n\n\n\n\n\nprograma\n\nSistema\n\n\n\nreglas-&gt;programa\n\n\n\n\n\nmodelo\n\nModelo aprendido\n\n\n\ndatos-&gt;modelo"
+    "objectID": "READINGS.html#semana-2",
+    "href": "READINGS.html#semana-2",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "Leer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje)."
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#dónde-encaja-cada-término",
-    "href": "slides/01-conceptos-basicos.html#dónde-encaja-cada-término",
-    "title": "Conceptos Básicos",
-    "section": "¿Dónde encaja cada término?",
-    "text": "¿Dónde encaja cada término?"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#qué-es-inteligencia",
-    "href": "slides/01-conceptos-basicos.html#qué-es-inteligencia",
-    "title": "Conceptos Básicos",
-    "section": "¿Qué es inteligencia?",
-    "text": "¿Qué es inteligencia?\n\n¿Qué significa ser inteligente?"
+    "objectID": "READINGS.html#semana-3",
+    "href": "READINGS.html#semana-3",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "Leer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#qué-es-inteligencia-artificial",
@@ -56,13 +49,6 @@
     "text": "¿Qué es Inteligencia Artificial?\n\nUn sistema artificial que realiza comportamientos que consideraríamos inteligentes si los realizara una persona.\n\n\nLa IA no es magia."
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#ia-aprendizaje-automático",
-    "href": "slides/01-conceptos-basicos.html#ia-aprendizaje-automático",
-    "title": "Conceptos Básicos",
-    "section": "IA ≠ Aprendizaje Automático",
-    "text": "IA ≠ Aprendizaje Automático\n\n\nReglas\nNosotros escribimos el comportamiento\n\n\n\n\n\n\n\n\n\nsi\n\nSi pasa esto...\n\n\n\ndothis\n\nHaz esto\n\n\n\nsi-&gt;dothis\n\n\nVerdadero\n\n\n\ndothisinstead\n\nHaz esto otro\n\n\n\nsi-&gt;dothisinstead\n\n\nFalso\n\n\n\n\n\n\n\n\n\nAprendizaje\nEl sistema aprende el comportamiento\n\n\n\n\n\n\n\n\n\ndatos\n\nDatos\n\n\n\nentrenamiento\n\nEntrenamiento\n\n\n\ndatos-&gt;entrenamiento\n\n\n\n\n\nmodelo\n\nModelo aprendido\n\n\n\nentrenamiento-&gt;modelo"
-  },
-  {
     "objectID": "slides/01-conceptos-basicos.html#inteligencia-artificial-es-un-concepto-amplio",
     "href": "slides/01-conceptos-basicos.html#inteligencia-artificial-es-un-concepto-amplio",
     "title": "Conceptos Básicos",
@@ -70,32 +56,11 @@
     "text": "Inteligencia artificial es un concepto amplio\n\nEn video juegos, la IA puede ser un conjunto de reglas que determinan el comportamiento de los enemigos.\nEn un sistema de recomendación, la IA puede ser un modelo que predice qué productos te interesan."
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#qué-pasa-si-no-puedo-describir-la-solución-a-un-problema",
-    "href": "slides/01-conceptos-basicos.html#qué-pasa-si-no-puedo-describir-la-solución-a-un-problema",
-    "title": "Conceptos Básicos",
-    "section": "¿Qué pasa si no puedo describir la solución a un problema?",
-    "text": "¿Qué pasa si no puedo describir la solución a un problema?\n¿Cual de estas 2 imágenes es un perro?\n\n\n\n\n\n\n\n¿Cómo le enseño a una computadora a reconocer un perro?"
-  },
-  {
     "objectID": "slides/01-conceptos-basicos.html#cual-de-estas-2-imágenes-es-un-perro",
     "href": "slides/01-conceptos-basicos.html#cual-de-estas-2-imágenes-es-un-perro",
     "title": "Conceptos Básicos",
     "section": "¿Cual de estas 2 imágenes es un perro?",
     "text": "¿Cual de estas 2 imágenes es un perro?\n¿Cual de estas imágenes es un 6?\n\n\n\n\nSet de datos MNIST"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#cómo-podría-describir-a-alguien-que-no-sabe-qué-es-un-perro-a-reconocerlo",
-    "href": "slides/01-conceptos-basicos.html#cómo-podría-describir-a-alguien-que-no-sabe-qué-es-un-perro-a-reconocerlo",
-    "title": "Conceptos Básicos",
-    "section": "¿Cómo podría describir a alguien que no sabe qué es un perro a reconocerlo?",
-    "text": "¿Cómo podría describir a alguien que no sabe qué es un perro a reconocerlo?"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#aprendizaje-automático-aprender-de-los-datos",
-    "href": "slides/01-conceptos-basicos.html#aprendizaje-automático-aprender-de-los-datos",
-    "title": "Conceptos Básicos",
-    "section": "Aprendizaje Automático: Aprender de los datos",
-    "text": "Aprendizaje Automático: Aprender de los datos\nEl sistema aprende el comportamiento\nObtenemos muchos ejemplos de un problema y el sistema encuentra patrones en los datos para poder resolverlo.\n\n\n\n\n\n\n\n\n\ndatos\n\nDatos\n\n\n\nentrenamiento\n\nEntrenamiento\n\n\n\ndatos-&gt;entrenamiento\n\n\n\n\n\nmodelo\n\nModelo aprendido\n\n\n\nentrenamiento-&gt;modelo"
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#aprendizaje-automático-ml-aprender-de-los-datos",
@@ -119,88 +84,11 @@
     "text": "¿Qué es una red neuronal?"
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-1",
-    "href": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-1",
+    "objectID": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-nn",
+    "href": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-nn",
     "title": "Conceptos Básicos",
-    "section": "¿Qué es una red neuronal?",
-    "text": "¿Qué es una red neuronal?\n\nModelo de ML inspirado en el cerebro humano.\nCompuesta por capas de nodos (neuronas) que procesan información.\nLas neuronas están conectadas entre sí y cada conexión tiene un peso que se ajusta durante el entrenamiento."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#una-red-neuronal-durante-el-entrenamiento",
-    "href": "slides/01-conceptos-basicos.html#una-red-neuronal-durante-el-entrenamiento",
-    "title": "Conceptos Básicos",
-    "section": "Una red neuronal durante el entrenamiento",
-    "text": "Una red neuronal durante el entrenamiento\n\n\n\n\nUsando un algoritmo conocido como backpropagation, la red ajusta los pesos de las conexiones para minimizar el error en sus predicciones."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#luego-de-entrenar-una-red-neuronal",
-    "href": "slides/01-conceptos-basicos.html#luego-de-entrenar-una-red-neuronal",
-    "title": "Conceptos Básicos",
-    "section": "Luego de entrenar una red neuronal",
-    "text": "Luego de entrenar una red neuronal\n\n\n\n\nLos pesos de las conexiones se fijaron para que la red pueda hacer predicciones sobre nuevos datos."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#entrenar-una-red-neuronal",
-    "href": "slides/01-conceptos-basicos.html#entrenar-una-red-neuronal",
-    "title": "Conceptos Básicos",
-    "section": "Entrenar una red neuronal",
-    "text": "Entrenar una red neuronal\n\n\n\n\nUsando un algoritmo conocido como backpropagation, la red ajusta los pesos de las conexiones para minimizar el error en sus predicciones."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#backpropagation",
-    "href": "slides/01-conceptos-basicos.html#backpropagation",
-    "title": "Conceptos Básicos",
-    "section": "Backpropagation",
-    "text": "Backpropagation\n\nCon base en el error de la predicción, calcula como debe ajustar cada conexión para mejorar.\nPropaga el error desde la capa de salida hacia las capas anteriores, ajustando los pesos de las conexiones en cada paso."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#por-qué-son-tan-poderosas-las-redes-neuronales",
-    "href": "slides/01-conceptos-basicos.html#por-qué-son-tan-poderosas-las-redes-neuronales",
-    "title": "Conceptos Básicos",
-    "section": "¿Por qué son tan poderosas las redes neuronales?",
-    "text": "¿Por qué son tan poderosas las redes neuronales?\n\nPueden aproximar cualquier función (Teorema de aproximación universal).\nCapaces de aprender representaciones jerárquicas: pueden combinar características simples para formar representaciones más complejas.\nEscalables: se vuelven más inteligentes a medida que se les da más datos y más capacidad de cómputo."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#qué-es-deep-learning-dl",
-    "href": "slides/01-conceptos-basicos.html#qué-es-deep-learning-dl",
-    "title": "Conceptos Básicos",
-    "section": "¿Qué es Deep Learning (DL)?",
-    "text": "¿Qué es Deep Learning (DL)?\n\nSubcampo de ML que utiliza redes neuronales profundas (con muchas capas) para modelar problemas.\n\n\nUNET, ejemplo de una red neuronal profunda"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#pablito-clavó-un-____",
-    "href": "slides/01-conceptos-basicos.html#pablito-clavó-un-____",
-    "title": "Conceptos Básicos",
-    "section": "Pablito clavó un ____",
-    "text": "Pablito clavó un ____"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#pablito-clavó-un",
-    "href": "slides/01-conceptos-basicos.html#pablito-clavó-un",
-    "title": "Conceptos Básicos",
-    "section": "Pablito clavó un ……",
-    "text": "Pablito clavó un ……"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#tres-tristes-tigres-tragaban",
-    "href": "slides/01-conceptos-basicos.html#tres-tristes-tigres-tragaban",
-    "title": "Conceptos Básicos",
-    "section": "Tres tristes tigres tragaban…",
-    "text": "Tres tristes tigres tragaban…\n\n\n…trigo\n\n\n\n\n…carne\n\n\n\n\n…arepas\n\n\n\n\n…pescado"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#llm",
-    "href": "slides/01-conceptos-basicos.html#llm",
-    "title": "Conceptos Básicos",
-    "section": "LLM",
-    "text": "LLM\nUn modelo de ML entrenado con grandes cantidades de texto para predecir la siguiente palabra más probable en una secuencia.\n\nTécnicamente, una LLM le asigna una probabilidad a cada palabra en su vocabulario dado un contexto de palabras anteriores."
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#llm-1",
-    "href": "slides/01-conceptos-basicos.html#llm-1",
-    "title": "Conceptos Básicos",
-    "section": "LLM",
-    "text": "LLM"
+    "section": "¿Qué es una red neuronal (NN)?",
+    "text": "¿Qué es una red neuronal (NN)?\n\nModelo de ML inspirado en el cerebro humano.\nCompuesta por capas de nodos (neuronas) que procesan información."
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#qué-es-una-neurona",
@@ -208,20 +96,6 @@
     "title": "Conceptos Básicos",
     "section": "¿Qué es una neurona?",
     "text": "¿Qué es una neurona?\n\nUnidad básica de una red neuronal.\nAlmacena un número entre 0 y 1 que representa su activación.\n\n\n\n\n\n\n\n\n\n\nneurona_001\n\n0.01\n\n\n\nneurona_025\n\n0.25\n\n\n\nneurona_050\n\n0.50\n\n\n\nneurona_075\n\n0.75\n\n\n\nneurona_099\n\n0.99"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#como-representamos-los-números-como-neuronas",
-    "href": "slides/01-conceptos-basicos.html#como-representamos-los-números-como-neuronas",
-    "title": "Conceptos Básicos",
-    "section": "¿Como representamos los números como neuronas?",
-    "text": "¿Como representamos los números como neuronas?\n\nCrédito: 3Blue1Brown"
-  },
-  {
-    "objectID": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-nn",
-    "href": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal-nn",
-    "title": "Conceptos Básicos",
-    "section": "¿Qué es una red neuronal (NN)?",
-    "text": "¿Qué es una red neuronal (NN)?\n\nModelo de ML inspirado en el cerebro humano.\nCompuesta por capas de nodos (neuronas) que procesan información."
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#cómo-representamos-los-números-como-neuronas",
@@ -266,6 +140,20 @@
     "text": "Backpropagation: función de costo"
   },
   {
+    "objectID": "slides/01-conceptos-basicos.html#por-qué-son-tan-poderosas-las-redes-neuronales",
+    "href": "slides/01-conceptos-basicos.html#por-qué-son-tan-poderosas-las-redes-neuronales",
+    "title": "Conceptos Básicos",
+    "section": "¿Por qué son tan poderosas las redes neuronales?",
+    "text": "¿Por qué son tan poderosas las redes neuronales?\n\nPueden aproximar cualquier función (Teorema de aproximación universal).\nCapaces de aprender representaciones jerárquicas: pueden combinar características simples para formar representaciones más complejas.\nEscalables: se vuelven más inteligentes a medida que se les da más datos y más capacidad de cómputo."
+  },
+  {
+    "objectID": "slides/01-conceptos-basicos.html#qué-es-deep-learning-dl",
+    "href": "slides/01-conceptos-basicos.html#qué-es-deep-learning-dl",
+    "title": "Conceptos Básicos",
+    "section": "¿Qué es Deep Learning (DL)?",
+    "text": "¿Qué es Deep Learning (DL)?\n\nSubcampo de ML que utiliza redes neuronales profundas (con muchas capas) para modelar problemas.\n\n\nUNET, ejemplo de una red neuronal profunda"
+  },
+  {
     "objectID": "slides/01-conceptos-basicos.html#gran-modelo-de-lenguaje-llm",
     "href": "slides/01-conceptos-basicos.html#gran-modelo-de-lenguaje-llm",
     "title": "Conceptos Básicos",
@@ -273,10 +161,31 @@
     "text": "Gran modelo de lenguaje (LLM)\nTres tristes tigres tragaban…\n\n\n…trigo\n\n\n\n\n…carne\n\n\n\n\n…arepas\n\n\n\n\n…pescado"
   },
   {
+    "objectID": "slides/01-conceptos-basicos.html#llm",
+    "href": "slides/01-conceptos-basicos.html#llm",
+    "title": "Conceptos Básicos",
+    "section": "LLM",
+    "text": "LLM\nUn modelo de ML entrenado con grandes cantidades de texto para predecir la siguiente palabra más probable en una secuencia.\n\nTécnicamente, una LLM le asigna una probabilidad a cada palabra en su vocabulario dado un contexto de palabras anteriores."
+  },
+  {
+    "objectID": "slides/01-conceptos-basicos.html#llm-1",
+    "href": "slides/01-conceptos-basicos.html#llm-1",
+    "title": "Conceptos Básicos",
+    "section": "LLM",
+    "text": "LLM"
+  },
+  {
     "objectID": "slides/01-conceptos-basicos.html#cómo-conversamos-con-un-llm",
     "href": "slides/01-conceptos-basicos.html#cómo-conversamos-con-un-llm",
     "title": "Conceptos Básicos",
     "section": "¿Cómo conversamos con un LLM?",
     "text": "¿Cómo conversamos con un LLM?"
+  },
+  {
+    "objectID": "slides/01-conceptos-basicos.html#dónde-encaja-cada-término",
+    "href": "slides/01-conceptos-basicos.html#dónde-encaja-cada-término",
+    "title": "Conceptos Básicos",
+    "section": "¿Dónde encaja cada término?",
+    "text": "¿Dónde encaja cada término?"
   }
 ]
