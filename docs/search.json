@@ -18,7 +18,7 @@
     "href": "index.html#diapositivas",
     "title": "Introducción a la Inteligencia Artificial",
     "section": "Diapositivas",
-    "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página."
+    "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página.\n\nConceptos básicos"
   },
   {
     "objectID": "READINGS.html",
@@ -56,11 +56,11 @@
     "text": "Inteligencia artificial es un concepto amplio\n\nEn video juegos, la IA puede ser un conjunto de reglas que determinan el comportamiento de los enemigos.\nEn un sistema de recomendación, la IA puede ser un modelo que predice qué productos te interesan."
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#cual-de-estas-2-imágenes-es-un-perro",
-    "href": "slides/01-conceptos-basicos.html#cual-de-estas-2-imágenes-es-un-perro",
+    "objectID": "slides/01-conceptos-basicos.html#cual-de-estas-imágenes-es-un-6",
+    "href": "slides/01-conceptos-basicos.html#cual-de-estas-imágenes-es-un-6",
     "title": "Conceptos Básicos",
-    "section": "¿Cual de estas 2 imágenes es un perro?",
-    "text": "¿Cual de estas 2 imágenes es un perro?\n¿Cual de estas imágenes es un 6?\n\n\n\n\nSet de datos MNIST"
+    "section": "¿Cual de estas imágenes es un 6?",
+    "text": "¿Cual de estas imágenes es un 6?\n\n\n\n\nSet de datos MNIST"
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#aprendizaje-automático-ml-aprender-de-los-datos",
@@ -75,6 +75,13 @@
     "title": "Conceptos Básicos",
     "section": "¿Qué es un modelo?",
     "text": "¿Qué es un modelo?\n\n\nAsí como un carro modelo es una versión pequeña de un vehículo real,\nun modelo de ML es una versión simplificada de un sistema, que permite simular su comportamiento y hacer predicciones sobre él."
+  },
+  {
+    "objectID": "slides/01-conceptos-basicos.html#definición-del-problema-reconocer-dígitos-escritos-a-mano",
+    "href": "slides/01-conceptos-basicos.html#definición-del-problema-reconocer-dígitos-escritos-a-mano",
+    "title": "Conceptos Básicos",
+    "section": "Definición del problema: reconocer dígitos escritos a mano",
+    "text": "Definición del problema: reconocer dígitos escritos a mano\n\nTenemos un conjunto de imágenes de dígitos escritos a mano (0-9) y queremos que el sistema reconozca cuando aparece un 6.\nUsaremos una red neuronal para aprender a reconocer los dígitos."
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#qué-es-una-red-neuronal",
@@ -154,11 +161,11 @@
     "text": "¿Qué es Deep Learning (DL)?\n\nSubcampo de ML que utiliza redes neuronales profundas (con muchas capas) para modelar problemas.\n\n\nUNET, ejemplo de una red neuronal profunda"
   },
   {
-    "objectID": "slides/01-conceptos-basicos.html#gran-modelo-de-lenguaje-llm",
-    "href": "slides/01-conceptos-basicos.html#gran-modelo-de-lenguaje-llm",
+    "objectID": "slides/01-conceptos-basicos.html#tres-tristes-tigres-tragaban",
+    "href": "slides/01-conceptos-basicos.html#tres-tristes-tigres-tragaban",
     "title": "Conceptos Básicos",
-    "section": "Gran modelo de lenguaje (LLM)",
-    "text": "Gran modelo de lenguaje (LLM)\nTres tristes tigres tragaban…\n\n\n…trigo\n\n\n\n\n…carne\n\n\n\n\n…arepas\n\n\n\n\n…pescado"
+    "section": "Tres tristes tigres tragaban…",
+    "text": "Tres tristes tigres tragaban…\n\n\n…trigo\n\n\n\n\n…carne\n\n\n\n\n…arepas\n\n\n\n\n…pescado"
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#llm",

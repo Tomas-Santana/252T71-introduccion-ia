@@ -1,5 +1,6 @@
 ---
 title: "Conceptos Básicos"
+subtitle: "Introducción a la Inteligencia Artificial"
 author: "Tomas Santana"
 format: revealjs
 theme: 
@@ -7,7 +8,7 @@ theme:
   - theme_ext.scss
 ---
 
-# Introducción a la Inteligencia Artificial
+# ¿Qué es la Inteligencia Artificial?
 
 # ¿Qué es inteligencia?
 
@@ -29,9 +30,7 @@ theme:
 
 - En un sistema de recomendación, la IA puede ser un modelo que predice qué productos te interesan.
 
-## ¿Cual de estas 2 imágenes es un perro?
-
-¿Cual de estas imágenes es un 6?
+## ¿Cual de estas imágenes es un 6?
 
 ::: {.center}
 ![Set de datos MNIST](assets/mnist.png){width="100%"}
@@ -73,6 +72,11 @@ Así como un carro modelo es una versión pequeña de un vehículo real,
 ![](./assets/model_f1.jpg)
 :::
 :::
+
+## Definición del problema: reconocer dígitos escritos a mano
+
+- Tenemos un conjunto de imágenes de dígitos escritos a mano (0-9) y queremos que el sistema reconozca cuando aparece un 6.
+- Usaremos una red neuronal para aprender a reconocer los dígitos.
 
 ## ¿Qué es una red neuronal?
 
@@ -159,20 +163,18 @@ digraph {
 # ¿Qué es un gran modelo de lenguaje (LLM)?
 Eg: GPT, Gemini, Claude
 
-# ¿Cuál es la entrada de un (LLM)?
+# ¿Cuál es la entrada de un LLM?
 
 :::{.fragment}
 Texto, imágenes, audio, video, etc.
 :::
 
-# ¿Cuál es la salida de un (LLM)?
+# ¿Cuál es la salida de un LLM?
 :::{.fragment}
 La siguiente palabra más probable
 :::
 
-## Gran modelo de lenguaje (LLM)
-
-### Tres tristes tigres tragaban...
+## Tres tristes tigres tragaban...
 :::{.fragment}
 - ...trigo
 :::
