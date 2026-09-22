@@ -35,7 +35,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-2abc1c5b7b5c7eecd6137558e106e4c3.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cd8098f5483e420f97e48b13bfdd57aa.css">
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -144,12 +144,287 @@ Tomas Santana
 </div>
 
 </section>
-<section id="ia-vs-ml-vs-dl-vs-genai" class="slide level2">
-<h2>IA vs ML vs DL vs GenAI</h2>
-<p>¿Por qué tantos términos? ¿Qué significan? ¿Cómo se relacionan entre sí?</p>
-
+<section id="introducción-a-la-inteligencia-artificial" class="title-slide slide level1 center">
+<h1>Introducción a la Inteligencia Artificial</h1>
 
 </section>
+
+<section>
+<section id="qué-es-inteligencia" class="title-slide slide level1 center">
+<h1>¿Qué es inteligencia?</h1>
+<div class="r-fit-text">
+<p>¿Qué significa ser inteligente?</p>
+</div>
+</section>
+<section id="qué-es-inteligencia-artificial" class="slide level2">
+<h2>¿Qué es Inteligencia Artificial?</h2>
+<blockquote>
+<p>Un sistema artificial que realiza comportamientos que consideraríamos inteligentes si los realizara una persona.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>La IA no es magia.</strong></p>
+</div>
+</section>
+<section id="inteligencia-artificial-es-un-concepto-amplio" class="slide level2">
+<h2>Inteligencia artificial <span class="marker">es un concepto amplio</span></h2>
+<ul>
+<li><p>En video juegos, la IA puede ser un conjunto de reglas que determinan el comportamiento de los enemigos.</p></li>
+<li><p>En un sistema de recomendación, la IA puede ser un modelo que predice qué productos te interesan.</p></li>
+</ul>
+</section>
+<section id="cual-de-estas-2-imágenes-es-un-perro" class="slide level2">
+<h2>¿Cual de estas 2 imágenes es un perro?</h2>
+<p>¿Cual de estas imágenes es un 6?</p>
+<div class="center">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="assets/mnist.png" style="width:100.0%"></p>
+<figcaption>Set de datos MNIST</figcaption>
+</figure>
+</div>
+</div>
+</section></section>
+<section>
+<section id="describan-un-procedimiento-para-identificar-un-6-en-una-imagen." class="title-slide slide level1 center">
+<h1>Describan un procedimiento para identificar un 6 en una imagen.</h1>
+<p>Discutamos.</p>
+</section>
+<section id="aprendizaje-automático-ml-aprender-de-los-datos" class="slide level2">
+<h2>Aprendizaje Automático (ML): <span class="marker">Aprender de los datos</span></h2>
+<p><strong>El sistema aprende el comportamiento</strong></p>
+<p>Obtenemos muchos ejemplos de un problema y el sistema encuentra patrones en los datos para poder resolverlo.</p>
+<div class="cell" data-fig-width="8" data-fig-height="3" data-out.width="50%" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="768" height="288" viewbox="0.00 0.00 351.45 44.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 40)">
+<!-- datos -->
+<g id="node1" class="node">
+<title>datos</title>
+<path fill="none" stroke="black" d="M42,-36C42,-36 12,-36 12,-36 6,-36 0,-30 0,-24 0,-24 0,-12 0,-12 0,-6 6,0 12,0 12,0 42,0 42,0 48,0 54,-6 54,-12 54,-12 54,-24 54,-24 54,-30 48,-36 42,-36"></path>
+<text text-anchor="middle" x="27" y="-13.8" font-family="Times,serif" font-size="14.00">Datos</text>
+</g>
+<!-- entrenamiento -->
+<g id="node2" class="node">
+<title>entrenamiento</title>
+<path fill="none" stroke="black" d="M176.62,-36C176.62,-36 101.79,-36 101.79,-36 95.79,-36 89.79,-30 89.79,-24 89.79,-24 89.79,-12 89.79,-12 89.79,-6 95.79,0 101.79,0 101.79,0 176.62,0 176.62,0 182.62,0 188.62,-6 188.62,-12 188.62,-12 188.62,-24 188.62,-24 188.62,-30 182.62,-36 176.62,-36"></path>
+<text text-anchor="middle" x="139.21" y="-13.8" font-family="Times,serif" font-size="14.00">Entrenamiento</text>
+</g>
+<!-- datos&#45;&gt;entrenamiento -->
+<g id="edge1" class="edge">
+<title>datos-&gt;entrenamiento</title>
+<path fill="none" stroke="black" d="M54.12,-18C61.89,-18 70.73,-18 79.7,-18"></path>
+<polygon fill="black" stroke="black" points="79.82,-21.5 89.82,-18 79.82,-14.5 79.82,-21.5"></polygon>
+</g>
+<!-- modelo -->
+<g id="node3" class="node">
+<title>modelo</title>
+<path fill="none" stroke="black" d="M331.46,-36C331.46,-36 236.4,-36 236.4,-36 230.4,-36 224.4,-30 224.4,-24 224.4,-24 224.4,-12 224.4,-12 224.4,-6 230.4,0 236.4,0 236.4,0 331.46,0 331.46,0 337.46,0 343.46,-6 343.46,-12 343.46,-12 343.46,-24 343.46,-24 343.46,-30 337.46,-36 331.46,-36"></path>
+<text text-anchor="middle" x="283.93" y="-13.8" font-family="Times,serif" font-size="14.00">Modelo aprendido</text>
+</g>
+<!-- entrenamiento&#45;&gt;modelo -->
+<g id="edge2" class="edge">
+<title>entrenamiento-&gt;modelo</title>
+<path fill="none" stroke="black" d="M188.53,-18C196.78,-18 205.49,-18 214.16,-18"></path>
+<polygon fill="black" stroke="black" points="214.27,-21.5 224.27,-18 214.27,-14.5 214.27,-21.5"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="qué-es-un-modelo" class="slide level2">
+<h2>¿Qué es un modelo?</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p>Así como un carro modelo es una versión pequeña de un vehículo real,</p>
+<p><span class="marker">un modelo de ML es una versión simplificada de un sistema</span>, que permite simular su comportamiento y hacer predicciones sobre él.</p>
+</div><div class="column" style="width:30%;">
+<p><img data-src="./assets/model_f1.jpg"></p>
+</div></div>
+</section>
+<section id="qué-es-una-red-neuronal" class="slide level2">
+<h2>¿Qué es una red neuronal?</h2>
+
+<img data-src="assets/nn.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="qué-es-una-red-neuronal-nn" class="slide level2">
+<h2>¿Qué es una red neuronal (NN)?</h2>
+<ul>
+<li>Modelo de ML inspirado en el cerebro humano.</li>
+<li>Compuesta por capas de nodos (neuronas) que procesan información.</li>
+</ul>
+</section>
+<section id="qué-es-una-neurona" class="slide level2">
+<h2>¿Qué es una neurona?</h2>
+<ul>
+<li>Unidad básica de una red neuronal.</li>
+<li>Almacena un número entre 0 y 1 que representa su activación.</li>
+</ul>
+<div class="cell" data-fig-width="8" data-fig-height="3" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="768" height="288" viewbox="0.00 0.00 359.87 63.87" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 59.87)">
+<!-- neurona_001 -->
+<g id="node1" class="node">
+<title>neurona_001</title>
+<ellipse fill="#101010" stroke="black" cx="27.94" cy="-27.94" rx="27.87" ry="27.87"></ellipse>
+<text text-anchor="middle" x="27.94" y="-23.74" font-family="Times,serif" font-size="14.00" fill="white">0.01</text>
+</g>
+<!-- neurona_025 -->
+<g id="node2" class="node">
+<title>neurona_025</title>
+<ellipse fill="#3d3d3d" stroke="black" cx="101.94" cy="-27.94" rx="27.87" ry="27.87"></ellipse>
+<text text-anchor="middle" x="101.94" y="-23.74" font-family="Times,serif" font-size="14.00" fill="white">0.25</text>
+</g>
+<!-- neurona_050 -->
+<g id="node3" class="node">
+<title>neurona_050</title>
+<ellipse fill="#7a7a7a" stroke="black" cx="175.94" cy="-27.94" rx="27.87" ry="27.87"></ellipse>
+<text text-anchor="middle" x="175.94" y="-23.74" font-family="Times,serif" font-size="14.00" fill="white">0.50</text>
+</g>
+<!-- neurona_075 -->
+<g id="node4" class="node">
+<title>neurona_075</title>
+<ellipse fill="#d0d0d0" stroke="black" cx="249.94" cy="-27.94" rx="27.87" ry="27.87"></ellipse>
+<text text-anchor="middle" x="249.94" y="-23.74" font-family="Times,serif" font-size="14.00">0.75</text>
+</g>
+<!-- neurona_099 -->
+<g id="node5" class="node">
+<title>neurona_099</title>
+<ellipse fill="#f0f0f0" stroke="black" cx="323.94" cy="-27.94" rx="27.87" ry="27.87"></ellipse>
+<text text-anchor="middle" x="323.94" y="-23.74" font-family="Times,serif" font-size="14.00">0.99</text>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section>
+<section id="cómo-representamos-los-números-como-neuronas" class="slide level2">
+<h2>¿Cómo representamos los números como neuronas?</h2>
+
+<img data-src="assets/mnist_pixels.png" class="r-stretch quarto-figure-center"><p class="caption">Crédito: <a href="https://www.3blue1brown.com/lessons/neural-networks/">3Blue1Brown</a></p></section>
+<section id="cómo-representamos-los-números-como-neuronas-1" class="slide level2">
+<h2>¿Cómo representamos los números como neuronas?</h2>
+<ul>
+<li>Cada pixel de la imagen se convierte en una neurona con un valor entre 0 y 1, donde 0 es negro y 1 es blanco.</li>
+<li>Para nuestro ejemplo de 28x28 pixeles, necesitamos 784 neuronas para representar la imagen completa.</li>
+</ul>
+</section>
+<section id="qué-hacen-las-capas-ocultas" class="slide level2">
+<h2>¿Qué hacen las capas ocultas?</h2>
+
+<img data-src="assets/hidden_layers.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="cómo-pregunta-una-neurona" class="slide level2">
+<h2>¿Cómo “pregunta” una neurona?</h2>
+<div class="columns">
+<div class="column" style="font-size: 80%;">
+<ul>
+<li>Cada neurona recibe información de las neuronas de la capa anterior.</li>
+<li>Cada conexión tiene un peso que indica la importancia de esa conexión.</li>
+<li>Entrenar la red neuronal significa ajustar los pesos de las conexiones para que la red haga buenas predicciones.</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/nn_question.png"></p>
+</div></div>
+</section>
+<section id="backpropagation-entrenar-una-red-neuronal" class="slide level2">
+<h2>Backpropagation: Entrenar una red neuronal</h2>
+
+<img data-src="assets/backprop.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="backpropagation-función-de-costo" class="slide level2">
+<h2>Backpropagation: función de costo</h2>
+
+<img data-src="assets/cost_function.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="por-qué-son-tan-poderosas-las-redes-neuronales" class="slide level2">
+<h2>¿Por qué son tan poderosas las redes neuronales?</h2>
+<ul>
+<li>Pueden aproximar cualquier función (Teorema de aproximación universal).</li>
+<li>Capaces de aprender representaciones jerárquicas: pueden combinar características simples para formar representaciones más complejas.</li>
+<li>Escalables: se vuelven más inteligentes a medida que se les da más datos y más capacidad de cómputo.</li>
+</ul>
+</section>
+<section id="qué-es-deep-learning-dl" class="slide level2">
+<h2>¿Qué es Deep Learning (DL)?</h2>
+<ul>
+<li>Subcampo de ML que utiliza redes neuronales profundas (con muchas capas) para modelar problemas.</li>
+</ul>
+
+<img data-src="assets/unet.png" class="r-stretch quarto-figure-center"><p class="caption">UNET, ejemplo de una red neuronal profunda</p></section></section>
+<section id="qué-es-un-gran-modelo-de-lenguaje-llm" class="title-slide slide level1 center">
+<h1>¿Qué es un gran modelo de lenguaje (LLM)?</h1>
+<p>Eg: GPT, Gemini, Claude</p>
+</section>
+
+<section id="cuál-es-la-entrada-de-un-llm" class="title-slide slide level1 center">
+<h1>¿Cuál es la entrada de un (LLM)?</h1>
+<div class="fragment">
+<p>Texto, imágenes, audio, video, etc.</p>
+</div>
+</section>
+
+<section>
+<section id="cuál-es-la-salida-de-un-llm" class="title-slide slide level1 center">
+<h1>¿Cuál es la salida de un (LLM)?</h1>
+<div class="fragment">
+<p>La siguiente palabra más probable</p>
+</div>
+</section>
+<section id="gran-modelo-de-lenguaje-llm" class="slide level2">
+<h2>Gran modelo de lenguaje (LLM)</h2>
+<h3 id="tres-tristes-tigres-tragaban">Tres tristes tigres tragaban…</h3>
+<div class="fragment">
+<ul>
+<li>…trigo</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>…carne</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>…arepas</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>…pescado</li>
+</ul>
+</div>
+</section>
+<section id="llm" class="slide level2">
+<h2>LLM</h2>
+<p>Un modelo de ML entrenado con grandes cantidades de texto para predecir la siguiente palabra más probable en una secuencia.</p>
+<div style="font-size: 80%;">
+<p>Técnicamente, una LLM le asigna una probabilidad a cada palabra en su vocabulario dado un contexto de palabras anteriores.</p>
+</div>
+</section>
+<section id="llm-1" class="slide level2">
+<h2>LLM</h2>
+
+<img data-src="assets/llm_prob.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="cómo-conversamos-con-un-llm" class="slide level2">
+<h2>¿Cómo conversamos con un LLM?</h2>
+
+<img data-src="assets/llm_conversation.png" class="quarto-figure quarto-figure-center r-stretch"></section>
+<section id="dónde-encaja-cada-término" class="slide level2">
+<h2>¿Dónde encaja cada término?</h2>
+
+
+
+<img data-src="assets/ai_field_simp.png" class="quarto-figure quarto-figure-center r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
