@@ -1,0 +1,11 @@
+---
+title: "LLM, explicados"
+subtitle: "Introducción a la Inteligencia Artificial"
+author: "Tomas Santana"
+format: revealjs
+theme: 
+  - serif
+  - theme_ext.scss
+---
+
+# Recordemos: ¿Qué es un LLM?

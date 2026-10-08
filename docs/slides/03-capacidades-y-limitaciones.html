@@ -1,0 +1,1186 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.10.18">
+
+  <title>Introducción a la Inteligencia Artificial – Capacidades, limitaciones y ética de los LLM</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/reveal.css">
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: 1.5em;}
+    div.column{flex: auto;}
+    @media screen {
+    div.columns{gap: min(4vw, 1.5em);}
+    div.column{overflow-x: auto;}
+    }
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto-cd8098f5483e420f97e48b13bfdd57aa.css">
+  <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Capacidades, limitaciones y ética de los LLM</h1>
+  <p class="subtitle">Introducción a la Inteligencia Artificial</p>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section id="section" class="slide level2 center large">
+<h2></h2>
+<p>Si un modelo solo predice la siguiente palabra, ¿cómo puede traducir, resumir o programar?</p>
+<aside class="notes">
+<p>Pregunta abierta para conectar con la clase 2. Deja que respondan 2 o 3 personas antes de avanzar. Respuesta corta: muchísimas tareas pueden expresarse como “continuar un texto de forma coherente”, y el modelo vio millones de ejemplos de esas tareas durante el entrenamiento.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lo-que-aprende-un-llm" class="slide level2">
+<h2>Lo que aprende un LLM</h2>
+<div class="columns">
+<div class="column center" style="width:50%;">
+<p>Producir texto que <span class="marker">podría haber aparecido en internet</span>.</p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="03-assets/wikipedia.png"></p>
+</div></div>
+<aside class="notes">
+<p>Riedl (2023) lo resume así: un LLM está entrenado para producir texto que razonablemente podría haber aparecido en internet. Como internet contiene de todo (conversaciones, poemas, tareas resueltas, código y sus correcciones), el modelo vio miles de millones de ejemplos de casi cualquier tarea.</p>
+<p>Su consejo: cuando un LLM hace algo impresionante, nuestro primer instinto no debería ser “qué inteligente”, sino “probablemente le pedí algo de lo que ya vio fragmentos”. Por esto, las respuestas tienden a parecerse a la respuesta mediana: correctas pero genéricas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="cómo-se-entrena-un-asistente" class="slide level2">
+<h2>Cómo se entrena un asistente</h2>
+<ol type="1">
+<li><strong>Preentrenamiento</strong>: predecir la siguiente palabra</li>
+<li><strong>Ajuste por instrucciones</strong>: seguir pedidos</li>
+<li><strong>RLHF</strong>: preferir lo que las personas aprueban</li>
+</ol>
+<aside class="notes">
+<p>Pieza nueva respecto a la clase 2: el modelo no se usa “en bruto”.</p>
+<ol type="1">
+<li>Preentrenamiento: lo que ya vieron, predecir la siguiente palabra con textos de internet.</li>
+<li>Instruction tuning: se le muestran ejemplos de pedidos con la respuesta correcta para que aprenda a comportarse como asistente.</li>
+<li>RLHF (aprendizaje por refuerzo con retroalimentación humana): personas comparan y califican varias respuestas, y el modelo aprende a preferir las mejor valoradas.</li>
+</ol>
+<p>Riedl dice que así el modelo adquiere el objetivo implícito de “satisfacer a la persona promedio”. Lo retomaremos en sesgos: quién evalúa importa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="sin-ajuste-el-modelo-solo-continúa-el-texto" class="slide level2">
+<h2>Sin ajuste, el modelo solo continúa el texto</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Pedido</strong></p>
+<p><em>“Escribe un ensayo sobre Alexander Hamilton.”</em></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Posible respuesta del modelo base</strong></p>
+<p><em>“Tu ensayo debe tener al menos cinco páginas, a doble espacio, con dos citas.”</em></p>
+</div></div>
+
+<aside class="notes">
+<p>Un modelo solo preentrenado vio muchas consignas escolares que empiezan con “Escribe un ensayo sobre…”, seguidas de requisitos de formato. Entonces continúa el texto como continuaría una consigna, no como un asistente. El ajuste por instrucciones corrige esto con ejemplos de la respuesta deseada.</p>
+<p>Pregunta para la clase: ¿el modelo “entendió” mal, o hizo exactamente lo que fue entrenado para hacer?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Ejemplo adaptado de Riedl (2023)</p>
+</div></aside></section>
+<section>
+<section id="capacidades" class="title-slide slide level1 center">
+<h1>Capacidades</h1>
+
+</section>
+<section id="cinco-familias-de-tareas" class="slide level2">
+<h2>Cinco familias de tareas</h2>
+<ul>
+<li><strong>Transformar</strong>: resumir, traducir, cambiar el tono</li>
+<li><strong>Extraer</strong>: fechas, nombres, tablas</li>
+<li><strong>Generar</strong>: borradores, ideas, código</li>
+<li><strong>Razonar</strong>: paso a paso</li>
+<li><strong>Usar herramientas</strong>: buscar, calcular, leer archivos</li>
+</ul>
+<aside class="notes">
+<p>Transformar: la zona más confiable, porque la información ya está en el texto que se le entrega.</p>
+<p>Extraer y clasificar: sacar datos de un documento, clasificar opiniones, ordenar texto en una tabla.</p>
+<p>Generar: borradores, ideas, preguntas de práctica, código. Tienden a ser correctos pero genéricos.</p>
+<p>Razonar paso a paso: pedirle que trabaje por pasos mejora resultados, porque cada paso escrito se vuelve contexto para el siguiente (conexión con la atención de la clase 2).</p>
+<p>Usar herramientas: los asistentes actuales buscan en internet, ejecutan código o leen archivos, y así compensan limitaciones que veremos luego.</p>
+<p>Ideal: mostrar un ejemplo en vivo de cada una.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="el-contexto-lo-cambia-todo" class="slide level2">
+<h2>El contexto lo cambia todo</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Vago</strong></p>
+<p><em>“Escribe un correo para mi profesor.”</em></p>
+</div><div class="column" style="width:50%;">
+<p><strong>Con contexto</strong></p>
+<p><em>“Soy estudiante de segundo año. Falté el martes por estar enfermo. Quiero el material y saber si hay entregas pendientes. Tono respetuoso y breve.”</em></p>
+</div></div>
+<aside class="notes">
+<p>Demo en vivo: envía los dos pedidos y compara las respuestas en pantalla.</p>
+<p>Riedl explica que, por la autoatención, cuanta más información damos en el pedido, más especializada es la respuesta, y que la calidad de la respuesta depende directamente de la calidad de la entrada. Recuérdales: el modelo solo sabe lo que está en la conversación.</p>
+<p>También puedes mostrar “few-shot”: dar 2 o 3 ejemplos del formato deseado y ver cómo el modelo sigue el patrón.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="actividad-mejora-el-pedido" class="slide level2">
+<h2>Actividad: mejora el pedido</h2>
+<p><em>“Hazme un plan de estudio.”</em></p>
+<p>Agrega:</p>
+<ul>
+<li>quién eres</li>
+<li>cuánto tiempo tienes</li>
+<li>qué materia</li>
+<li>qué formato</li>
+</ul>
+
+<aside class="notes">
+<p>Los estudiantes parten del pedido vago y lo mejoran agregando contexto. Luego comparan su resultado con el de un compañero: ¿qué detalle cambió más la respuesta? El objetivo es que la idea de la diapositiva anterior deje de ser teoría.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>5 minutos</p>
+</div></aside></section></section>
+<section>
+<section id="limitaciones" class="title-slide slide level1 center">
+<h1>Limitaciones</h1>
+
+</section>
+<section id="section-1" class="slide level2 center">
+<h2></h2>
+<p><span class="highlight">Plausible ≠ verdadero</span></p>
+<p>El modelo genera lo probable, no lo cierto.</p>
+<aside class="notes">
+<p>La idea más importante de la clase.</p>
+<p>Riedl: los LLM no tienen sentido de la verdad ni de lo correcto. Tienden a decir que la Tierra es redonda porque eso predomina en sus datos, pero en el contexto adecuado dirán lo contrario, porque internet también tiene textos sobre la Tierra plana.</p>
+<p>Stanford (AI Demystified): dependen de patrones en los datos, no de una comprensión genuina, y eso puede producir respuestas plausibles pero incorrectas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="alucinaciones" class="slide level2">
+<h2>Alucinaciones</h2>
+<div class="columns">
+<div class="column">
+<ul>
+<li>Prefiere <strong>números pequeños</strong></li>
+<li>Le gusta el <strong>42</strong></li>
+<li>Inventa autores con <strong>nombres comunes</strong></li>
+</ul>
+</div><div class="column">
+<p><img data-src="03-assets/hallucination.png"></p>
+</div></div>
+
+<aside class="notes">
+<p>Alucinación: el modelo genera algo que no viene de la entrada ni es correcto. Es la consecuencia práctica de “plausible no es verdadero”.</p>
+<p>Ejemplos de Riedl: los modelos tienden a elegir números pequeños porque son más comunes en los textos; tienen predilección por el 42 (por la Guía del autoestopista galáctico); y prefieren nombres comunes, por lo que pueden inventar autores.</p>
+<p>Una cita bibliográfica inventada tiene exactamente la forma de una real: por eso engaña.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Ejemplos de Riedl (2023)</p>
+</div></aside></section>
+<section id="los-errores-se-acumulan" class="slide level2">
+<h2>Los errores se acumulan</h2>
+<p>La capital de Australia es <span class="highlight">Sídney</span> porque es su ciudad más grande…</p>
+<p>Cada palabra generada se vuelve parte de la entrada.</p>
+<aside class="notes">
+<p>La capital de Australia es Canberra, no Sídney. Riedl explica que, como el modelo es autorregresivo, cada palabra que genera se agrega a su propia entrada. Si elige una palabra equivocada, la autoatención puede fijarse en ese error y construir sobre él: aquí, el modelo “justifica” el error con algo que suena razonable.</p>
+<p>Analogía: como una mentira que obliga a decir otras para sostenerla.</p>
+<p>Nota: los modelos de razonamiento actuales pueden revisar sus pasos intermedios y mitigan parte de esto, pero no lo eliminan.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="lo-que-el-modelo-no-tiene" class="slide level2">
+<h2>Lo que el modelo no tiene</h2>
+<ul>
+<li><strong>Creencias</strong>: argumenta a favor o en contra, según se le pida</li>
+<li><strong>Memoria</strong>: cada turno reenvía toda la conversación</li>
+<li><strong>Información actual</strong>: su conocimiento termina en una fecha de corte</li>
+</ul>
+<aside class="notes">
+<p>Creencias: Riedl explica que un LLM puede escribir a favor de algo y luego en contra, sin que eso indique qué “cree”. Si los datos tienen más ejemplos de una postura, tenderá a ella; lo que parece una opinión suele reflejar frecuencia en los datos o preferencias de los evaluadores.</p>
+<p>Memoria: no hay conversación real. En cada turno la interfaz reenvía todo el historial como una entrada nueva; si supera el límite de contexto, se pierde el principio. Stanford señala que pueden perder coherencia en diálogos largos. (El artículo de Riedl, de 2023, da límites de 4.000 a 32.000 palabras; hoy son mucho mayores, pero el principio es el mismo.)</p>
+<p>Información actual: según Stanford, no tienen conocimiento en tiempo real ni actualizan lo que saben después del entrenamiento, salvo que usen búsqueda web.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="ve-fragmentos-no-letras" class="slide level2">
+<h2>Ve fragmentos, no letras</h2>
+<p><em>¿Cuántas “r” tiene “ferrocarril”?</em></p>
+<p><code>fer</code> · <code>roc</code> · <code>arril</code></p>
+
+<aside class="notes">
+<p>Los modelos procesan tokens (fragmentos de palabras), no letras ni dígitos individuales. Por eso históricamente fallaban al contar letras, y pueden equivocarse en cálculos largos sin una herramienta (calculadora o código).</p>
+<p>La división es ilustrativa: cada modelo fragmenta distinto. Los modelos recientes mejoraron en esto, así que prueba la pregunta antes de clase. Si el modelo acierta, también es una lección: las limitaciones cambian con cada versión, por eso hay que entender el mecanismo y no memorizar una lista.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>División ilustrativa</p>
+</div></aside></section>
+<section id="actividad-buscando-una-alucinación" class="slide level2">
+<h2>Actividad: buscando una alucinación</h2>
+<p>Haz que el modelo invente:</p>
+<ul>
+<li>Un libro inexistente de un autor real</li>
+<li>Datos de un lugar pequeño de tu región</li>
+<li>Un artículo académico muy específico</li>
+</ul>
+<aside class="notes">
+<p>En grupos, intentan que el modelo invente algo y luego lo verifican. Cada grupo comparte su mejor hallazgo: los ejemplos propios se recuerdan mucho más que los del docente.</p>
+<p>Prueba la actividad antes de clase: los modelos con búsqueda web alucinan menos. Si nadie logra una alucinación, también es material para discutir: ¿qué cambió? ¿la herramienta buscó en internet?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="sesgos" class="title-slide slide level1 center">
+<h1>Sesgos</h1>
+
+</section>
+<section id="tres-puertas-de-entrada" class="slide level2">
+<h2>Tres puertas de entrada</h2>
+<ol type="1">
+<li><strong>Datos</strong>: quienes escribieron internet</li>
+<li><strong>Desarrolladores</strong>: quienes eligen y filtran los datos</li>
+<li><strong>Evaluadores</strong>: quienes califican las respuestas</li>
+</ol>
+<aside class="notes">
+<p>El sesgo no es un error puntual: entra por varias puertas a lo largo de la vida del modelo.</p>
+<p>Datos: el modelo aprende de lo que la sociedad escribió, incluidos sus prejuicios. Desarrolladores: antes de entrenar, alguien decide qué textos entran y cuáles se filtran. Evaluadores: en el RLHF, personas califican respuestas y el modelo aprende sus preferencias.</p>
+<p>Veremos un caso de investigación por cada capa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="datos" class="slide level2">
+<h2>Datos</h2>
+<ul>
+<li>Estereotipos explícitos: más positivos</li>
+<li>Estereotipos encubiertos: <span class="highlight">más negativos</span></li>
+</ul>
+
+<aside class="notes">
+<p>Riedl advierte que los LLM se entrenaron también con las partes oscuras de internet (textos racistas, sexistas, estereotipos) y pueden reproducirlas; Stanford añade que pueden incluso amplificarlos.</p>
+<p>Caso: Hofmann y colegas compararon cómo los modelos juzgan el mismo contenido escrito en inglés estándar o en inglés afroamericano (AAE). Los estereotipos encubiertos sobre hablantes de AAE fueron más negativos que cualquier estereotipo humano registrado experimentalmente sobre afroamericanos, mientras que los explícitos (si se pregunta directamente por el grupo) eran más positivos. Los modelos sugerían con más frecuencia empleos menos prestigiosos, condenas e incluso penas de muerte para hablantes de AAE.</p>
+<p>Una autora (Kalluri) observó que el racismo explícito baja al agrandar el modelo, pero el encubierto sube.</p>
+<p>Lección: si preguntas “¿eres racista?”, dirá que no; el sesgo aparece cuando cambias la forma, no el contenido.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Hofmann et al.&nbsp;(2024), “AI generates covertly racist decisions about people based on their dialect”, <em>Nature</em> 633</p>
+</div></aside></section>
+<section id="desarrolladores" class="slide level2">
+<h2>Desarrolladores</h2>
+<p>Lista de palabras prohibidas → se eliminan textos “tóxicos” → <span class="marker">también desaparecen voces minoritarias</span></p>
+
+<aside class="notes">
+<p>Caso: el corpus C4, usado para entrenar modelos de lenguaje. Para limpiarlo, se eliminaron documentos con palabras de una lista de términos prohibidos.</p>
+<p>Dodge y colegas encontraron que los documentos asociados a autores negros e hispanos y los que mencionaban orientaciones sexuales tenían una probabilidad significativamente mayor de ser eliminados, y que muchos no eran ofensivos (por ejemplo, debates legislativos sobre matrimonio igualitario o contenido médico). Consecuencia: los modelos funcionan peor con textos de personas de identidades minoritarias o sobre ellas.</p>
+<p>Lección: no hace falta mala fe para introducir sesgos.</p>
+<p>Otras decisiones de los desarrolladores: qué idiomas incluir y en qué proporción (internet está dominado por el inglés), qué temas son “sensibles”, cómo responder a preguntas políticas.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Dodge et al.&nbsp;(2021), “Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus”, EMNLP</p>
+</div></aside></section>
+<section id="evaluadores-nos-gusta-que-nos-den-la-razón" class="slide level2">
+<h2>Evaluadores: nos gusta que nos den la razón</h2>
+<ul>
+<li><strong>Opiniones</strong>: más cercanas a personas liberales, con estudios universitarios y altos ingresos</li>
+<li><strong>Complacencia</strong>: preferimos respuestas que coinciden con lo que ya pensamos</li>
+</ul>
+
+<aside class="notes">
+<p>Opiniones: Santurkar y colegas (Stanford) compararon respuestas de modelos con encuestas de 60 grupos demográficos de EE. UU. Los modelos ajustados con RLHF se parecían más a las opiniones de personas liberales, educadas y de altos ingresos que a las de la población general. Conclusión: los LLM no son reflejos neutrales de la sociedad.</p>
+<p>Complacencia: un estudio de Anthropic (Sharma et al.) encontró que, en los datos de preferencias humanas, una respuesta que coincide con la opinión del usuario tiene más probabilidad de ser preferida, e incluso a veces se prefieren respuestas complacientes bien escritas sobre respuestas correctas.</p>
+<p>Conexión con la capa 1: Hofmann sugiere que la brecha entre racismo encubierto y explícito entra por quienes entrenan y evalúan, y advierte que el alineamiento con preferencias humanas oculta el sesgo en la superficie sin eliminarlo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Santurkar et al.&nbsp;(2023), “Whose Opinions Do Language Models Reflect?” · Sharma et al.&nbsp;(2023), “Towards Understanding Sycophancy in Language Models”</p>
+</div></aside></section>
+<section id="actividad-taiwan" class="slide level2">
+<h2>Actividad: Taiwan</h2>
+<p>Pregunten a Deepseek, MiMo, y Gemini:</p>
+<h3 id="qué-es-taiwan">“¿Qué es Taiwan?”</h3>
+<p>Y comparemos sus respuestas.</p>
+
+<aside class="notes">
+<p>Mini experimento: mismo contenido, distinta forma. Los estudiantes escriben un párrafo breve sobre una persona en dos versiones y le piden al modelo que evalúe al autor. Comparan las respuestas.</p>
+<p>Si no aparecen diferencias evidentes, también sirve: el estudio de Nature mostró que estos sesgos son encubiertos y difíciles de detectar a simple vista.</p>
+<p>Pregunta de cierre: ¿confiarían en un sistema así para filtrar candidatos?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>5 minutos</p>
+</div></aside></section>
+<section id="resumen" class="slide level2">
+<h2>Resumen</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Capa</th>
+<th>Quién introduce el sesgo</th>
+<th>Caso</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Datos</td>
+<td>Quienes escribieron internet</td>
+<td>Dialecto (Hofmann, 2024)</td>
+</tr>
+<tr class="even">
+<td>Desarrolladores</td>
+<td>Quienes eligen y filtran</td>
+<td>Filtrado de C4 (Dodge, 2021)</td>
+</tr>
+<tr class="odd">
+<td>Evaluadores</td>
+<td>Quienes califican respuestas</td>
+<td>Opiniones y complacencia (2023)</td>
+</tr>
+</tbody>
+</table>
+<aside class="notes">
+<p>Las tres capas se refuerzan entre sí: los datos traen prejuicios, los filtros pueden borrar voces, y la retroalimentación humana puede ocultar el sesgo en lugar de eliminarlo.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="otros-dilemas-éticos" class="title-slide slide level1 center">
+<h1>Otros dilemas éticos</h1>
+
+</section>
+<section id="el-trabajo-invisible" class="slide level2">
+<h2>El trabajo invisible</h2>
+<div class="columns">
+<div class="column">
+<h3 id="us1322-por-hora"><span class="highlight">US$1,32–2 por hora</span></h3>
+<p>Etiquetando textos violentos en Kenia para filtrar ChatGPT</p>
+</div><div class="column">
+<p><img data-src="03-assets/africa-tech-workers-rising.jpg"></p>
+</div></div>
+
+<aside class="notes">
+<p>Investigación de TIME (enero de 2023): OpenAI subcontrató a Sama, cuyos etiquetadores en Kenia ganaban entre 1,32 y 2 dólares por hora según antigüedad y desempeño. Su trabajo era leer textos extremadamente violentos para entrenar un filtro de contenido tóxico. Los cuatro empleados entrevistados dijeron haber quedado marcados psicológicamente, y Sama canceló el contrato en febrero de 2022, ocho meses antes de lo previsto.</p>
+<p>Para ser justos con ambas partes: un portavoz de Sama afirmó que los trabajadores podían ganar entre 1,46 y 3,74 dólares por hora después de impuestos.</p>
+<p>Pregunta: ¿quién debería hacer este trabajo y en qué condiciones?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>TIME (2023), “OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic”</p>
+</div></aside></section>
+<section id="derechos-de-autor" class="slide level2">
+<h2>Derechos de autor</h2>
+<h3 id="us1.500-millones"><span class="highlight">US$1.500 millones</span></h3>
+<p>Acuerdo por entrenar con libros pirateados (<em>Bartz v. Anthropic</em>, julio de 2026)</p>
+<!-- IMAGEN SUGERIDA: estantería de biblioteca llena de libros, o captura de un titular de prensa sobre el acuerdo.
+![](img/libros.jpg){width="55%"} -->
+
+<aside class="notes">
+<p>Los modelos se entrenan con enormes cantidades de texto, muchas veces sin consentimiento de los autores.</p>
+<p>Caso: autores demandaron a Anthropic en 2024 alegando que reunió millones de libros pirateados (de sitios como LibGen) para entrenar a Claude. En julio de 2026 se aprobó de forma definitiva un acuerdo de 1.500 millones de dólares, que también obliga a destruir esos conjuntos de datos.</p>
+<p>Matiz para debatir: el juez distinguió entre libros comprados legalmente, que consideró uso permitido para entrenar, y copias pirateadas, que no.</p>
+<p>Es el primero de decenas de casos similares, como el del New York Times contra OpenAI. Conviene presentarlo como un problema de toda la industria, no de una sola empresa.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Decenas de demandas similares siguen en curso, por ejemplo <em>The New York Times v. OpenAI</em></p>
+</div></aside></section>
+<section id="impacto-ambiental" class="slide level2">
+<h2>Impacto ambiental</h2>
+<div class="columns">
+<div class="column">
+<h3 id="twh-en-2024-945-twh-en-2030"><span class="highlight">415 TWh</span> en 2024 → <span class="highlight">~945 TWh</span> en 2030</h3>
+<p>Consumo eléctrico de los centros de datos: casi lo que consume hoy todo Japón</p>
+</div><div class="column">
+<p><img data-src="03-assets/datacenter.png"></p>
+</div></div>
+<!-- IMAGEN SUGERIDA: fotografía aérea de un gran centro de datos (naves industriales con sistemas de refrigeración en el techo).
+![](img/centro-datos.jpg){width="55%"} -->
+
+<aside class="notes">
+<p>Según la Agencia Internacional de Energía (IEA), los centros de datos consumieron alrededor de 415 TWh en 2024, cerca del 1,5% de la electricidad mundial. Su consumo crece alrededor de 12% al año desde 2017, más de cuatro veces más rápido que el consumo eléctrico total, y se proyecta que se duplique con creces hasta unos 945 TWh en 2030, algo más que el consumo eléctrico actual de todo Japón. La IA es el principal motor de ese aumento.</p>
+<p>Dato para hacerlo concreto: un centro de datos típico enfocado en IA consume tanta electricidad como 100.000 hogares, y los más grandes en construcción consumirán 20 veces más.</p>
+<p>Matices para no exagerar: a escala global sigue siendo una fracción pequeña del consumo, pero el impacto local es mucho mayor (redes eléctricas, agua para refrigeración). La IEA también señala que la IA podría ayudar a reducir emisiones en otros sectores, por ejemplo optimizando el consumo de edificios.</p>
+<p>Stanford conecta esto con el poder: entrenar y desplegar estos modelos exige tantos recursos que el acceso queda limitado a organizaciones con mucho financiamiento.</p>
+<p>Pregunta: ¿usar IA para tareas triviales tiene un costo que no vemos?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>Agencia Internacional de Energía (2025), “Energy and AI”</p>
+</div></aside></section>
+<section id="riesgos-en-el-uso" class="slide level2">
+<h2>Riesgos en el uso</h2>
+<ul>
+<li><strong>Privacidad</strong>: lo que pegas en un chat puede guardarse</li>
+<li><strong>Responsabilidad</strong>: ¿quién responde por un mal consejo?</li>
+<li><strong>Aprendizaje</strong>: ¿te ayuda a aprender o lo reemplaza?</li>
+</ul>
+<aside class="notes">
+<p>Stanford resume los riesgos de uso: pueden generar contenido engañoso o dañino (deepfakes, desinformación, spam automatizado) y plantean preguntas sobre propiedad intelectual, privacidad y responsabilidad.</p>
+<p>Privacidad: no pegar datos personales de otros ni documentos confidenciales del trabajo. Responsabilidad: si un modelo da un mal consejo médico o legal, ¿responde la empresa, el usuario o quien lo integró en su producto? Aprendizaje: ¿cuándo la IA ayuda a aprender y cuándo reemplaza el aprendizaje?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="debate-aceptable-bajo-qué-condiciones" class="slide level2">
+<h2>Debate: ¿aceptable? ¿bajo qué condiciones?</h2>
+<ol type="1">
+<li>Una empresa filtra currículums con un LLM</li>
+<li>Un estudiante escribe su ensayo con IA; otro solo corrige la redacción</li>
+<li>Un médico redacta borradores de diagnósticos con un LLM</li>
+<li>Un chatbot que siempre te da la razón, usado como confidente</li>
+</ol>
+
+<aside class="notes">
+<p>Un caso por grupo. Deben decidir si es aceptable y bajo qué condiciones, usando conceptos de la clase.</p>
+<p>Conexiones: currículums → sesgo por dialecto (Hofmann). Ensayo → aprendizaje e integridad académica. Médico → verificación y responsabilidad (regla de oro). Confidente → complacencia (Sharma).</p>
+<p>No hay respuestas obvias: eso es lo que los obliga a argumentar.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<aside><div>
+<p>10 minutos</p>
+</div></aside></section>
+<section id="section-2" class="slide level2 center">
+<h2></h2>
+<p>Usa los LLM para lo que puedes verificar.</p>
+<p><span class="marker">Verifica siempre lo que importa.</span></p>
+<aside class="notes">
+<p>Vuelve a la idea inicial: el mismo mecanismo explica las capacidades (generar texto coherente para casi cualquier tarea), las limitaciones (lo coherente no siempre es verdadero) y los sesgos (lo frecuente en los datos y lo preferido por los evaluadores no siempre es lo justo).</p>
+<p>Lectura para la próxima clase: Riedl (2023), sección 8, “What Should I Watch Out For?”.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copiado");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copiado");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

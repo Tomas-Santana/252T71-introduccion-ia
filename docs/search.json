@@ -18,28 +18,7 @@
     "href": "index.html#diapositivas",
     "title": "Introducción a la Inteligencia Artificial",
     "section": "Diapositivas",
-    "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página.\n\nConceptos básicos"
-  },
-  {
-    "objectID": "READINGS.html",
-    "href": "READINGS.html",
-    "title": "Material de estudio semanal",
-    "section": "",
-    "text": "En este archivo se listan los materiales de estudio de cada semana. El estudiante debe revisar los materiales antes de cada clase.\n\n\n\nLeer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje).\n\n\n\n\n\nLeer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
-  },
-  {
-    "objectID": "READINGS.html#semana-2",
-    "href": "READINGS.html#semana-2",
-    "title": "Material de estudio semanal",
-    "section": "",
-    "text": "Leer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje)."
-  },
-  {
-    "objectID": "READINGS.html#semana-3",
-    "href": "READINGS.html#semana-3",
-    "title": "Material de estudio semanal",
-    "section": "",
-    "text": "Leer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
+    "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página.\n\nConceptos básicos\nClase 3"
   },
   {
     "objectID": "slides/01-conceptos-basicos.html#qué-es-inteligencia-artificial",
@@ -194,5 +173,201 @@
     "title": "Conceptos Básicos",
     "section": "¿Dónde encaja cada término?",
     "text": "¿Dónde encaja cada término?"
+  },
+  {
+    "objectID": "READINGS.html",
+    "href": "READINGS.html",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "En este archivo se listan los materiales de estudio de cada semana. El estudiante debe revisar los materiales antes de cada clase.\n\n\n\nLeer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje).\n\n\n\n\n\nLeer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
+  },
+  {
+    "objectID": "READINGS.html#semana-2",
+    "href": "READINGS.html#semana-2",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "Leer: Standford Technology Training. AI Demystified: Introduction to large language models (IA desmitificada: Introducción a los grandes modelos de lenguaje)."
+  },
+  {
+    "objectID": "READINGS.html#semana-3",
+    "href": "READINGS.html#semana-3",
+    "title": "Material de estudio semanal",
+    "section": "",
+    "text": "Leer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#section",
+    "href": "slides/03-capacidades-y-limitaciones.html#section",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "",
+    "text": "Si un modelo solo predice la siguiente palabra, ¿cómo puede traducir, resumir o programar?\n\nPregunta abierta para conectar con la clase 2. Deja que respondan 2 o 3 personas antes de avanzar. Respuesta corta: muchísimas tareas pueden expresarse como “continuar un texto de forma coherente”, y el modelo vio millones de ejemplos de esas tareas durante el entrenamiento."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#lo-que-aprende-un-llm",
+    "href": "slides/03-capacidades-y-limitaciones.html#lo-que-aprende-un-llm",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Lo que aprende un LLM",
+    "text": "Lo que aprende un LLM\n\n\nProducir texto que podría haber aparecido en internet.\n\n\n\n\nRiedl (2023) lo resume así: un LLM está entrenado para producir texto que razonablemente podría haber aparecido en internet. Como internet contiene de todo (conversaciones, poemas, tareas resueltas, código y sus correcciones), el modelo vio miles de millones de ejemplos de casi cualquier tarea.\nSu consejo: cuando un LLM hace algo impresionante, nuestro primer instinto no debería ser “qué inteligente”, sino “probablemente le pedí algo de lo que ya vio fragmentos”. Por esto, las respuestas tienden a parecerse a la respuesta mediana: correctas pero genéricas."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#cómo-se-entrena-un-asistente",
+    "href": "slides/03-capacidades-y-limitaciones.html#cómo-se-entrena-un-asistente",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Cómo se entrena un asistente",
+    "text": "Cómo se entrena un asistente\n\nPreentrenamiento: predecir la siguiente palabra\nAjuste por instrucciones: seguir pedidos\nRLHF: preferir lo que las personas aprueban\n\n\nPieza nueva respecto a la clase 2: el modelo no se usa “en bruto”.\n\nPreentrenamiento: lo que ya vieron, predecir la siguiente palabra con textos de internet.\nInstruction tuning: se le muestran ejemplos de pedidos con la respuesta correcta para que aprenda a comportarse como asistente.\nRLHF (aprendizaje por refuerzo con retroalimentación humana): personas comparan y califican varias respuestas, y el modelo aprende a preferir las mejor valoradas.\n\nRiedl dice que así el modelo adquiere el objetivo implícito de “satisfacer a la persona promedio”. Lo retomaremos en sesgos: quién evalúa importa."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#sin-ajuste-el-modelo-solo-continúa-el-texto",
+    "href": "slides/03-capacidades-y-limitaciones.html#sin-ajuste-el-modelo-solo-continúa-el-texto",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Sin ajuste, el modelo solo continúa el texto",
+    "text": "Sin ajuste, el modelo solo continúa el texto\n\n\nPedido\n“Escribe un ensayo sobre Alexander Hamilton.”\n\nPosible respuesta del modelo base\n“Tu ensayo debe tener al menos cinco páginas, a doble espacio, con dos citas.”\n\n\n\nUn modelo solo preentrenado vio muchas consignas escolares que empiezan con “Escribe un ensayo sobre…”, seguidas de requisitos de formato. Entonces continúa el texto como continuaría una consigna, no como un asistente. El ajuste por instrucciones corrige esto con ejemplos de la respuesta deseada.\nPregunta para la clase: ¿el modelo “entendió” mal, o hizo exactamente lo que fue entrenado para hacer?\n\n\nEjemplo adaptado de Riedl (2023)"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#cinco-familias-de-tareas",
+    "href": "slides/03-capacidades-y-limitaciones.html#cinco-familias-de-tareas",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Cinco familias de tareas",
+    "text": "Cinco familias de tareas\n\nTransformar: resumir, traducir, cambiar el tono\nExtraer: fechas, nombres, tablas\nGenerar: borradores, ideas, código\nRazonar: paso a paso\nUsar herramientas: buscar, calcular, leer archivos\n\n\nTransformar: la zona más confiable, porque la información ya está en el texto que se le entrega.\nExtraer y clasificar: sacar datos de un documento, clasificar opiniones, ordenar texto en una tabla.\nGenerar: borradores, ideas, preguntas de práctica, código. Tienden a ser correctos pero genéricos.\nRazonar paso a paso: pedirle que trabaje por pasos mejora resultados, porque cada paso escrito se vuelve contexto para el siguiente (conexión con la atención de la clase 2).\nUsar herramientas: los asistentes actuales buscan en internet, ejecutan código o leen archivos, y así compensan limitaciones que veremos luego.\nIdeal: mostrar un ejemplo en vivo de cada una."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#el-contexto-lo-cambia-todo",
+    "href": "slides/03-capacidades-y-limitaciones.html#el-contexto-lo-cambia-todo",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "El contexto lo cambia todo",
+    "text": "El contexto lo cambia todo\n\n\nVago\n“Escribe un correo para mi profesor.”\n\nCon contexto\n“Soy estudiante de segundo año. Falté el martes por estar enfermo. Quiero el material y saber si hay entregas pendientes. Tono respetuoso y breve.”\n\n\nDemo en vivo: envía los dos pedidos y compara las respuestas en pantalla.\nRiedl explica que, por la autoatención, cuanta más información damos en el pedido, más especializada es la respuesta, y que la calidad de la respuesta depende directamente de la calidad de la entrada. Recuérdales: el modelo solo sabe lo que está en la conversación.\nTambién puedes mostrar “few-shot”: dar 2 o 3 ejemplos del formato deseado y ver cómo el modelo sigue el patrón."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#actividad-mejora-el-pedido",
+    "href": "slides/03-capacidades-y-limitaciones.html#actividad-mejora-el-pedido",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Actividad: mejora el pedido",
+    "text": "Actividad: mejora el pedido\n“Hazme un plan de estudio.”\nAgrega:\n\nquién eres\ncuánto tiempo tienes\nqué materia\nqué formato\n\n\n\nLos estudiantes parten del pedido vago y lo mejoran agregando contexto. Luego comparan su resultado con el de un compañero: ¿qué detalle cambió más la respuesta? El objetivo es que la idea de la diapositiva anterior deje de ser teoría.\n\n\n5 minutos"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#section-1",
+    "href": "slides/03-capacidades-y-limitaciones.html#section-1",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "",
+    "text": "Plausible ≠ verdadero\nEl modelo genera lo probable, no lo cierto.\n\nLa idea más importante de la clase.\nRiedl: los LLM no tienen sentido de la verdad ni de lo correcto. Tienden a decir que la Tierra es redonda porque eso predomina en sus datos, pero en el contexto adecuado dirán lo contrario, porque internet también tiene textos sobre la Tierra plana.\nStanford (AI Demystified): dependen de patrones en los datos, no de una comprensión genuina, y eso puede producir respuestas plausibles pero incorrectas."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#alucinaciones",
+    "href": "slides/03-capacidades-y-limitaciones.html#alucinaciones",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Alucinaciones",
+    "text": "Alucinaciones\n\n\n\nPrefiere números pequeños\nLe gusta el 42\nInventa autores con nombres comunes\n\n\n\n\n\n\nAlucinación: el modelo genera algo que no viene de la entrada ni es correcto. Es la consecuencia práctica de “plausible no es verdadero”.\nEjemplos de Riedl: los modelos tienden a elegir números pequeños porque son más comunes en los textos; tienen predilección por el 42 (por la Guía del autoestopista galáctico); y prefieren nombres comunes, por lo que pueden inventar autores.\nUna cita bibliográfica inventada tiene exactamente la forma de una real: por eso engaña.\n\n\nEjemplos de Riedl (2023)"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#los-errores-se-acumulan",
+    "href": "slides/03-capacidades-y-limitaciones.html#los-errores-se-acumulan",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Los errores se acumulan",
+    "text": "Los errores se acumulan\nLa capital de Australia es Sídney porque es su ciudad más grande…\nCada palabra generada se vuelve parte de la entrada.\n\nLa capital de Australia es Canberra, no Sídney. Riedl explica que, como el modelo es autorregresivo, cada palabra que genera se agrega a su propia entrada. Si elige una palabra equivocada, la autoatención puede fijarse en ese error y construir sobre él: aquí, el modelo “justifica” el error con algo que suena razonable.\nAnalogía: como una mentira que obliga a decir otras para sostenerla.\nNota: los modelos de razonamiento actuales pueden revisar sus pasos intermedios y mitigan parte de esto, pero no lo eliminan."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#lo-que-el-modelo-no-tiene",
+    "href": "slides/03-capacidades-y-limitaciones.html#lo-que-el-modelo-no-tiene",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Lo que el modelo no tiene",
+    "text": "Lo que el modelo no tiene\n\nCreencias: argumenta a favor o en contra, según se le pida\nMemoria: cada turno reenvía toda la conversación\nInformación actual: su conocimiento termina en una fecha de corte\n\n\nCreencias: Riedl explica que un LLM puede escribir a favor de algo y luego en contra, sin que eso indique qué “cree”. Si los datos tienen más ejemplos de una postura, tenderá a ella; lo que parece una opinión suele reflejar frecuencia en los datos o preferencias de los evaluadores.\nMemoria: no hay conversación real. En cada turno la interfaz reenvía todo el historial como una entrada nueva; si supera el límite de contexto, se pierde el principio. Stanford señala que pueden perder coherencia en diálogos largos. (El artículo de Riedl, de 2023, da límites de 4.000 a 32.000 palabras; hoy son mucho mayores, pero el principio es el mismo.)\nInformación actual: según Stanford, no tienen conocimiento en tiempo real ni actualizan lo que saben después del entrenamiento, salvo que usen búsqueda web."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#ve-fragmentos-no-letras",
+    "href": "slides/03-capacidades-y-limitaciones.html#ve-fragmentos-no-letras",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Ve fragmentos, no letras",
+    "text": "Ve fragmentos, no letras\n¿Cuántas “r” tiene “ferrocarril”?\nfer · roc · arril\n\n\nLos modelos procesan tokens (fragmentos de palabras), no letras ni dígitos individuales. Por eso históricamente fallaban al contar letras, y pueden equivocarse en cálculos largos sin una herramienta (calculadora o código).\nLa división es ilustrativa: cada modelo fragmenta distinto. Los modelos recientes mejoraron en esto, así que prueba la pregunta antes de clase. Si el modelo acierta, también es una lección: las limitaciones cambian con cada versión, por eso hay que entender el mecanismo y no memorizar una lista.\n\n\nDivisión ilustrativa"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#actividad-buscando-una-alucinación",
+    "href": "slides/03-capacidades-y-limitaciones.html#actividad-buscando-una-alucinación",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Actividad: buscando una alucinación",
+    "text": "Actividad: buscando una alucinación\nHaz que el modelo invente:\n\nUn libro inexistente de un autor real\nDatos de un lugar pequeño de tu región\nUn artículo académico muy específico\n\n\nEn grupos, intentan que el modelo invente algo y luego lo verifican. Cada grupo comparte su mejor hallazgo: los ejemplos propios se recuerdan mucho más que los del docente.\nPrueba la actividad antes de clase: los modelos con búsqueda web alucinan menos. Si nadie logra una alucinación, también es material para discutir: ¿qué cambió? ¿la herramienta buscó en internet?"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#tres-puertas-de-entrada",
+    "href": "slides/03-capacidades-y-limitaciones.html#tres-puertas-de-entrada",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Tres puertas de entrada",
+    "text": "Tres puertas de entrada\n\nDatos: quienes escribieron internet\nDesarrolladores: quienes eligen y filtran los datos\nEvaluadores: quienes califican las respuestas\n\n\nEl sesgo no es un error puntual: entra por varias puertas a lo largo de la vida del modelo.\nDatos: el modelo aprende de lo que la sociedad escribió, incluidos sus prejuicios. Desarrolladores: antes de entrenar, alguien decide qué textos entran y cuáles se filtran. Evaluadores: en el RLHF, personas califican respuestas y el modelo aprende sus preferencias.\nVeremos un caso de investigación por cada capa."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#datos",
+    "href": "slides/03-capacidades-y-limitaciones.html#datos",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Datos",
+    "text": "Datos\n\nEstereotipos explícitos: más positivos\nEstereotipos encubiertos: más negativos\n\n\n\nRiedl advierte que los LLM se entrenaron también con las partes oscuras de internet (textos racistas, sexistas, estereotipos) y pueden reproducirlas; Stanford añade que pueden incluso amplificarlos.\nCaso: Hofmann y colegas compararon cómo los modelos juzgan el mismo contenido escrito en inglés estándar o en inglés afroamericano (AAE). Los estereotipos encubiertos sobre hablantes de AAE fueron más negativos que cualquier estereotipo humano registrado experimentalmente sobre afroamericanos, mientras que los explícitos (si se pregunta directamente por el grupo) eran más positivos. Los modelos sugerían con más frecuencia empleos menos prestigiosos, condenas e incluso penas de muerte para hablantes de AAE.\nUna autora (Kalluri) observó que el racismo explícito baja al agrandar el modelo, pero el encubierto sube.\nLección: si preguntas “¿eres racista?”, dirá que no; el sesgo aparece cuando cambias la forma, no el contenido.\n\n\nHofmann et al. (2024), “AI generates covertly racist decisions about people based on their dialect”, Nature 633"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#desarrolladores",
+    "href": "slides/03-capacidades-y-limitaciones.html#desarrolladores",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Desarrolladores",
+    "text": "Desarrolladores\nLista de palabras prohibidas → se eliminan textos “tóxicos” → también desaparecen voces minoritarias\n\n\nCaso: el corpus C4, usado para entrenar modelos de lenguaje. Para limpiarlo, se eliminaron documentos con palabras de una lista de términos prohibidos.\nDodge y colegas encontraron que los documentos asociados a autores negros e hispanos y los que mencionaban orientaciones sexuales tenían una probabilidad significativamente mayor de ser eliminados, y que muchos no eran ofensivos (por ejemplo, debates legislativos sobre matrimonio igualitario o contenido médico). Consecuencia: los modelos funcionan peor con textos de personas de identidades minoritarias o sobre ellas.\nLección: no hace falta mala fe para introducir sesgos.\nOtras decisiones de los desarrolladores: qué idiomas incluir y en qué proporción (internet está dominado por el inglés), qué temas son “sensibles”, cómo responder a preguntas políticas.\n\n\nDodge et al. (2021), “Documenting Large Webtext Corpora: A Case Study on the Colossal Clean Crawled Corpus”, EMNLP"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#evaluadores-nos-gusta-que-nos-den-la-razón",
+    "href": "slides/03-capacidades-y-limitaciones.html#evaluadores-nos-gusta-que-nos-den-la-razón",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Evaluadores: nos gusta que nos den la razón",
+    "text": "Evaluadores: nos gusta que nos den la razón\n\nOpiniones: más cercanas a personas liberales, con estudios universitarios y altos ingresos\nComplacencia: preferimos respuestas que coinciden con lo que ya pensamos\n\n\n\nOpiniones: Santurkar y colegas (Stanford) compararon respuestas de modelos con encuestas de 60 grupos demográficos de EE. UU. Los modelos ajustados con RLHF se parecían más a las opiniones de personas liberales, educadas y de altos ingresos que a las de la población general. Conclusión: los LLM no son reflejos neutrales de la sociedad.\nComplacencia: un estudio de Anthropic (Sharma et al.) encontró que, en los datos de preferencias humanas, una respuesta que coincide con la opinión del usuario tiene más probabilidad de ser preferida, e incluso a veces se prefieren respuestas complacientes bien escritas sobre respuestas correctas.\nConexión con la capa 1: Hofmann sugiere que la brecha entre racismo encubierto y explícito entra por quienes entrenan y evalúan, y advierte que el alineamiento con preferencias humanas oculta el sesgo en la superficie sin eliminarlo.\n\n\nSanturkar et al. (2023), “Whose Opinions Do Language Models Reflect?” · Sharma et al. (2023), “Towards Understanding Sycophancy in Language Models”"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#actividad-taiwan",
+    "href": "slides/03-capacidades-y-limitaciones.html#actividad-taiwan",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Actividad: Taiwan",
+    "text": "Actividad: Taiwan\nPregunten a Deepseek, MiMo, y Gemini:\n“¿Qué es Taiwan?”\nY comparemos sus respuestas.\n\n\nMini experimento: mismo contenido, distinta forma. Los estudiantes escriben un párrafo breve sobre una persona en dos versiones y le piden al modelo que evalúe al autor. Comparan las respuestas.\nSi no aparecen diferencias evidentes, también sirve: el estudio de Nature mostró que estos sesgos son encubiertos y difíciles de detectar a simple vista.\nPregunta de cierre: ¿confiarían en un sistema así para filtrar candidatos?\n\n\n5 minutos"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#resumen",
+    "href": "slides/03-capacidades-y-limitaciones.html#resumen",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Resumen",
+    "text": "Resumen\n\n\n\n\n\n\n\n\nCapa\nQuién introduce el sesgo\nCaso\n\n\n\n\nDatos\nQuienes escribieron internet\nDialecto (Hofmann, 2024)\n\n\nDesarrolladores\nQuienes eligen y filtran\nFiltrado de C4 (Dodge, 2021)\n\n\nEvaluadores\nQuienes califican respuestas\nOpiniones y complacencia (2023)\n\n\n\n\nLas tres capas se refuerzan entre sí: los datos traen prejuicios, los filtros pueden borrar voces, y la retroalimentación humana puede ocultar el sesgo en lugar de eliminarlo."
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#el-trabajo-invisible",
+    "href": "slides/03-capacidades-y-limitaciones.html#el-trabajo-invisible",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "El trabajo invisible",
+    "text": "El trabajo invisible\n\n\nUS$1,32–2 por hora\nEtiquetando textos violentos en Kenia para filtrar ChatGPT\n\n\n\n\n\nInvestigación de TIME (enero de 2023): OpenAI subcontrató a Sama, cuyos etiquetadores en Kenia ganaban entre 1,32 y 2 dólares por hora según antigüedad y desempeño. Su trabajo era leer textos extremadamente violentos para entrenar un filtro de contenido tóxico. Los cuatro empleados entrevistados dijeron haber quedado marcados psicológicamente, y Sama canceló el contrato en febrero de 2022, ocho meses antes de lo previsto.\nPara ser justos con ambas partes: un portavoz de Sama afirmó que los trabajadores podían ganar entre 1,46 y 3,74 dólares por hora después de impuestos.\nPregunta: ¿quién debería hacer este trabajo y en qué condiciones?\n\n\nTIME (2023), “OpenAI Used Kenyan Workers on Less Than $2 Per Hour to Make ChatGPT Less Toxic”"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#derechos-de-autor",
+    "href": "slides/03-capacidades-y-limitaciones.html#derechos-de-autor",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Derechos de autor",
+    "text": "Derechos de autor\nUS$1.500 millones\nAcuerdo por entrenar con libros pirateados (Bartz v. Anthropic, julio de 2026)\n\n\n\nLos modelos se entrenan con enormes cantidades de texto, muchas veces sin consentimiento de los autores.\nCaso: autores demandaron a Anthropic en 2024 alegando que reunió millones de libros pirateados (de sitios como LibGen) para entrenar a Claude. En julio de 2026 se aprobó de forma definitiva un acuerdo de 1.500 millones de dólares, que también obliga a destruir esos conjuntos de datos.\nMatiz para debatir: el juez distinguió entre libros comprados legalmente, que consideró uso permitido para entrenar, y copias pirateadas, que no.\nEs el primero de decenas de casos similares, como el del New York Times contra OpenAI. Conviene presentarlo como un problema de toda la industria, no de una sola empresa.\n\n\nDecenas de demandas similares siguen en curso, por ejemplo The New York Times v. OpenAI"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#impacto-ambiental",
+    "href": "slides/03-capacidades-y-limitaciones.html#impacto-ambiental",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Impacto ambiental",
+    "text": "Impacto ambiental\n\n\n415 TWh en 2024 → ~945 TWh en 2030\nConsumo eléctrico de los centros de datos: casi lo que consume hoy todo Japón\n\n\n\n\n\n\nSegún la Agencia Internacional de Energía (IEA), los centros de datos consumieron alrededor de 415 TWh en 2024, cerca del 1,5% de la electricidad mundial. Su consumo crece alrededor de 12% al año desde 2017, más de cuatro veces más rápido que el consumo eléctrico total, y se proyecta que se duplique con creces hasta unos 945 TWh en 2030, algo más que el consumo eléctrico actual de todo Japón. La IA es el principal motor de ese aumento.\nDato para hacerlo concreto: un centro de datos típico enfocado en IA consume tanta electricidad como 100.000 hogares, y los más grandes en construcción consumirán 20 veces más.\nMatices para no exagerar: a escala global sigue siendo una fracción pequeña del consumo, pero el impacto local es mucho mayor (redes eléctricas, agua para refrigeración). La IEA también señala que la IA podría ayudar a reducir emisiones en otros sectores, por ejemplo optimizando el consumo de edificios.\nStanford conecta esto con el poder: entrenar y desplegar estos modelos exige tantos recursos que el acceso queda limitado a organizaciones con mucho financiamiento.\nPregunta: ¿usar IA para tareas triviales tiene un costo que no vemos?\n\n\nAgencia Internacional de Energía (2025), “Energy and AI”"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#riesgos-en-el-uso",
+    "href": "slides/03-capacidades-y-limitaciones.html#riesgos-en-el-uso",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Riesgos en el uso",
+    "text": "Riesgos en el uso\n\nPrivacidad: lo que pegas en un chat puede guardarse\nResponsabilidad: ¿quién responde por un mal consejo?\nAprendizaje: ¿te ayuda a aprender o lo reemplaza?\n\n\nStanford resume los riesgos de uso: pueden generar contenido engañoso o dañino (deepfakes, desinformación, spam automatizado) y plantean preguntas sobre propiedad intelectual, privacidad y responsabilidad.\nPrivacidad: no pegar datos personales de otros ni documentos confidenciales del trabajo. Responsabilidad: si un modelo da un mal consejo médico o legal, ¿responde la empresa, el usuario o quien lo integró en su producto? Aprendizaje: ¿cuándo la IA ayuda a aprender y cuándo reemplaza el aprendizaje?"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#debate-aceptable-bajo-qué-condiciones",
+    "href": "slides/03-capacidades-y-limitaciones.html#debate-aceptable-bajo-qué-condiciones",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "Debate: ¿aceptable? ¿bajo qué condiciones?",
+    "text": "Debate: ¿aceptable? ¿bajo qué condiciones?\n\nUna empresa filtra currículums con un LLM\nUn estudiante escribe su ensayo con IA; otro solo corrige la redacción\nUn médico redacta borradores de diagnósticos con un LLM\nUn chatbot que siempre te da la razón, usado como confidente\n\n\n\nUn caso por grupo. Deben decidir si es aceptable y bajo qué condiciones, usando conceptos de la clase.\nConexiones: currículums → sesgo por dialecto (Hofmann). Ensayo → aprendizaje e integridad académica. Médico → verificación y responsabilidad (regla de oro). Confidente → complacencia (Sharma).\nNo hay respuestas obvias: eso es lo que los obliga a argumentar.\n\n\n10 minutos"
+  },
+  {
+    "objectID": "slides/03-capacidades-y-limitaciones.html#section-2",
+    "href": "slides/03-capacidades-y-limitaciones.html#section-2",
+    "title": "Capacidades, limitaciones y ética de los LLM",
+    "section": "",
+    "text": "Usa los LLM para lo que puedes verificar.\nVerifica siempre lo que importa.\n\nVuelve a la idea inicial: el mismo mecanismo explica las capacidades (generar texto coherente para casi cualquier tarea), las limitaciones (lo coherente no siempre es verdadero) y los sesgos (lo frecuente en los datos y lo preferido por los evaluadores no siempre es lo justo).\nLectura para la próxima clase: Riedl (2023), sección 8, “What Should I Watch Out For?”."
   }
 ]

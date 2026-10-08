@@ -14,3 +14,4 @@ subtitle: "Material de la asignatura"
 Las diapositivas estarán disponibles en línea desde esta misma página.
 
 - [Conceptos básicos](slides/01-conceptos-basicos.html)
+- [Clase 3](slides/03-capacidades-y-limitaciones.html)
