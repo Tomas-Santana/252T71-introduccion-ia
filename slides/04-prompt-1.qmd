@@ -1,0 +1,239 @@
+---
+title: "Prompting 1."
+subtitle: "Introducción a la Inteligencia Artificial"
+author: "Tomas Santana"
+format:
+  revealjs:
+    code-overflow: wrap
+    theme:
+      - serif
+      - theme_ext.scss
+---
+
+## 1. Petición inicial ambigua
+
+```text
+Ayúdame a preparar una propuesta para mejorar la atención al público.
+```
+## 2. Propuesta con objetivo, contexto y restricciones
+
+```text
+Tarea
+Prepara tres medidas para reducir la espera en la atención al público de una biblioteca universitaria.
+
+Información disponible
+- La fila se concentra entre las 12:00 y las 2:00 p. m.
+- Hay dos personas atendiendo.
+- Una observación preliminar de un solo día encontró esperas de alrededor de 20 minutos. Todavía no sabemos si ese día fue representativo.
+
+Condiciones
+- Durante este semestre no podemos contratar personal ni comprar equipos.
+- Queremos probar las medidas durante un mes.
+- La propuesta será revisada por la directora de la biblioteca.
+
+Entrega
+Una tabla con medida, aplicación, recursos necesarios y forma de evaluar el resultado.
+Distingue los datos proporcionados de tus suposiciones. Si falta información importante, señálala.
+```
+## 3. Resumir un texto delimitado e identificar información faltante
+
+```text
+Tarea: resume el siguiente correo en tres puntos y señala qué información falta para responderlo.
+
+Inicio del correo
+Buenas tardes. Queremos una propuesta para una actividad el próximo mes. Esperamos unas 60 personas, pero todavía no confirmamos el lugar.
+Fin del correo
+
+No inventes una fecha ni una sede para completar el resumen.
+```
+## 4. Extraer tareas siguiendo ejemplos
+
+```text
+Convierte estas notas en tareas de seguimiento. Usa la estructura de los ejemplos. Si falta un responsable o una fecha, escribe “por confirmar”.
+
+Ejemplo 1
+Nota: Ana consultará mañana si el salón tiene proyector.
+Tarea: Confirmar disponibilidad del proyector.
+Responsable: Ana.
+Plazo: mañana.
+
+Ejemplo 2
+Nota: Hay que preparar el formulario de inscripción, pero todavía no se asignó a nadie ni se acordó una fecha.
+Tarea: Preparar el formulario de inscripción.
+Responsable: por confirmar.
+Plazo: por confirmar.
+
+Nueva nota
+Debemos consultar si el acceso lateral estará disponible el día de la actividad.
+```
+## 5. Primera etapa: extraer información antes de redactar
+
+```text
+Extrae de estas notas los requisitos confirmados, las propuestas y la información pendiente. Todavía no redactes el plan.
+
+[PEGAR AQUÍ LAS NOTAS DEL PROYECTO]
+```
+## 6. Segunda etapa: comparar alternativas
+
+```text
+Con los requisitos revisados, compara las alternativas disponibles y señala las ventajas, los costos conocidos y los datos que faltan para decidir.
+
+Requisitos revisados:
+[PEGAR AQUÍ LOS REQUISITOS CONFIRMADOS]
+
+Alternativas:
+[PEGAR AQUÍ LAS ALTERNATIVAS]
+```
+## 7. Tercera etapa: redactar a partir de una decisión revisada
+
+```text
+Redacta el plan de la alternativa elegida respetando estos requisitos vigentes:
+
+[PEGAR AQUÍ LA LISTA REVISADA DE REQUISITOS]
+
+Alternativa elegida:
+[PEGAR AQUÍ LA ALTERNATIVA]
+
+Señala al final las suposiciones y la información que todavía debe confirmarse.
+```
+## 8. Metaprompt para construir una petición mediante preguntas
+
+```text
+Necesito comparar proveedores para una actividad universitaria.
+
+Antes de escribir el prompt, hazme hasta cuatro preguntas sobre la información que pueda cambiar la comparación.
+
+Después utiliza mis respuestas para redactar una petición clara y específica. Si queda información pendiente, señálala sin inventarla.
+```
+## 9. Metaprompt para revisar una petición existente
+
+```text
+Revisa la petición que pegaré a continuación. Todavía no ejecutes su tarea.
+
+Identifica ambigüedades, información faltante y requisitos contradictorios.
+
+Hazme hasta tres preguntas que puedan cambiar el resultado y espera mis respuestas.
+
+Después propón una versión revisada y explica brevemente los cambios. No inventes datos para completar los vacíos.
+
+Inicio de mi petición
+[PEGAR AQUÍ LA PETICIÓN DE LA PRIMERA PRÁCTICA]
+Fin de mi petición
+```
+## 10. Resumen de continuidad para empezar otra conversación
+
+```text
+Prepara un resumen de continuidad para seguir este trabajo en otra conversación.
+
+Separa:
+- objetivo actual;
+- requisitos vigentes;
+- decisiones confirmadas;
+- propuestas sin aprobar;
+- opciones descartadas;
+- información pendiente.
+
+Cuando una actualización reemplace un dato anterior, conserva el valor vigente y señala qué quedó descartado. Identifica como tales las sugerencias generadas por IA y sus costos no cotizados.
+
+Todavía no redactes el plan del evento. No conviertas propuestas en decisiones ni datos ausentes en hechos.
+
+Expediente:
+[PEGAR AQUÍ EL HISTORIAL O EXPEDIENTE COMPLETO]
+```
+## 11. Plan preliminar a partir de un contexto organizado
+
+```text
+Con este estado vigente, prepara un plan preliminar para la jornada.
+
+Estado vigente:
+[PEGAR AQUÍ EL RESUMEN DE CONTINUIDAD REVISADO]
+
+Entrega:
+1. Una agenda que sume exactamente 120 minutos e incluya charla, panel y 20 minutos de preguntas del público. Si propones tiempos de bienvenida, transiciones o cierre, inclúyelos dentro del total.
+2. Una distribución de tareas para cuatro voluntarios, identificados como A, B, C y D. Aclara qué se hace antes y durante la jornada.
+3. Una lista de datos que deben confirmarse antes de aprobar gastos y cerrar el plan.
+
+Respeta el máximo de 60 asistentes y el límite de 300 dólares. No presentes como confirmados una fecha, invitados, honorarios ni costos desconocidos. No es necesario gastar todo el presupuesto. Mantén fuera las opciones descartadas.
+```
+## 12. Corregir una agenda que no cumple los requisitos
+
+```text
+La agenda suma 135 minutos y solo reserva 10 para preguntas. Revisa las duraciones para que el total sea 120 minutos y las preguntas ocupen 20 minutos.
+
+Conserva la charla y el panel. Muestra las duraciones de cada parte para que pueda comprobar la suma.
+```
+## 13. Revisar conflictos entre tareas
+
+```text
+Revisa si asignaste tareas simultáneas incompatibles a algún voluntario.
+
+Señala los posibles conflictos de horarios y ajusta la distribución si hace falta.
+
+No cambies las tareas necesarias para la jornada sin explicar qué modificaste.
+```
+## 14. Pedir evidencia antes de una conclusión
+
+```text
+Antes de presentar la conclusión, identifica los fragmentos de la información proporcionada que la respaldan.
+
+Para cada afirmación importante, indica qué dato la sustenta. Si una afirmación no puede demostrarse con la información disponible, márcala como “información insuficiente” y explica qué dato faltaría.
+
+Información:
+[PEGAR AQUÍ EL DOCUMENTO O LAS NOTAS]
+
+Pregunta:
+[ESCRIBIR AQUÍ LA PREGUNTA]
+```
+## 15. Revisar el resultado contra los requisitos
+
+```text
+Revisa la respuesta contra los siguientes requisitos. No la reescribas todavía.
+
+Requisitos:
+[PEGAR AQUÍ LA LISTA DE REQUISITOS]
+
+Respuesta:
+[PEGAR AQUÍ LA RESPUESTA GENERADA]
+
+Devuelve una tabla con tres columnas:
+1. requisito;
+2. evidencia de cumplimiento o incumplimiento;
+3. corrección necesaria.
+
+Si un requisito no puede evaluarse con la información disponible, escribe “no se puede determinar” y explica qué dato falta.
+```
+## 16. Corregir una respuesta sin inventar información
+
+```text
+Corrige la respuesta siguiente únicamente con la información disponible y los requisitos indicados.
+
+Conserva lo que ya cumple. Marca como “pendiente” cualquier dato que no esté confirmado. No inventes fechas, costos, nombres, fuentes ni decisiones.
+
+Requisitos:
+[PEGAR AQUÍ LOS REQUISITOS]
+
+Respuesta que debe corregirse:
+[PEGAR AQUÍ LA RESPUESTA]
+```
+## 17. Preguntar antes de comenzar una tarea ambigua
+
+```text
+Antes de resolver la tarea, hazme hasta cinco preguntas cuya respuesta pueda cambiar significativamente el resultado.
+
+No hagas preguntas sobre detalles secundarios. Si una información no es indispensable, continúa usando una suposición explícita y separa las suposiciones de los datos confirmados.
+
+Tarea:
+[PEGAR AQUÍ LA TAREA]
+```
+## 18. Preparar un mensaje para trasladar el contexto
+
+```text
+Convierte el estado de este trabajo en un mensaje breve que pueda pegar en una conversación nueva.
+
+Incluye únicamente la información necesaria para continuar: objetivo, requisitos vigentes, decisiones tomadas, información pendiente, restricciones y próxima tarea.
+
+No incluyas propuestas descartadas salvo que sea necesario mencionarlas para evitar una confusión. No inventes información y conserva las incertidumbres.
+
+Estado del trabajo:
+[PEGAR AQUÍ EL ESTADO REVISADO]
+```

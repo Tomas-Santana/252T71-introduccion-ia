@@ -15,3 +15,8 @@ Las diapositivas estarán disponibles en línea desde esta misma página.
 
 - [Conceptos básicos](slides/01-conceptos-basicos.html)
 - [Clase 3](slides/03-capacidades-y-limitaciones.html)
+
+
+## PROMPTS
+
+https://docs.google.com/document/d/1NmkhmOqt6xMEj27_voaTs1650ABezdQ9dQpWI9gBfE4/edit?tab=t.0

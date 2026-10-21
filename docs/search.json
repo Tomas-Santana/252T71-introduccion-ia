@@ -21,6 +21,13 @@
     "text": "Diapositivas\nLas diapositivas estarán disponibles en línea desde esta misma página.\n\nConceptos básicos\nClase 3"
   },
   {
+    "objectID": "index.html#prompts",
+    "href": "index.html#prompts",
+    "title": "Introducción a la Inteligencia Artificial",
+    "section": "PROMPTS",
+    "text": "PROMPTS\nhttps://docs.google.com/document/d/1NmkhmOqt6xMEj27_voaTs1650ABezdQ9dQpWI9gBfE4/edit?tab=t.0"
+  },
+  {
     "objectID": "slides/01-conceptos-basicos.html#qué-es-inteligencia-artificial",
     "href": "slides/01-conceptos-basicos.html#qué-es-inteligencia-artificial",
     "title": "Conceptos Básicos",
@@ -194,6 +201,132 @@
     "title": "Material de estudio semanal",
     "section": "",
     "text": "Leer: Mark Riedl. A very gentle introduction to large language models without the hype. (Secciones 5-8, saltar 6.2)"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#petición-inicial-ambigua",
+    "href": "slides/04-prompt-1.html#petición-inicial-ambigua",
+    "title": "Prompting 1.",
+    "section": "1. Petición inicial ambigua",
+    "text": "1. Petición inicial ambigua\nAyúdame a preparar una propuesta para mejorar la atención al público."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#propuesta-con-objetivo-contexto-y-restricciones",
+    "href": "slides/04-prompt-1.html#propuesta-con-objetivo-contexto-y-restricciones",
+    "title": "Prompting 1.",
+    "section": "2. Propuesta con objetivo, contexto y restricciones",
+    "text": "2. Propuesta con objetivo, contexto y restricciones\nTarea\nPrepara tres medidas para reducir la espera en la atención al público de una biblioteca universitaria.\n\nInformación disponible\n- La fila se concentra entre las 12:00 y las 2:00 p. m.\n- Hay dos personas atendiendo.\n- Una observación preliminar de un solo día encontró esperas de alrededor de 20 minutos. Todavía no sabemos si ese día fue representativo.\n\nCondiciones\n- Durante este semestre no podemos contratar personal ni comprar equipos.\n- Queremos probar las medidas durante un mes.\n- La propuesta será revisada por la directora de la biblioteca.\n\nEntrega\nUna tabla con medida, aplicación, recursos necesarios y forma de evaluar el resultado.\nDistingue los datos proporcionados de tus suposiciones. Si falta información importante, señálala."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#resumir-un-texto-delimitado-e-identificar-información-faltante",
+    "href": "slides/04-prompt-1.html#resumir-un-texto-delimitado-e-identificar-información-faltante",
+    "title": "Prompting 1.",
+    "section": "3. Resumir un texto delimitado e identificar información faltante",
+    "text": "3. Resumir un texto delimitado e identificar información faltante\nTarea: resume el siguiente correo en tres puntos y señala qué información falta para responderlo.\n\nInicio del correo\nBuenas tardes. Queremos una propuesta para una actividad el próximo mes. Esperamos unas 60 personas, pero todavía no confirmamos el lugar.\nFin del correo\n\nNo inventes una fecha ni una sede para completar el resumen."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#extraer-tareas-siguiendo-ejemplos",
+    "href": "slides/04-prompt-1.html#extraer-tareas-siguiendo-ejemplos",
+    "title": "Prompting 1.",
+    "section": "4. Extraer tareas siguiendo ejemplos",
+    "text": "4. Extraer tareas siguiendo ejemplos\nConvierte estas notas en tareas de seguimiento. Usa la estructura de los ejemplos. Si falta un responsable o una fecha, escribe “por confirmar”.\n\nEjemplo 1\nNota: Ana consultará mañana si el salón tiene proyector.\nTarea: Confirmar disponibilidad del proyector.\nResponsable: Ana.\nPlazo: mañana.\n\nEjemplo 2\nNota: Hay que preparar el formulario de inscripción, pero todavía no se asignó a nadie ni se acordó una fecha.\nTarea: Preparar el formulario de inscripción.\nResponsable: por confirmar.\nPlazo: por confirmar.\n\nNueva nota\nDebemos consultar si el acceso lateral estará disponible el día de la actividad."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#primera-etapa-extraer-información-antes-de-redactar",
+    "href": "slides/04-prompt-1.html#primera-etapa-extraer-información-antes-de-redactar",
+    "title": "Prompting 1.",
+    "section": "5. Primera etapa: extraer información antes de redactar",
+    "text": "5. Primera etapa: extraer información antes de redactar\nExtrae de estas notas los requisitos confirmados, las propuestas y la información pendiente. Todavía no redactes el plan.\n\n[PEGAR AQUÍ LAS NOTAS DEL PROYECTO]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#segunda-etapa-comparar-alternativas",
+    "href": "slides/04-prompt-1.html#segunda-etapa-comparar-alternativas",
+    "title": "Prompting 1.",
+    "section": "6. Segunda etapa: comparar alternativas",
+    "text": "6. Segunda etapa: comparar alternativas\nCon los requisitos revisados, compara las alternativas disponibles y señala las ventajas, los costos conocidos y los datos que faltan para decidir.\n\nRequisitos revisados:\n[PEGAR AQUÍ LOS REQUISITOS CONFIRMADOS]\n\nAlternativas:\n[PEGAR AQUÍ LAS ALTERNATIVAS]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#tercera-etapa-redactar-a-partir-de-una-decisión-revisada",
+    "href": "slides/04-prompt-1.html#tercera-etapa-redactar-a-partir-de-una-decisión-revisada",
+    "title": "Prompting 1.",
+    "section": "7. Tercera etapa: redactar a partir de una decisión revisada",
+    "text": "7. Tercera etapa: redactar a partir de una decisión revisada\nRedacta el plan de la alternativa elegida respetando estos requisitos vigentes:\n\n[PEGAR AQUÍ LA LISTA REVISADA DE REQUISITOS]\n\nAlternativa elegida:\n[PEGAR AQUÍ LA ALTERNATIVA]\n\nSeñala al final las suposiciones y la información que todavía debe confirmarse."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#metaprompt-para-construir-una-petición-mediante-preguntas",
+    "href": "slides/04-prompt-1.html#metaprompt-para-construir-una-petición-mediante-preguntas",
+    "title": "Prompting 1.",
+    "section": "8. Metaprompt para construir una petición mediante preguntas",
+    "text": "8. Metaprompt para construir una petición mediante preguntas\nNecesito comparar proveedores para una actividad universitaria.\n\nAntes de escribir el prompt, hazme hasta cuatro preguntas sobre la información que pueda cambiar la comparación.\n\nDespués utiliza mis respuestas para redactar una petición clara y específica. Si queda información pendiente, señálala sin inventarla."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#metaprompt-para-revisar-una-petición-existente",
+    "href": "slides/04-prompt-1.html#metaprompt-para-revisar-una-petición-existente",
+    "title": "Prompting 1.",
+    "section": "9. Metaprompt para revisar una petición existente",
+    "text": "9. Metaprompt para revisar una petición existente\nRevisa la petición que pegaré a continuación. Todavía no ejecutes su tarea.\n\nIdentifica ambigüedades, información faltante y requisitos contradictorios.\n\nHazme hasta tres preguntas que puedan cambiar el resultado y espera mis respuestas.\n\nDespués propón una versión revisada y explica brevemente los cambios. No inventes datos para completar los vacíos.\n\nInicio de mi petición\n[PEGAR AQUÍ LA PETICIÓN DE LA PRIMERA PRÁCTICA]\nFin de mi petición"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#resumen-de-continuidad-para-empezar-otra-conversación",
+    "href": "slides/04-prompt-1.html#resumen-de-continuidad-para-empezar-otra-conversación",
+    "title": "Prompting 1.",
+    "section": "10. Resumen de continuidad para empezar otra conversación",
+    "text": "10. Resumen de continuidad para empezar otra conversación\nPrepara un resumen de continuidad para seguir este trabajo en otra conversación.\n\nSepara:\n- objetivo actual;\n- requisitos vigentes;\n- decisiones confirmadas;\n- propuestas sin aprobar;\n- opciones descartadas;\n- información pendiente.\n\nCuando una actualización reemplace un dato anterior, conserva el valor vigente y señala qué quedó descartado. Identifica como tales las sugerencias generadas por IA y sus costos no cotizados.\n\nTodavía no redactes el plan del evento. No conviertas propuestas en decisiones ni datos ausentes en hechos.\n\nExpediente:\n[PEGAR AQUÍ EL HISTORIAL O EXPEDIENTE COMPLETO]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#plan-preliminar-a-partir-de-un-contexto-organizado",
+    "href": "slides/04-prompt-1.html#plan-preliminar-a-partir-de-un-contexto-organizado",
+    "title": "Prompting 1.",
+    "section": "11. Plan preliminar a partir de un contexto organizado",
+    "text": "11. Plan preliminar a partir de un contexto organizado\nCon este estado vigente, prepara un plan preliminar para la jornada.\n\nEstado vigente:\n[PEGAR AQUÍ EL RESUMEN DE CONTINUIDAD REVISADO]\n\nEntrega:\n1. Una agenda que sume exactamente 120 minutos e incluya charla, panel y 20 minutos de preguntas del público. Si propones tiempos de bienvenida, transiciones o cierre, inclúyelos dentro del total.\n2. Una distribución de tareas para cuatro voluntarios, identificados como A, B, C y D. Aclara qué se hace antes y durante la jornada.\n3. Una lista de datos que deben confirmarse antes de aprobar gastos y cerrar el plan.\n\nRespeta el máximo de 60 asistentes y el límite de 300 dólares. No presentes como confirmados una fecha, invitados, honorarios ni costos desconocidos. No es necesario gastar todo el presupuesto. Mantén fuera las opciones descartadas."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#corregir-una-agenda-que-no-cumple-los-requisitos",
+    "href": "slides/04-prompt-1.html#corregir-una-agenda-que-no-cumple-los-requisitos",
+    "title": "Prompting 1.",
+    "section": "12. Corregir una agenda que no cumple los requisitos",
+    "text": "12. Corregir una agenda que no cumple los requisitos\nLa agenda suma 135 minutos y solo reserva 10 para preguntas. Revisa las duraciones para que el total sea 120 minutos y las preguntas ocupen 20 minutos.\n\nConserva la charla y el panel. Muestra las duraciones de cada parte para que pueda comprobar la suma."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#revisar-conflictos-entre-tareas",
+    "href": "slides/04-prompt-1.html#revisar-conflictos-entre-tareas",
+    "title": "Prompting 1.",
+    "section": "13. Revisar conflictos entre tareas",
+    "text": "13. Revisar conflictos entre tareas\nRevisa si asignaste tareas simultáneas incompatibles a algún voluntario.\n\nSeñala los posibles conflictos de horarios y ajusta la distribución si hace falta.\n\nNo cambies las tareas necesarias para la jornada sin explicar qué modificaste."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#pedir-evidencia-antes-de-una-conclusión",
+    "href": "slides/04-prompt-1.html#pedir-evidencia-antes-de-una-conclusión",
+    "title": "Prompting 1.",
+    "section": "14. Pedir evidencia antes de una conclusión",
+    "text": "14. Pedir evidencia antes de una conclusión\nAntes de presentar la conclusión, identifica los fragmentos de la información proporcionada que la respaldan.\n\nPara cada afirmación importante, indica qué dato la sustenta. Si una afirmación no puede demostrarse con la información disponible, márcala como “información insuficiente” y explica qué dato faltaría.\n\nInformación:\n[PEGAR AQUÍ EL DOCUMENTO O LAS NOTAS]\n\nPregunta:\n[ESCRIBIR AQUÍ LA PREGUNTA]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#revisar-el-resultado-contra-los-requisitos",
+    "href": "slides/04-prompt-1.html#revisar-el-resultado-contra-los-requisitos",
+    "title": "Prompting 1.",
+    "section": "15. Revisar el resultado contra los requisitos",
+    "text": "15. Revisar el resultado contra los requisitos\nRevisa la respuesta contra los siguientes requisitos. No la reescribas todavía.\n\nRequisitos:\n[PEGAR AQUÍ LA LISTA DE REQUISITOS]\n\nRespuesta:\n[PEGAR AQUÍ LA RESPUESTA GENERADA]\n\nDevuelve una tabla con tres columnas:\n1. requisito;\n2. evidencia de cumplimiento o incumplimiento;\n3. corrección necesaria.\n\nSi un requisito no puede evaluarse con la información disponible, escribe “no se puede determinar” y explica qué dato falta."
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#corregir-una-respuesta-sin-inventar-información",
+    "href": "slides/04-prompt-1.html#corregir-una-respuesta-sin-inventar-información",
+    "title": "Prompting 1.",
+    "section": "16. Corregir una respuesta sin inventar información",
+    "text": "16. Corregir una respuesta sin inventar información\nCorrige la respuesta siguiente únicamente con la información disponible y los requisitos indicados.\n\nConserva lo que ya cumple. Marca como “pendiente” cualquier dato que no esté confirmado. No inventes fechas, costos, nombres, fuentes ni decisiones.\n\nRequisitos:\n[PEGAR AQUÍ LOS REQUISITOS]\n\nRespuesta que debe corregirse:\n[PEGAR AQUÍ LA RESPUESTA]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#preguntar-antes-de-comenzar-una-tarea-ambigua",
+    "href": "slides/04-prompt-1.html#preguntar-antes-de-comenzar-una-tarea-ambigua",
+    "title": "Prompting 1.",
+    "section": "17. Preguntar antes de comenzar una tarea ambigua",
+    "text": "17. Preguntar antes de comenzar una tarea ambigua\nAntes de resolver la tarea, hazme hasta cinco preguntas cuya respuesta pueda cambiar significativamente el resultado.\n\nNo hagas preguntas sobre detalles secundarios. Si una información no es indispensable, continúa usando una suposición explícita y separa las suposiciones de los datos confirmados.\n\nTarea:\n[PEGAR AQUÍ LA TAREA]"
+  },
+  {
+    "objectID": "slides/04-prompt-1.html#preparar-un-mensaje-para-trasladar-el-contexto",
+    "href": "slides/04-prompt-1.html#preparar-un-mensaje-para-trasladar-el-contexto",
+    "title": "Prompting 1.",
+    "section": "18. Preparar un mensaje para trasladar el contexto",
+    "text": "18. Preparar un mensaje para trasladar el contexto\nConvierte el estado de este trabajo en un mensaje breve que pueda pegar en una conversación nueva.\n\nIncluye únicamente la información necesaria para continuar: objetivo, requisitos vigentes, decisiones tomadas, información pendiente, restricciones y próxima tarea.\n\nNo incluyas propuestas descartadas salvo que sea necesario mencionarlas para evitar una confusión. No inventes información y conserva las incertidumbres.\n\nEstado del trabajo:\n[PEGAR AQUÍ EL ESTADO REVISADO]"
   },
   {
     "objectID": "slides/03-capacidades-y-limitaciones.html#section",
