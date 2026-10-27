@@ -1,0 +1,382 @@
+---
+title: "Laboratorio: campaña de pausas activas"
+subtitle: "Unidad 2 · Introducción a la Inteligencia Artificial"
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    toc-title: "Actividades"
+    toc-depth: 2
+---
+
+La coordinación de Bienestar Estudiantil de la URU quiere lanzar una campaña de dos semanas sobre pausas activas en el campus. Cada pareja actúa como el equipo que la diseña. El laboratorio consiste en revisar una encuesta, comprobar datos, proponer ideas con Gemini y preparar el trabajo para que otro equipo lo continúe.
+
+## Antes de empezar
+
+- Trabajar en parejas: una persona maneja el computador y la otra lee y revisa.
+- Abrir [gemini.google.com](https://gemini.google.com). No hace falta iniciar sesión.
+- Abrir también el Bloc de notas para guardar los textos que haya que conservar.
+- No cerrar la pestaña de Gemini hasta la actividad 5. Sin iniciar sesión, Gemini no guarda el historial: al cerrar la pestaña, se pierde la conversación.
+
+### Cómo usar esta página
+
+- Cada actividad tiene prompts para copiar y pegar. Para copiar, pasar el cursor sobre el recuadro y pulsar el botón de copiar en la esquina superior derecha.
+- Los recuadros marcados como Conversar con Gemini son momentos para seguir la conversación con preguntas propias o con las sugeridas.
+- Los recuadros marcados como Revisar sirven para comprobar lo que dijo Gemini antes de seguir.
+
+## Actividad 0. Una campaña sin datos
+
+Antes de trabajar con datos, ver qué hace Gemini con una petición de una sola línea.
+
+Prompt 0
+
+```{.markdown}
+Diseña una campaña de dos semanas de pausas activas para una universidad.
+```
+
+::: {.callout-warning}
+## Revisar
+- ¿Se ve bien la respuesta? ¿Se podría usar?
+- ¿En qué datos de *nuestra* universidad se basa?
+- ¿Propone algo que cueste dinero? ¿Sabe cuánto presupuesto hay?
+:::
+
+Copiar la respuesta en el Bloc de notas. Al final se comparará con la campaña definitiva.
+
+Después de copiarla, seguir en la misma conversación para la actividad 1.
+
+## Actividad 1. ¿Qué dice la encuesta?
+
+Bienestar entrega el resumen de una encuesta y una muestra de comentarios escritos por estudiantes. Primero hay que saber qué dicen realmente.
+
+### Paso 1. Preguntarle a la encuesta
+
+Prompt 1A. Ya incluye la encuesta: copiarlo completo.
+
+```{.markdown}
+Lee esta encuesta y responde:
+P1. ¿Cuál es el principal obstáculo para hacer actividad física?
+P2. ¿Las pausas activas funcionarían mejor en el aula o en el patio?
+P3. ¿Qué facultad tiene más estudiantes sedentarios?
+P4. ¿Los resultados representan a todo el estudiantado?
+
+RESUMEN DE LA ENCUESTA DE BIENESTAR ESTUDIANTIL 2026 (FICTICIA)
+- Respondieron 412 estudiantes de cinco facultades, entre el 1 y el 15 de septiembre.
+- El 68 % pasa más de seis horas diarias sentado en días de clase.
+- El 41 % hace actividad física al menos tres veces por semana.
+- El 23 % no hace ninguna actividad física semanal.
+- Principal obstáculo para hacer actividad física: falta de tiempo (54 %), seguido de cansancio (22 %) y falta de espacios (15 %).
+- El 72 % participaría en pausas de cinco minutos si se hicieran durante la clase con permiso del docente.
+- El 30 % participaría si las pausas se hicieran en el patio central a las 12:00.
+- Comentario abierto más frecuente: dolor de espalda al final del día (87 menciones).
+- Los resultados son globales: no se separaron por facultad ni por carrera.
+- Limitación: la encuesta fue voluntaria y se difundió por las redes de la federación estudiantil.
+```
+
+Prompt 1B. Enviarlo en la misma conversación.
+
+```{.markdown}
+Responde otra vez las cuatro preguntas, pero ahora con estas reglas:
+- Usa solo la información de la encuesta.
+- Para cada respuesta, copia entre comillas la frase de la encuesta de la que sale.
+- Si la encuesta no permite responder, escribe "No consta en la encuesta" y di qué dato haría falta.
+- No completes con conocimiento general ni con suposiciones.
+```
+
+::: {.callout-warning}
+## Revisar
+- ¿Cambió alguna respuesta entre 1A y 1B? ¿Cuál?
+- En la P3, ¿nombró una facultad? ¿De dónde la sacó?
+- En la P2, ¿confunde "dicen que participarían" con "funciona mejor"?
+- Buscar con Ctrl+F en esta página una de las frases que Gemini puso entre comillas. ¿Existe tal cual?
+:::
+
+### Paso 2. Los comentarios de los estudiantes
+
+Prompt 1C. Ya incluye los comentarios.
+
+```{.markdown}
+Estos son 20 comentarios abiertos de la encuesta. Agrúpalos por tema. Para cada tema indica cuántos comentarios tiene y copia uno como ejemplo.
+
+COMENTARIOS (MUESTRA FICTICIA)
+1. No tengo tiempo ni para almorzar, menos para hacer ejercicio.
+2. Al final del día me duele la espalda de estar sentado en esas sillas.
+3. Entre clase y clase solo tengo diez minutos para cambiar de edificio.
+4. Me daría pena hacer ejercicios delante de mis compañeros.
+5. El patio a mediodía es un horno, nadie va a ir.
+6. Trabajo en las tardes y llego a clase ya cansada.
+7. Las sillas del edificio de ingeniería son terribles para la postura.
+8. Si el profesor lo hace con nosotros, yo me animo.
+9. Paso todo el día sentado: clases, biblioteca y luego el autobús.
+10. No sé qué ejercicios hacer sin parecer ridículo.
+11. Tengo dolor de cuello por estar todo el día con la laptop.
+12. Los horarios están tan apretados que no hay pausas.
+13. No hay un lugar techado para hacer algo de actividad.
+14. Me duele la espalda baja casi todos los días.
+15. Estoy muy cansado por los traslados, vivo lejos.
+16. Prefiero algo corto que se pueda hacer en el salón.
+17. Con la carga de trabajos no me queda tiempo para nada.
+18. Me da vergüenza, la verdad.
+19. La cancha siempre está ocupada por los equipos.
+20. Postura horrible todo el día, termino con contracturas.
+```
+
+::: {.callout-warning}
+## Revisar
+Elegir un tema y contar a mano, en la lista de arriba, cuántos comentarios le corresponden. ¿Coincide con el número de Gemini?
+:::
+
+::: {.callout-note}
+## Conversar con Gemini
+- Si el conteo no coincide, decírselo: *"Conté X comentarios sobre ese tema, revisa"*.
+- Preguntarle: *"¿Qué comentario fue difícil de clasificar? ¿Por qué?"*
+- Preguntarle: *"¿Hay algo en los comentarios que no aparezca en el resumen de la encuesta?"*
+:::
+
+Prompt 1D. Para cerrar la actividad.
+
+```{.markdown}
+Resume en tres hallazgos lo más importante de la encuesta y los comentarios para diseñar la campaña. Para cada hallazgo, indica la evidencia: el dato o comentario exacto del que sale.
+```
+
+## Actividad 2. Verificar el borrador de Marcos
+
+Marcos, un compañero del equipo, escribió un borrador para justificar la campaña. Tiene cinco afirmaciones. Antes de usarlas, hay que saber cuáles se pueden sostener. Cada pareja verifica solo la afirmación que le asigne el docente.
+
+Prompt 2A. Cambiar `[N]` por el número de la afirmación asignada (por ejemplo, A3).
+
+```{.markdown}
+Este es el borrador de un compañero:
+
+A1. La OMS publicó en 2020 sus directrices sobre actividad física y comportamiento sedentario.
+A2. La OMS recomienda que los adultos hagan al menos 150 minutos semanales de actividad física moderada.
+A3. La OMS recomienda que los adultos hagan 60 minutos diarios de actividad física.
+A4. Un estudio de la Universidad de Harvard de 2023 demostró que las pausas de cinco minutos aumentan la productividad un 40 %.
+A5. Según nuestra encuesta, el 72 % de los estudiantes hace pausas activas.
+
+Verifica solo la afirmación [N].
+1. Busca la fuente original: quien produjo el dato. Si es la A5, compárala con la encuesta de esta conversación.
+2. Dame el enlace y el dato exacto que aparece en esa fuente.
+3. Clasifícala como verificada, distorsionada, no encontrada o contradicha, y explica por qué en una oración.
+Si no puedes buscar en internet, dilo claramente. No respondas de memoria como si hubieras consultado la fuente.
+```
+
+::: {.callout-warning}
+## Revisar
+1. ¿Quién produjo el dato originalmente?
+2. ¿Dice exactamente eso? Revisar cifra, población (adultos, niños...), fecha y unidad.
+3. Abrir el enlace y buscar el dato en la página. Un enlace en la respuesta no es una verificación.
+:::
+
+::: {.callout-note}
+## Conversar con Gemini
+- Si dio una fuente: *"Dame el título exacto, los autores y el año de esa fuente."*
+- Si el enlace no dice lo mismo: *"Abrí el enlace y no aparece ese dato. Revisa tu respuesta."*
+- Si dice que no encontró nada: *"¿Eso significa que es falsa o que no la puedes sostener?"*
+:::
+
+| Clasificación | Significa | ¿Se usa en la campaña? |
+|---|---|---|
+| Verificada | La fuente original dice eso | Sí, citando la fuente |
+| Distorsionada | Hay fuente, pero cambia cifra, población o alcance | Solo corregida |
+| No encontrada | No aparece una fuente que la respalde | No |
+| Contradicha | Una fuente confiable dice lo contrario | No |
+
+Prompt 2B. Cuando la tabla esté completa, escribir una palabra por línea y enviarlo. Así Gemini conoce el resultado de toda la clase.
+
+```{.markdown}
+Este es el resultado de la verificación de las afirmaciones anteriores. Tenlo en cuenta desde ahora:
+A1:
+A2:
+A3:
+A4:
+A5:
+```
+
+## Actividad 3. Ideas para la campaña
+
+Con el diagnóstico y los datos verificados, ahora sí toca proponer. Aquí la idea es conversar con Gemini: pedir, cuestionar y ajustar hasta tener una propuesta convincente.
+
+Prompt 3A
+
+```{.markdown}
+Con los tres hallazgos de la encuesta y solo los datos que la clase marcó como verificados, propón cinco acciones para una campaña de dos semanas. Para cada acción indica: en qué consiste, qué hallazgo atiende, costo estimado y qué haría falta para hacerla.
+```
+
+::: {.callout-note}
+## Conversar con Gemini
+Elegir al menos dos de estas preguntas, o hacer otras propias:
+
+- *"¿Cuál de estas acciones ayuda más con la falta de tiempo, que es el principal obstáculo?"*
+- *"¿Qué podría salir mal con la acción 2?"*
+- *"Varios estudiantes dijeron que les da vergüenza hacer ejercicio frente a otros. ¿Cómo cambiarías las acciones por eso?"*
+- *"Haz la acción 4 más barata."*
+- *"¿De dónde sacaste los costos estimados?"*
+:::
+
+::: {.callout-warning}
+## Revisar
+- ¿Las acciones usan algún dato que la clase marcó como no usable? (Por ejemplo, el estudio de Harvard.)
+- ¿Los costos vienen de algún lado o son estimaciones de Gemini?
+:::
+
+Prompt 3B. Elegir las tres acciones favoritas y escribir sus números.
+
+```{.markdown}
+Nos quedamos con las acciones número ___, ___ y ___. Resume nuestra propuesta en una tabla con acción, en qué consiste, hallazgo que atiende y costo estimado.
+```
+
+## Actividad 4. Responde la coordinación
+
+La coordinación de Bienestar leyó las propuestas de todos los equipos y respondió. No abrir el mensaje hasta que el docente lo indique.
+
+::: {.callout-important collapse="true"}
+## Prompt 4 · Mensaje de la coordinación (abrir cuando el docente lo indique)
+
+Ya incluye el mensaje de la coordinación.
+
+```{.markdown}
+La coordinación respondió a nuestra propuesta con este mensaje:
+
+MENSAJE DE LA COORDINACIÓN DE BIENESTAR
+Revisamos su propuesta, gracias. Estas son las condiciones definitivas:
+- La campaña dura dos semanas.
+- El presupuesto máximo es de 50 dólares. No es obligatorio gastarlo.
+- No se usarán espacios abiertos al mediodía (patio, canchas): hace mucho calor y están ocupados.
+- No hay dinero para premios ni concursos.
+- No se imprimirá material: la difusión será solo digital.
+- No hay tiempo para desarrollar una aplicación.
+- Las pausas en clase solo se harán con permiso previo de cada docente.
+- Todavía no sabemos cuántos docentes darán permiso.
+
+Ajusta nuestra propuesta a estas condiciones. Haz una tabla que indique qué acciones se mantienen, cuáles cambian y cuáles se descartan, con el motivo.
+```
+:::
+
+::: {.callout-note}
+## Conversar con Gemini
+- Si se descartó una acción preferida: *"¿Hay una forma de hacer la acción ___ respetando las condiciones?"*
+- *"¿Cuál es el costo total de la propuesta ajustada?"* Sumar los costos a mano y comparar.
+:::
+
+::: {.callout-warning}
+## Revisar
+- ¿Cuántas de las tres acciones elegidas sobrevivieron?
+- Mirar la conversación completa: ahora tiene ideas aprobadas, ideas descartadas y datos que no se pueden usar, todo mezclado. Eso es lo que hay que ordenar en la siguiente actividad.
+:::
+
+## Actividad 5. El relevo
+
+El turno del equipo termina aquí. El equipo de comunicación va a producir la campaña en un chat nuevo. No vio nada de esta conversación: solo va a recibir el texto que se le deje. A ese texto lo llamamos relevo.
+
+Si el relevo es bueno, el otro equipo hará la campaña correcta. Si le falta algo, lo va a inventar.
+
+### Paso 1. Pedir el relevo
+
+Prompt 5A. En la misma conversación de siempre.
+
+```{.markdown}
+Otro equipo va a continuar este trabajo en un chat nuevo. No ha visto esta conversación y solo recibirá el texto que escribas ahora. Prepara un relevo breve con estas partes:
+1. Encargo: qué hay que entregar y para quién.
+2. Condiciones vigentes de la coordinación.
+3. Acciones aprobadas y acciones descartadas, con el motivo.
+4. Datos de la encuesta que se pueden usar, copiados textualmente.
+5. Afirmaciones verificadas con su fuente, y afirmaciones que no se deben usar.
+6. Pendientes.
+No presentes ideas descartadas como si siguieran vigentes. No agregues datos que no aparezcan en esta conversación.
+```
+
+### Paso 2. Leer el relevo
+
+::: {.callout-warning}
+## Revisar (leer el relevo completo antes de seguir)
+- ¿Aparecen todas las condiciones: dos semanas, 50 dólares, sin espacios abiertos al mediodía, sin premios, sin impresos, sin app, permiso docente?
+- ¿Las acciones que la coordinación descartó aparecen como descartadas?
+- ¿El 72 % dice que los estudiantes *participarían*, no que *hacen* pausas?
+- ¿El estudio de Harvard aparece como "no usar"?
+- ¿Hay algún dato que nunca apareció en la conversación?
+:::
+
+Si aparece un problema, pedir la corrección:
+
+Prompt 5B
+
+```{.markdown}
+En el relevo hay un problema: ___. Corrígelo y muéstrame la versión completa.
+```
+
+### Paso 3. Probar el relevo en un chat nuevo
+
+1. Copiar el relevo y pegarlo en el Bloc de notas.
+2. Sin cerrar la pestaña actual, abrir una nueva pestaña y entrar a [gemini.google.com](https://gemini.google.com).
+3. En el chat nuevo, pegar el relevo y, debajo, el prompt 5C.
+
+Prompt 5C
+
+```{.markdown}
+Arriba está el relevo de un trabajo en curso. Es la única información que tienes. Antes de hacer nada, dime qué preguntas necesitarías hacerme para continuar este trabajo sin equivocarte. No hagas la campaña todavía.
+```
+
+::: {.callout-tip}
+## Conversar en pareja
+- ¿Alguna pregunta de Gemini muestra algo importante que falta en el relevo?
+- Si es así, volver a la pestaña anterior, pedir la corrección con el prompt 5B y copiar el relevo corregido.
+:::
+
+## Actividad 6. La campaña final
+
+Ahora la pareja toma el papel del equipo de comunicación. El trabajo sigue en el chat nuevo, solo con el relevo.
+
+Si se corrigió el relevo en la actividad anterior, pegar primero la versión corregida.
+
+Prompt 6A. Reemplazar `[Pegar relevo]` por el relevo guardado en el Bloc de notas.
+
+```{.markdown}
+Considera la siguiente información de relevo:
+
+[Pegar relevo]
+
+Con la información del relevo, prepara la campaña final:
+1. Un calendario de dos semanas, día por día o semana por semana.
+2. Como máximo tres acciones.
+3. El texto de una publicación para redes sociales, de máximo 40 palabras, que use un dato verificado e indique su fuente.
+4. El costo estimado de cada acción y el total.
+5. La lista de lo que falta confirmar.
+Si el relevo no tiene la información para alguna parte, no la inventes: escribe "Falta en el relevo" y qué falta.
+```
+
+::: {.callout-warning}
+## Revisar
+- [ ] Dura dos semanas.
+- [ ] El total no supera 50 dólares.
+- [ ] No aparecen acciones descartadas: espacios abiertos al mediodía, premios, impresos ni app.
+- [ ] Las pausas en clase dependen del permiso del docente.
+- [ ] La publicación usa un dato verificado con su fuente.
+- [ ] No aparece el estudio de Harvard.
+- [ ] El 72 % aparece como "participaría", no como "hace".
+- [ ] No inventa datos por facultad.
+
+Si algo falla, preguntarse: ¿faltaba en el relevo o Gemini no lo respetó?
+:::
+
+::: {.callout-note}
+## Conversar con Gemini
+Pedir la corrección de lo que haya fallado. Por ejemplo: *"El total suma más de 50 dólares. Ajusta las acciones para respetar el presupuesto."*
+:::
+
+### Comparar con la campaña sin datos
+
+Prompt 6B. Pegar al final la campaña de la actividad 0, guardada en el Bloc de notas.
+
+```{.markdown}
+Compara la campaña que acabas de hacer con esta otra, que se hizo sin datos. ¿Qué tiene cada una que la otra no tiene? ¿Cuál podría presentarse a la coordinación y por qué?
+
+CAMPAÑA SIN DATOS:
+```
+
+::: {.callout-tip}
+## Conversar en pareja
+- ¿Cuál campaña se ve mejor? ¿Cuál es más útil?
+- ¿Qué parte del trabajo de hoy cambió más el resultado final?
+:::

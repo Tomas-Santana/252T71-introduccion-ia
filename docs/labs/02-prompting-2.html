@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Laboratorio: campaña de pausas activas – Introducción a la Inteligencia Artificial</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-362eb8f4806eea82f0f830ded64f92c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="quarto-light">
+
+<div id="quarto-search-results"></div>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Actividades</h2>
+   
+  <ul class="collapse">
+  <li><a href="#antes-de-empezar" id="toc-antes-de-empezar" class="nav-link active" data-scroll-target="#antes-de-empezar">Antes de empezar</a></li>
+  <li><a href="#actividad-0.-una-campaña-sin-datos" id="toc-actividad-0.-una-campaña-sin-datos" class="nav-link" data-scroll-target="#actividad-0.-una-campaña-sin-datos">Actividad 0. Una campaña sin datos</a></li>
+  <li><a href="#actividad-1.-qué-dice-la-encuesta" id="toc-actividad-1.-qué-dice-la-encuesta" class="nav-link" data-scroll-target="#actividad-1.-qué-dice-la-encuesta">Actividad 1. ¿Qué dice la encuesta?</a></li>
+  <li><a href="#actividad-2.-verificar-el-borrador-de-marcos" id="toc-actividad-2.-verificar-el-borrador-de-marcos" class="nav-link" data-scroll-target="#actividad-2.-verificar-el-borrador-de-marcos">Actividad 2. Verificar el borrador de Marcos</a></li>
+  <li><a href="#actividad-3.-ideas-para-la-campaña" id="toc-actividad-3.-ideas-para-la-campaña" class="nav-link" data-scroll-target="#actividad-3.-ideas-para-la-campaña">Actividad 3. Ideas para la campaña</a></li>
+  <li><a href="#actividad-4.-responde-la-coordinación" id="toc-actividad-4.-responde-la-coordinación" class="nav-link" data-scroll-target="#actividad-4.-responde-la-coordinación">Actividad 4. Responde la coordinación</a></li>
+  <li><a href="#actividad-5.-el-relevo" id="toc-actividad-5.-el-relevo" class="nav-link" data-scroll-target="#actividad-5.-el-relevo">Actividad 5. El relevo</a></li>
+  <li><a href="#actividad-6.-la-campaña-final" id="toc-actividad-6.-la-campaña-final" class="nav-link" data-scroll-target="#actividad-6.-la-campaña-final">Actividad 6. La campaña final</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Laboratorio: campaña de pausas activas</h1>
+<p class="subtitle lead">Unidad 2 · Introducción a la Inteligencia Artificial</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>La coordinación de Bienestar Estudiantil de la URU quiere lanzar una campaña de dos semanas sobre pausas activas en el campus. Cada pareja actúa como el equipo que la diseña. El laboratorio consiste en revisar una encuesta, comprobar datos, proponer ideas con Gemini y preparar el trabajo para que otro equipo lo continúe.</p>
+<section id="antes-de-empezar" class="level2">
+<h2 class="anchored" data-anchor-id="antes-de-empezar">Antes de empezar</h2>
+<ul>
+<li>Trabajar en parejas: una persona maneja el computador y la otra lee y revisa.</li>
+<li>Abrir <a href="https://gemini.google.com">gemini.google.com</a>. No hace falta iniciar sesión.</li>
+<li>Abrir también el Bloc de notas para guardar los textos que haya que conservar.</li>
+<li>No cerrar la pestaña de Gemini hasta la actividad 5. Sin iniciar sesión, Gemini no guarda el historial: al cerrar la pestaña, se pierde la conversación.</li>
+</ul>
+<section id="cómo-usar-esta-página" class="level3">
+<h3 class="anchored" data-anchor-id="cómo-usar-esta-página">Cómo usar esta página</h3>
+<ul>
+<li>Cada actividad tiene prompts para copiar y pegar. Para copiar, pasar el cursor sobre el recuadro y pulsar el botón de copiar en la esquina superior derecha.</li>
+<li>Los recuadros marcados como Conversar con Gemini son momentos para seguir la conversación con preguntas propias o con las sugeridas.</li>
+<li>Los recuadros marcados como Revisar sirven para comprobar lo que dijo Gemini antes de seguir.</li>
+</ul>
+</section>
+</section>
+<section id="actividad-0.-una-campaña-sin-datos" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-0.-una-campaña-sin-datos">Actividad 0. Una campaña sin datos</h2>
+<p>Antes de trabajar con datos, ver qué hace Gemini con una petición de una sola línea.</p>
+<p>Prompt 0</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Diseña una campaña de dos semanas de pausas activas para una universidad.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Se ve bien la respuesta? ¿Se podría usar?</li>
+<li>¿En qué datos de <em>nuestra</em> universidad se basa?</li>
+<li>¿Propone algo que cueste dinero? ¿Sabe cuánto presupuesto hay?</li>
+</ul>
+</div>
+</div>
+<p>Copiar la respuesta en el Bloc de notas. Al final se comparará con la campaña definitiva.</p>
+<p>Después de copiarla, seguir en la misma conversación para la actividad 1.</p>
+</section>
+<section id="actividad-1.-qué-dice-la-encuesta" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-1.-qué-dice-la-encuesta">Actividad 1. ¿Qué dice la encuesta?</h2>
+<p>Bienestar entrega el resumen de una encuesta y una muestra de comentarios escritos por estudiantes. Primero hay que saber qué dicen realmente.</p>
+<section id="paso-1.-preguntarle-a-la-encuesta" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1.-preguntarle-a-la-encuesta">Paso 1. Preguntarle a la encuesta</h3>
+<p>Prompt 1A. Ya incluye la encuesta: copiarlo completo.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="an">Lee esta encuesta y responde:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>P1. ¿Cuál es el principal obstáculo para hacer actividad física?</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>P2. ¿Las pausas activas funcionarían mejor en el aula o en el patio?</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>P3. ¿Qué facultad tiene más estudiantes sedentarios?</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>P4. ¿Los resultados representan a todo el estudiantado?</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>RESUMEN DE LA ENCUESTA DE BIENESTAR ESTUDIANTIL 2026 (FICTICIA)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Respondieron 412 estudiantes de cinco facultades, entre el 1 y el 15 de septiembre.</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El 68 % pasa más de seis horas diarias sentado en días de clase.</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El 41 % hace actividad física al menos tres veces por semana.</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El 23 % no hace ninguna actividad física semanal.</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Principal obstáculo para hacer actividad física: falta de tiempo (54 %), seguido de cansancio (22 %) y falta de espacios (15 %).</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El 72 % participaría en pausas de cinco minutos si se hicieran durante la clase con permiso del docente.</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El 30 % participaría si las pausas se hicieran en el patio central a las 12:00.</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comentario abierto más frecuente: dolor de espalda al final del día (87 menciones).</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Los resultados son globales: no se separaron por facultad ni por carrera.</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Limitación: la encuesta fue voluntaria y se difundió por las redes de la federación estudiantil.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Prompt 1B. Enviarlo en la misma conversación.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>Responde otra vez las cuatro preguntas, pero ahora con estas reglas:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Usa solo la información de la encuesta.</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Para cada respuesta, copia entre comillas la frase de la encuesta de la que sale.</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Si la encuesta no permite responder, escribe "No consta en la encuesta" y di qué dato haría falta.</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No completes con conocimiento general ni con suposiciones.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Cambió alguna respuesta entre 1A y 1B? ¿Cuál?</li>
+<li>En la P3, ¿nombró una facultad? ¿De dónde la sacó?</li>
+<li>En la P2, ¿confunde “dicen que participarían” con “funciona mejor”?</li>
+<li>Buscar con Ctrl+F en esta página una de las frases que Gemini puso entre comillas. ¿Existe tal cual?</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="paso-2.-los-comentarios-de-los-estudiantes" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2.-los-comentarios-de-los-estudiantes">Paso 2. Los comentarios de los estudiantes</h3>
+<p>Prompt 1C. Ya incluye los comentarios.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Estos son 20 comentarios abiertos de la encuesta. Agrúpalos por tema. Para cada tema indica cuántos comentarios tiene y copia uno como ejemplo.</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>COMENTARIOS (MUESTRA FICTICIA)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>No tengo tiempo ni para almorzar, menos para hacer ejercicio.</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Al final del día me duele la espalda de estar sentado en esas sillas.</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Entre clase y clase solo tengo diez minutos para cambiar de edificio.</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Me daría pena hacer ejercicios delante de mis compañeros.</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>El patio a mediodía es un horno, nadie va a ir.</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Trabajo en las tardes y llego a clase ya cansada.</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="ss">7. </span>Las sillas del edificio de ingeniería son terribles para la postura.</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="ss">8. </span>Si el profesor lo hace con nosotros, yo me animo.</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="ss">9. </span>Paso todo el día sentado: clases, biblioteca y luego el autobús.</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="ss">10. </span>No sé qué ejercicios hacer sin parecer ridículo.</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="ss">11. </span>Tengo dolor de cuello por estar todo el día con la laptop.</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="ss">12. </span>Los horarios están tan apretados que no hay pausas.</span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="ss">13. </span>No hay un lugar techado para hacer algo de actividad.</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="ss">14. </span>Me duele la espalda baja casi todos los días.</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="ss">15. </span>Estoy muy cansado por los traslados, vivo lejos.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="ss">16. </span>Prefiero algo corto que se pueda hacer en el salón.</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">17. </span>Con la carga de trabajos no me queda tiempo para nada.</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ss">18. </span>Me da vergüenza, la verdad.</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="ss">19. </span>La cancha siempre está ocupada por los equipos.</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="ss">20. </span>Postura horrible todo el día, termino con contracturas.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Elegir un tema y contar a mano, en la lista de arriba, cuántos comentarios le corresponden. ¿Coincide con el número de Gemini?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversar con Gemini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si el conteo no coincide, decírselo: <em>“Conté X comentarios sobre ese tema, revisa”</em>.</li>
+<li>Preguntarle: <em>“¿Qué comentario fue difícil de clasificar? ¿Por qué?”</em></li>
+<li>Preguntarle: <em>“¿Hay algo en los comentarios que no aparezca en el resumen de la encuesta?”</em></li>
+</ul>
+</div>
+</div>
+<p>Prompt 1D. Para cerrar la actividad.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Resume en tres hallazgos lo más importante de la encuesta y los comentarios para diseñar la campaña. Para cada hallazgo, indica la evidencia: el dato o comentario exacto del que sale.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+</section>
+<section id="actividad-2.-verificar-el-borrador-de-marcos" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-2.-verificar-el-borrador-de-marcos">Actividad 2. Verificar el borrador de Marcos</h2>
+<p>Marcos, un compañero del equipo, escribió un borrador para justificar la campaña. Tiene cinco afirmaciones. Antes de usarlas, hay que saber cuáles se pueden sostener. Cada pareja verifica solo la afirmación que le asigne el docente.</p>
+<p>Prompt 2A. Cambiar <code>[N]</code> por el número de la afirmación asignada (por ejemplo, A3).</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="an">Este es el borrador de un compañero:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>A1. La OMS publicó en 2020 sus directrices sobre actividad física y comportamiento sedentario.</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>A2. La OMS recomienda que los adultos hagan al menos 150 minutos semanales de actividad física moderada.</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>A3. La OMS recomienda que los adultos hagan 60 minutos diarios de actividad física.</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>A4. Un estudio de la Universidad de Harvard de 2023 demostró que las pausas de cinco minutos aumentan la productividad un 40 %.</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>A5. Según nuestra encuesta, el 72 % de los estudiantes hace pausas activas.</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>Verifica solo la afirmación <span class="co">[</span><span class="ot">N</span><span class="co">]</span>.</span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Busca la fuente original: quien produjo el dato. Si es la A5, compárala con la encuesta de esta conversación.</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Dame el enlace y el dato exacto que aparece en esa fuente.</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Clasifícala como verificada, distorsionada, no encontrada o contradicha, y explica por qué en una oración.</span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>Si no puedes buscar en internet, dilo claramente. No respondas de memoria como si hubieras consultado la fuente.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>¿Quién produjo el dato originalmente?</li>
+<li>¿Dice exactamente eso? Revisar cifra, población (adultos, niños…), fecha y unidad.</li>
+<li>Abrir el enlace y buscar el dato en la página. Un enlace en la respuesta no es una verificación.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversar con Gemini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si dio una fuente: <em>“Dame el título exacto, los autores y el año de esa fuente.”</em></li>
+<li>Si el enlace no dice lo mismo: <em>“Abrí el enlace y no aparece ese dato. Revisa tu respuesta.”</em></li>
+<li>Si dice que no encontró nada: <em>“¿Eso significa que es falsa o que no la puedes sostener?”</em></li>
+</ul>
+</div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Clasificación</th>
+<th>Significa</th>
+<th>¿Se usa en la campaña?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Verificada</td>
+<td>La fuente original dice eso</td>
+<td>Sí, citando la fuente</td>
+</tr>
+<tr class="even">
+<td>Distorsionada</td>
+<td>Hay fuente, pero cambia cifra, población o alcance</td>
+<td>Solo corregida</td>
+</tr>
+<tr class="odd">
+<td>No encontrada</td>
+<td>No aparece una fuente que la respalde</td>
+<td>No</td>
+</tr>
+<tr class="even">
+<td>Contradicha</td>
+<td>Una fuente confiable dice lo contrario</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>Prompt 2B. Cuando la tabla esté completa, escribir una palabra por línea y enviarlo. Así Gemini conoce el resultado de toda la clase.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>Este es el resultado de la verificación de las afirmaciones anteriores. Tenlo en cuenta desde ahora:</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>A1:</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>A2:</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>A3:</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>A4:</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>A5:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="actividad-3.-ideas-para-la-campaña" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-3.-ideas-para-la-campaña">Actividad 3. Ideas para la campaña</h2>
+<p>Con el diagnóstico y los datos verificados, ahora sí toca proponer. Aquí la idea es conversar con Gemini: pedir, cuestionar y ajustar hasta tener una propuesta convincente.</p>
+<p>Prompt 3A</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>Con los tres hallazgos de la encuesta y solo los datos que la clase marcó como verificados, propón cinco acciones para una campaña de dos semanas. Para cada acción indica: en qué consiste, qué hallazgo atiende, costo estimado y qué haría falta para hacerla.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversar con Gemini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Elegir al menos dos de estas preguntas, o hacer otras propias:</p>
+<ul>
+<li><em>“¿Cuál de estas acciones ayuda más con la falta de tiempo, que es el principal obstáculo?”</em></li>
+<li><em>“¿Qué podría salir mal con la acción 2?”</em></li>
+<li><em>“Varios estudiantes dijeron que les da vergüenza hacer ejercicio frente a otros. ¿Cómo cambiarías las acciones por eso?”</em></li>
+<li><em>“Haz la acción 4 más barata.”</em></li>
+<li><em>“¿De dónde sacaste los costos estimados?”</em></li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Las acciones usan algún dato que la clase marcó como no usable? (Por ejemplo, el estudio de Harvard.)</li>
+<li>¿Los costos vienen de algún lado o son estimaciones de Gemini?</li>
+</ul>
+</div>
+</div>
+<p>Prompt 3B. Elegir las tres acciones favoritas y escribir sus números.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>Nos quedamos con las acciones número ___, ___ y ___. Resume nuestra propuesta en una tabla con acción, en qué consiste, hallazgo que atiende y costo estimado.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="actividad-4.-responde-la-coordinación" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-4.-responde-la-coordinación">Actividad 4. Responde la coordinación</h2>
+<p>La coordinación de Bienestar leyó las propuestas de todos los equipos y respondió. No abrir el mensaje hasta que el docente lo indique.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Prompt 4 · Mensaje de la coordinación (abrir cuando el docente lo indique)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Ya incluye el mensaje de la coordinación.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="an">La coordinación respondió a nuestra propuesta con este mensaje:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>MENSAJE DE LA COORDINACIÓN DE BIENESTAR</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>Revisamos su propuesta, gracias. Estas son las condiciones definitivas:</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>La campaña dura dos semanas.</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>El presupuesto máximo es de 50 dólares. No es obligatorio gastarlo.</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No se usarán espacios abiertos al mediodía (patio, canchas): hace mucho calor y están ocupados.</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No hay dinero para premios ni concursos.</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No se imprimirá material: la difusión será solo digital.</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>No hay tiempo para desarrollar una aplicación.</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Las pausas en clase solo se harán con permiso previo de cada docente.</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Todavía no sabemos cuántos docentes darán permiso.</span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>Ajusta nuestra propuesta a estas condiciones. Haz una tabla que indique qué acciones se mantienen, cuáles cambian y cuáles se descartan, con el motivo.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversar con Gemini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Si se descartó una acción preferida: <em>“¿Hay una forma de hacer la acción ___ respetando las condiciones?”</em></li>
+<li><em>“¿Cuál es el costo total de la propuesta ajustada?”</em> Sumar los costos a mano y comparar.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Cuántas de las tres acciones elegidas sobrevivieron?</li>
+<li>Mirar la conversación completa: ahora tiene ideas aprobadas, ideas descartadas y datos que no se pueden usar, todo mezclado. Eso es lo que hay que ordenar en la siguiente actividad.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="actividad-5.-el-relevo" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-5.-el-relevo">Actividad 5. El relevo</h2>
+<p>El turno del equipo termina aquí. El equipo de comunicación va a producir la campaña en un chat nuevo. No vio nada de esta conversación: solo va a recibir el texto que se le deje. A ese texto lo llamamos relevo.</p>
+<p>Si el relevo es bueno, el otro equipo hará la campaña correcta. Si le falta algo, lo va a inventar.</p>
+<section id="paso-1.-pedir-el-relevo" class="level3">
+<h3 class="anchored" data-anchor-id="paso-1.-pedir-el-relevo">Paso 1. Pedir el relevo</h3>
+<p>Prompt 5A. En la misma conversación de siempre.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>Otro equipo va a continuar este trabajo en un chat nuevo. No ha visto esta conversación y solo recibirá el texto que escribas ahora. Prepara un relevo breve con estas partes:</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Encargo: qué hay que entregar y para quién.</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Condiciones vigentes de la coordinación.</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>Acciones aprobadas y acciones descartadas, con el motivo.</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Datos de la encuesta que se pueden usar, copiados textualmente.</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>Afirmaciones verificadas con su fuente, y afirmaciones que no se deben usar.</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="ss">6. </span>Pendientes.</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>No presentes ideas descartadas como si siguieran vigentes. No agregues datos que no aparezcan en esta conversación.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-2.-leer-el-relevo" class="level3">
+<h3 class="anchored" data-anchor-id="paso-2.-leer-el-relevo">Paso 2. Leer el relevo</h3>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar (leer el relevo completo antes de seguir)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Aparecen todas las condiciones: dos semanas, 50 dólares, sin espacios abiertos al mediodía, sin premios, sin impresos, sin app, permiso docente?</li>
+<li>¿Las acciones que la coordinación descartó aparecen como descartadas?</li>
+<li>¿El 72 % dice que los estudiantes <em>participarían</em>, no que <em>hacen</em> pausas?</li>
+<li>¿El estudio de Harvard aparece como “no usar”?</li>
+<li>¿Hay algún dato que nunca apareció en la conversación?</li>
+</ul>
+</div>
+</div>
+<p>Si aparece un problema, pedir la corrección:</p>
+<p>Prompt 5B</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="an">En el relevo hay un problema:</span><span class="co"> ___. Corrígelo y muéstrame la versión completa.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="paso-3.-probar-el-relevo-en-un-chat-nuevo" class="level3">
+<h3 class="anchored" data-anchor-id="paso-3.-probar-el-relevo-en-un-chat-nuevo">Paso 3. Probar el relevo en un chat nuevo</h3>
+<ol type="1">
+<li>Copiar el relevo y pegarlo en el Bloc de notas.</li>
+<li>Sin cerrar la pestaña actual, abrir una nueva pestaña y entrar a <a href="https://gemini.google.com">gemini.google.com</a>.</li>
+<li>En el chat nuevo, pegar el relevo y, debajo, el prompt 5C.</li>
+</ol>
+<p>Prompt 5C</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Arriba está el relevo de un trabajo en curso. Es la única información que tienes. Antes de hacer nada, dime qué preguntas necesitarías hacerme para continuar este trabajo sin equivocarte. No hagas la campaña todavía.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Conversar en pareja
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Alguna pregunta de Gemini muestra algo importante que falta en el relevo?</li>
+<li>Si es así, volver a la pestaña anterior, pedir la corrección con el prompt 5B y copiar el relevo corregido.</li>
+</ul>
+</div>
+</div>
+</section>
+</section>
+<section id="actividad-6.-la-campaña-final" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-6.-la-campaña-final">Actividad 6. La campaña final</h2>
+<p>Ahora la pareja toma el papel del equipo de comunicación. El trabajo sigue en el chat nuevo, solo con el relevo.</p>
+<p>Si se corrigió el relevo en la actividad anterior, pegar primero la versión corregida.</p>
+<p>Prompt 6A. Reemplazar <code>[Pegar relevo]</code> por el relevo guardado en el Bloc de notas.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="an">Considera la siguiente información de relevo:</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Pegar relevo</span><span class="co">]</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>Con la información del relevo, prepara la campaña final:</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>Un calendario de dos semanas, día por día o semana por semana.</span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Como máximo tres acciones.</span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>El texto de una publicación para redes sociales, de máximo 40 palabras, que use un dato verificado e indique su fuente.</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>El costo estimado de cada acción y el total.</span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>La lista de lo que falta confirmar.</span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>Si el relevo no tiene la información para alguna parte, no la inventes: escribe "Falta en el relevo" y qué falta.</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Revisar
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul class="task-list">
+<li><label><input type="checkbox">Dura dos semanas.</label></li>
+<li><label><input type="checkbox">El total no supera 50 dólares.</label></li>
+<li><label><input type="checkbox">No aparecen acciones descartadas: espacios abiertos al mediodía, premios, impresos ni app.</label></li>
+<li><label><input type="checkbox">Las pausas en clase dependen del permiso del docente.</label></li>
+<li><label><input type="checkbox">La publicación usa un dato verificado con su fuente.</label></li>
+<li><label><input type="checkbox">No aparece el estudio de Harvard.</label></li>
+<li><label><input type="checkbox">El 72 % aparece como “participaría”, no como “hace”.</label></li>
+<li><label><input type="checkbox">No inventa datos por facultad.</label></li>
+</ul>
+<p>Si algo falla, preguntarse: ¿faltaba en el relevo o Gemini no lo respetó?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Conversar con Gemini
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pedir la corrección de lo que haya fallado. Por ejemplo: <em>“El total suma más de 50 dólares. Ajusta las acciones para respetar el presupuesto.”</em></p>
+</div>
+</div>
+<section id="comparar-con-la-campaña-sin-datos" class="level3">
+<h3 class="anchored" data-anchor-id="comparar-con-la-campaña-sin-datos">Comparar con la campaña sin datos</h3>
+<p>Prompt 6B. Pegar al final la campaña de la actividad 0, guardada en el Bloc de notas.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>Compara la campaña que acabas de hacer con esta otra, que se hizo sin datos. ¿Qué tiene cada una que la otra no tiene? ¿Cuál podría presentarse a la coordinación y por qué?</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>CAMPAÑA SIN DATOS:</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Conversar en pareja
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>¿Cuál campaña se ve mejor? ¿Cuál es más útil?</li>
+<li>¿Qué parte del trabajo de hoy cambió más el resultado final?</li>
+</ul>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

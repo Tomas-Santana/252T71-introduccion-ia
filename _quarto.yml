@@ -8,3 +8,4 @@ website:
 format:
   html:
     toc: false
+    css: styles.css
