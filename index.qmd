@@ -21,3 +21,7 @@ Las diapositivas estarán disponibles en línea desde esta misma página.
 ## Prácticas
 
 - [Prompting, parte 2](labs/02-prompting-2.html)
+
+## Enunciados de Actividades
+
+- [Actividad 2](homework/02.pdf)
