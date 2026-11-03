@@ -22,6 +22,7 @@ Las diapositivas estarán disponibles en línea desde esta misma página.
 ## Prácticas
 
 - [Prompting, parte 2](labs/02-prompting-2.html)
+- [Python, parte 1](labs/03-python-1.qmd)
 
 ## Enunciados de Actividades
 
