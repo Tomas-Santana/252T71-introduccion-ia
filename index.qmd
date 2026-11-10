@@ -11,18 +11,18 @@ subtitle: "Material de la asignatura"
 
 ## Diapositivas
 
-Las diapositivas estarán disponibles en línea desde esta misma página.
-
 - [Conceptos básicos](slides/01-conceptos-basicos.html)
 - [Clase 3](slides/03-capacidades-y-limitaciones.html)
 - [Clase 5](slides/05-prompt-2.html)
 - [Clase 6](slides/06-python-1.html)
+- [Clase 7](slides/07-python-2.html)
 
 
 ## Prácticas
 
 - [Prompting, parte 2](labs/02-prompting-2.html)
 - [Python, parte 1](labs/03-python-1.qmd)
+- [Python, parte 2](labs/04-python-2.qmd)
 
 ## Enunciados de Actividades
 

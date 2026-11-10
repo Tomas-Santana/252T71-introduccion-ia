@@ -1,0 +1,515 @@
+---
+title: "Laboratorio: diseñar un programa con IA"
+subtitle: "Unidad 3 · Semana 9 · Introducción a la Inteligencia Artificial"
+resources:
+  - datos/*.csv
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    toc-title: "Actividades"
+    toc-depth: 2
+---
+
+La semana pasada se leyeron programas de pocas líneas. Hoy se diseña un programa completo para resolver un problema de su profesión, con Gemini como compañero de diseño.
+
+El programa va a ser más largo de lo que se puede leer línea por línea, y no hace falta. Lo importante es saber qué hace cada bloque y comprobar que el resultado es correcto.
+
+## Antes de empezar
+
+- Trabajar en parejas: una persona maneja el computador y la otra lee, revisa y anota.
+- Abrir [gemini.google.com](https://gemini.google.com). No hace falta iniciar sesión.
+- Abrir [JupyterLite](https://jupyter.org/try-jupyter/lab/) en otra pestaña. No hace falta iniciar sesión.
+
+### Cómo usar JupyterLite
+
+1. En la pantalla de inicio, en **Notebook**, elegir **Python (Pyodide)**. Se abre un cuaderno vacío.
+2. Para subir una tabla de datos: arrastrar el archivo `.csv` desde la carpeta Descargas al panel de archivos de la izquierda, o pulsar el botón de subir (flecha hacia arriba) en ese panel.
+3. Un cuaderno está hecho de celdas. Se pega el código en una celda y se ejecuta con **Shift + Enter**. El resultado aparece debajo.
+4. Para agregar una celda nueva, pulsar **+** en la barra superior del cuaderno.
+5. La primera vez que se ejecuta código, JupyterLite tarda unos segundos en cargar. Es normal.
+6. Al terminar, descargar el cuaderno con **File → Download**. JupyterLite guarda el trabajo solo en este navegador: lo que no se descargue, se pierde para ustedes.
+
+### Las cuatro fases
+
+Cada programa de hoy se diseña en cuatro fases. Las dos primeras ocurren antes de ver una sola línea de código.
+
+| Fase | Qué hacen | Qué hace Gemini |
+|---|---|---|
+| 1. Entender | Describen el problema, los datos y las preguntas | Pregunta lo que no está claro |
+| 2. Planificar | Revisan y corrigen el plan | Propone los pasos en lenguaje natural, sin código |
+| 3. Construir | Ejecutan cada bloque y revisan el resultado | Escribe el código de un paso a la vez |
+| 4. Comprobar | Prueban con resultados que ya conocen | Explica qué hace cada bloque |
+
+### Cómo usar esta página
+
+- Los recuadros de código tienen un botón para copiar en la esquina superior derecha.
+- Los recuadros **Conversar con Gemini** son momentos para seguir la conversación con preguntas propias o con las sugeridas.
+- Los recuadros **Revisar** sirven para comprobar lo que dijo o hizo Gemini antes de seguir.
+
+## Actividad 1. Primeros pasos en JupyterLite
+
+1. Descargar la tabla del caso guiado: [asistencia_pausas.csv](datos/asistencia_pausas.csv).
+2. Subirla a JupyterLite.
+3. Pegar este código en la primera celda y ejecutarlo con Shift + Enter.
+
+```{.python}
+import pandas as pd
+
+datos = pd.read_csv("asistencia_pausas.csv")
+datos.head()
+```
+
+`pandas` es una herramienta de Python para trabajar con tablas. La segunda línea lee el archivo y lo guarda con el nombre `datos`. La última muestra la tabla.
+
+::: {.callout-warning}
+## Revisar
+- ¿Cuántas filas tiene la tabla? Aparece debajo, por ejemplo `50 rows`.
+- ¿Qué columnas tiene?
+- Si aparece un error que dice `FileNotFoundError`, el archivo no se subió o tiene otro nombre. Revisar el panel de la izquierda.
+:::
+
+## Actividad 2. Caso guiado: ¿funcionaron las pausas activas?
+
+La campaña de pausas activas ya se hizo. Durante dos semanas hubo una sesión diaria en cada una de cinco facultades: los martes y jueves en el patio, los demás días en el aula. La coordinación de Bienestar quiere saber cómo funcionó la asistencia.
+
+### Fase 1. Entender
+
+Prompt 2A. Ya describe el problema y los datos. Copiarlo completo.
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+La coordinación de Bienestar hizo dos semanas de pausas activas en cinco facultades. Quiere saber cómo funcionó la asistencia.
+
+DATOS
+Un archivo llamado asistencia_pausas.csv con estas columnas:
+- fecha: día de la sesión, por ejemplo 2026-11-09
+- facultad: nombre de la facultad
+- lugar: "aula" o "patio"
+- inscritos: estudiantes inscritos en esa sesión
+- asistentes: estudiantes que asistieron
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿Qué porcentaje de asistencia tuvo cada facultad en total?
+2. ¿Qué día tuvo la asistencia total más baja?
+3. ¿Qué sesiones tuvieron menos del 50 % de asistencia?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+::: {.callout-note}
+## Conversar con Gemini
+Responder las preguntas de Gemini en la misma conversación. Si una pregunta no tiene respuesta en el problema, decidirla en pareja.
+
+Una pregunta importante: para el porcentaje total de una facultad, ¿se suman todos los asistentes y se dividen por todos los inscritos, o se promedian los porcentajes de cada día? No da lo mismo. En este caso, la coordinación quiere **el total de asistentes dividido por el total de inscritos**. Si Gemini no lo preguntó, decírselo.
+:::
+
+### Fase 2. Planificar
+
+Prompt 2B
+
+```{.markdown}
+Ahora propón un plan para el programa. Escríbelo como una lista de pasos en español, sin código. Cada paso será un bloque del programa y debe decir qué datos usa, qué hace y qué muestra.
+```
+
+::: {.callout-warning}
+## Revisar
+- ¿Cada una de las tres preguntas tiene su paso?
+- ¿Hay un paso para cargar y revisar los datos?
+- ¿Hay pasos que nadie pidió? ¿Sobran?
+- ¿El plan dice cómo se calcula el porcentaje total?
+:::
+
+Si algo no está bien, pedir la corrección antes de seguir: *"Cambia el paso ___ para que ___."*
+
+### Fase 3. Construir por partes
+
+Prompt 2C
+
+```{.markdown}
+Escribe solo el código del paso 1 del plan.
+Condiciones:
+- Lo voy a ejecutar en una celda de JupyterLite. El archivo asistencia_pausas.csv ya está subido.
+- Usa pandas.
+- Al final del bloque, muestra el resultado para que pueda revisarlo.
+- Antes del código, explica en una oración qué hace este bloque.
+```
+
+Pegar el código en una celda nueva y ejecutarlo. Si funciona y el resultado tiene sentido, pedir el siguiente paso.
+
+Prompt 2D. Repetirlo para cada paso, cambiando el número.
+
+```{.markdown}
+Funcionó. Ahora escribe solo el código del paso ___, con las mismas condiciones.
+```
+
+Si aparece un error:
+
+Prompt 2E
+
+```{.markdown}
+Al ejecutar el bloque apareció este error:
+[Pegar el error]
+Explícame en palabras simples qué significa y corrige solo este bloque.
+```
+
+::: {.callout-warning}
+## Revisar después de cada bloque
+- ¿El resultado responde lo que decía ese paso del plan?
+- ¿Los números tienen sentido? Un porcentaje de 140 % o una facultad que no existe son señales de error.
+:::
+
+### Fase 4. Comprobar
+
+Que el programa funcione sin errores no significa que esté bien. Hay tres formas de comprobarlo.
+
+**1. Un dato que ya conocemos.** La coordinación calculó a mano una facultad: **Ciencias Agropecuarias tuvo 62 % de asistencia total**. ¿El programa da lo mismo?
+
+**2. Una tabla de prueba.** Esta tabla tiene solo tres filas y sus resultados se pueden calcular a mano. Pegarla en una celda nueva y ejecutarla. Reemplaza los datos reales por la tabla de prueba.
+
+```{.python}
+datos = pd.DataFrame({
+    "fecha": ["2026-11-09", "2026-11-09", "2026-11-10"],
+    "facultad": ["A", "B", "A"],
+    "lugar": ["aula", "aula", "patio"],
+    "inscritos": [10, 20, 10],
+    "asistentes": [5, 18, 3],
+})
+datos
+```
+
+Después, volver a ejecutar los bloques de las tres preguntas, sin ejecutar el bloque que carga el archivo. Si el programa usa otro nombre en vez de `datos`, por ejemplo `df`, cambiarlo en la primera línea de la tabla de prueba.
+
+::: {.callout-caution}
+## Predecir antes de ejecutar
+Calcular a mano y anotar:
+
+- El porcentaje total de la facultad A y de la facultad B.
+- El día con la asistencia total más baja.
+- Las sesiones con menos del 50 %. Atención a la facultad A el 9 de noviembre.
+:::
+
+::: {.callout-warning}
+## Revisar
+- ¿El programa dio lo mismo que el cálculo a mano?
+- La facultad A tuvo exactamente 50 % el 9 de noviembre. ¿El programa la contó como "menos del 50 %"? ¿Debería?
+- Al terminar, volver a ejecutar el bloque que carga el archivo real.
+:::
+
+**3. Un mapa del programa.**
+
+Prompt 2F
+
+```{.markdown}
+Haz un mapa de nuestro programa: para cada bloque, en una oración, qué hace y qué resultado muestra. No cambies el código.
+```
+
+::: {.callout-warning}
+## Revisar
+Comparar el mapa con lo que muestra cada celda. ¿Coinciden? Si un bloque hace algo distinto de lo que dice el mapa, preguntarle a Gemini por qué.
+:::
+
+### Cambio de requisito
+
+No abrir hasta que el docente lo indique.
+
+::: {.callout-important collapse="true"}
+## Mensaje de la coordinación (abrir cuando el docente lo indique)
+
+Prompt 2G
+
+```{.markdown}
+La coordinación tiene una pregunta nueva: ¿funcionaron mejor las sesiones en el aula o en el patio? Agrega al plan un paso que compare el porcentaje de asistencia total en el aula y en el patio. Después escribe solo el código de ese paso.
+```
+:::
+
+::: {.callout-tip}
+## Conversar en pareja
+- ¿Qué le dirían a la coordinación con estos resultados?
+- ¿El cambio de requisito obligó a modificar los bloques anteriores o solo a agregar uno nuevo?
+:::
+
+## Actividad 3. Un caso de su carrera
+
+Cada pareja elige la pestaña de su carrera. Si los integrantes son de carreras distintas, elegir una. 
+
+El proceso es el mismo de la actividad 2:
+
+1. Abrir un **chat nuevo** en Gemini y un **cuaderno nuevo** en JupyterLite (File → New → Notebook).
+2. Descargar la tabla del caso y subirla a JupyterLite.
+3. **Entender:** enviar el prompt de inicio del caso y responder las preguntas de Gemini.
+4. **Planificar:** usar el prompt 2B y revisar el plan.
+5. **Construir:** usar los prompts 2C y 2D, cambiando el nombre del archivo.
+6. **Comprobar:** revisar el dato de control, hacer una tabla de prueba propia y pedir el mapa con el prompt 2F.
+7. **Cambio de requisito:** abrirlo cuando el docente lo indique.
+
+Para hacer una tabla de prueba propia:
+
+Prompt 3A
+
+```{.markdown}
+Quiero probar el programa con una tabla pequeña cuyos resultados calculé a mano. Escribe una celda que reemplace `datos` por una tabla con estas filas:
+[Escribir 3 o 4 filas inventadas, con las mismas columnas]
+No me digas los resultados.
+```
+
+Antes de ejecutar los bloques con la tabla de prueba, calcular a mano qué debería dar y anotarlo. Incluir al menos un caso límite: un valor justo en la meta, en el límite del rango o en el borde de una fecha.
+
+::: {.panel-tabset}
+
+### Derecho
+
+**Plazos procesales.** Un despacho lleva 30 expedientes y necesita saber cuándo vence el plazo para presentar cada recurso.
+
+Tabla: [expedientes.csv](datos/expedientes.csv)
+
+Prompt de inicio
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+Un despacho de abogados necesita controlar los plazos para presentar recursos en 30 expedientes.
+
+DATOS
+Un archivo llamado expedientes.csv con estas columnas:
+- expediente: código del expediente, por ejemplo EXP-001
+- tipo_recurso: Apelación, Reconsideración, Casación o Revisión
+- fecha_notificacion: fecha en que se notificó, por ejemplo 2026-10-19
+
+REGLAS
+- Plazo de cada recurso, en días hábiles: Apelación 5, Reconsideración 3, Casación 10, Revisión 15.
+- El plazo empieza a contar el día hábil siguiente a la notificación.
+- No son hábiles los sábados, los domingos ni los feriados.
+- Feriados: 2026-11-02 y 2026-11-11.
+- Hoy es lunes 16 de noviembre de 2026. "Esta semana" va del 16 al 20 de noviembre.
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿En qué fecha vence el plazo de cada expediente?
+2. ¿Qué expedientes vencen esta semana?
+3. ¿Qué expedientes ya vencieron?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+**Dato de control:** el EXP-001 es una Revisión notificada el 19 de octubre. Su plazo vence el **10 de noviembre de 2026**.
+
+::: {.callout-warning}
+## Revisar
+- ¿El programa descuenta los dos feriados?
+- Hay un expediente que vence justo hoy. ¿Aparece en "esta semana", en "ya vencieron" o en los dos?
+:::
+
+::: {.callout-important collapse="true"}
+## Cambio de requisito (abrir cuando el docente lo indique)
+El tribunal declaró feriado el **miércoles 18 de noviembre de 2026**. Pedir a Gemini que agregue ese feriado y volver a ejecutar todo. ¿Qué expedientes cambian de fecha? ¿Alguno deja de vencer esta semana?
+:::
+
+### Ingeniería
+
+**Temperatura de un equipo.** Un sensor registró cada hora la temperatura de operación de un equipo industrial durante una semana: 168 lecturas.
+
+Tabla: [temperatura_equipo.csv](datos/temperatura_equipo.csv)
+
+Prompt de inicio
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+Un sensor registró cada hora la temperatura de operación de un equipo industrial durante una semana. El área de mantenimiento quiere saber si el equipo trabajó fuera de rango.
+
+DATOS
+Un archivo llamado temperatura_equipo.csv con estas columnas:
+- fecha_hora: fecha y hora de la lectura, por ejemplo 2026-11-02 14:00
+- temperatura_c: temperatura en grados Celsius
+
+REGLAS
+- El rango permitido va de 60 a 85 °C. Los valores 60 y 85 están dentro del rango.
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿Qué lecturas estuvieron fuera de rango?
+2. ¿Cuál fue la temperatura máxima de cada día?
+3. ¿Hubo tres o más horas seguidas fuera de rango? ¿Cuándo?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+**Dato de control:** la temperatura máxima del 2 de noviembre fue **82,1 °C**.
+
+::: {.callout-warning}
+## Revisar
+- El 3 de noviembre a las 12:00 hubo una lectura de exactamente 85,0 °C. ¿El programa la marcó como fuera de rango? ¿Debería?
+- Para la pregunta 3, ¿el programa revisa horas *seguidas* o solo cuenta cuántas hubo en el día?
+:::
+
+::: {.callout-important collapse="true"}
+## Cambio de requisito (abrir cuando el docente lo indique)
+En el turno de noche, de 22:00 a 05:59, el equipo trabaja con menos carga y el rango permitido es de **55 a 80 °C**. En el resto del día sigue siendo de 60 a 85 °C. Pedir a Gemini el cambio y volver a ejecutar todo. ¿Qué lecturas aparecen o desaparecen de la lista?
+:::
+
+### Producción animal
+
+**Ganancia de peso de un lote.** Un lote de 36 bovinos de engorde, repartidos en tres corrales, se pesó al inicio y al final del periodo.
+
+Tabla: [pesajes_lote.csv](datos/pesajes_lote.csv)
+
+Prompt de inicio
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+Un lote de 36 bovinos de engorde, en tres corrales, se pesó al inicio y al final del periodo. El encargado quiere saber qué animales no alcanzaron la ganancia de peso esperada.
+
+DATOS
+Un archivo llamado pesajes_lote.csv con estas columnas:
+- animal: código del animal, por ejemplo B-001
+- corral: A, B o C
+- sexo: M (macho) o H (hembra)
+- peso_inicial_kg: peso al inicio, en kilogramos
+- peso_final_kg: peso al final, en kilogramos
+- dias: días entre los dos pesajes
+
+REGLAS
+- Ganancia diaria de peso = (peso final − peso inicial) ÷ días.
+- La meta es una ganancia diaria de 0,8 kg por día o más.
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿Cuál es la ganancia diaria de peso de cada animal?
+2. ¿Qué animales quedaron bajo la meta?
+3. ¿Cuál es la ganancia diaria promedio de cada corral?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+**Dato de control:** el animal B-001 tuvo una ganancia diaria de **0,878 kg por día**.
+
+::: {.callout-warning}
+## Revisar
+- El corral C no se pesó a los mismos días que los otros. ¿El programa usa la columna `dias` de cada animal o supuso un mismo número para todos?
+- ¿Los resultados están redondeados? ¿Cuántos decimales tienen sentido para un informe?
+:::
+
+::: {.callout-important collapse="true"}
+## Cambio de requisito (abrir cuando el docente lo indique)
+El veterinario indica que la meta debe ser distinta según el sexo: **0,9 kg por día para los machos y 0,75 kg por día para las hembras**. Pedir a Gemini el cambio y volver a ejecutar todo. ¿Qué animales entran o salen de la lista bajo la meta?
+:::
+
+### Psicología
+
+**Puntuar una escala.** Un equipo aplicó un cuestionario de 10 ítems a 35 estudiantes y necesita puntuarlo.
+
+Tabla: [escala_eba10.csv](datos/escala_eba10.csv)
+
+Prompt de inicio
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+Un equipo aplicó un cuestionario de 10 ítems, la escala EBA-10, a 35 estudiantes. Necesita calcular el puntaje de cada persona y clasificarlo.
+
+> La escala EBA-10 es inventada.
+
+DATOS
+Un archivo llamado escala_eba10.csv con estas columnas:
+- participante: código, por ejemplo P01
+- item1 a item10: respuesta a cada ítem, de 1 a 5. Si la persona no respondió, la celda está vacía.
+
+REGLAS
+- Los ítems 3, 6 y 9 son invertidos: su puntaje es 6 menos la respuesta. Por ejemplo, una respuesta 5 vale 1.
+- El puntaje total es la suma de los 10 ítems, ya con los invertidos corregidos. Va de 10 a 50.
+- Rangos: de 10 a 23, bajo; de 24 a 36, medio; de 37 a 50, alto.
+- Un cuestionario con alguna respuesta vacía está incompleto y no se puntúa.
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿Cuál es el puntaje total de cada participante?
+2. ¿En qué rango queda cada participante y cuántos hay en cada rango?
+3. ¿Qué cuestionarios están incompletos?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+**Dato de control:** el participante P01 tiene un puntaje total de **29**, rango medio.
+
+::: {.callout-warning}
+## Revisar
+- ¿El programa invirtió los ítems 3, 6 y 9 antes de sumar?
+- ¿Puntuó los cuestionarios incompletos como si la respuesta vacía valiera 0? No debería.
+- El participante P16 tiene exactamente 23 puntos. ¿En qué rango quedó?
+:::
+
+::: {.callout-important collapse="true"}
+## Cambio de requisito (abrir cuando el docente lo indique)
+Una revisión de la escala concluyó que **el ítem 8 también es invertido**. Pedir a Gemini el cambio y volver a ejecutar todo. ¿Cuántas personas cambian de rango?
+:::
+
+### Administración
+
+**Ventas de una tienda.** Una tienda registró las ventas mensuales de cinco productos durante el primer semestre del año.
+
+Tabla: [ventas_tienda.csv](datos/ventas_tienda.csv)
+
+Prompt de inicio
+
+```{.markdown}
+Voy a escribir un programa en Python con tu ayuda. No soy programador.
+
+PROBLEMA
+Una tienda registró las ventas de cinco productos de enero a junio de 2026. La gerencia quiere un resumen del semestre.
+
+DATOS
+Un archivo llamado ventas_tienda.csv con estas columnas:
+- mes: por ejemplo 2026-01
+- producto: nombre del producto
+- vendedor: quien registró la venta
+- unidades: unidades vendidas en el mes
+- precio_unitario: precio de cada unidad, en dólares
+
+REGLAS
+- Ingreso = unidades × precio unitario.
+- La meta de ingreso total de la tienda es de 6300 dólares por mes.
+- Primer trimestre: enero a marzo. Segundo trimestre: abril a junio.
+
+PREGUNTAS QUE DEBE RESPONDER EL PROGRAMA
+1. ¿Cuál fue el ingreso total de cada producto en el semestre?
+2. ¿En qué meses el ingreso total de la tienda quedó bajo la meta?
+3. ¿Qué productos vendieron menos unidades en el segundo trimestre que en el primero?
+
+Todavía no escribas código. Hazme las preguntas que necesites para entender bien el problema. No escribas el código incluso después de responder las preguntas. 
+```
+
+**Dato de control:** el café molido generó un ingreso total de **13 708,50 dólares** en el semestre.
+
+::: {.callout-warning}
+## Revisar
+- Marzo quedó muy cerca de la meta. ¿El programa lo clasificó bien?
+- Para la pregunta 3, ¿el programa comparó unidades o ingresos? La pregunta pide unidades.
+:::
+
+::: {.callout-important collapse="true"}
+## Cambio de requisito (abrir cuando el docente lo indique)
+La gerencia pagará a cada vendedor una **comisión del 5 % del ingreso de las ventas que registró**. Pedir a Gemini un bloque nuevo que calcule cuánto recibe cada vendedor.
+:::
+
+:::
+
+## Para cerrar
+
+### Descargar el trabajo
+
+1. En JupyterLite, abrir cada cuaderno y elegir **File → Download**. Se descarga un archivo `.ipynb`.
+2. De ser posible, enviárlos por correo para poder consultarlos desde su casa. 
+
+
+::: {.callout-tip}
+## Conversar en pareja
+- ¿En qué fase se encontró el problema más importante: al entender, al planificar, al construir o al comprobar?
+- ¿Qué pregunta de Gemini en la fase 1 cambió lo que iba a hacer el programa?
+- ¿Qué otro problema de su carrera se podría resolver con este método?
+:::
+

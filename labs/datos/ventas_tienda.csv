@@ -1,0 +1,31 @@
+mes,producto,vendedor,unidades,precio_unitario
+2026-01,Café molido 250 g,Ana,328,6.5
+2026-01,Té verde,Luis,220,4.0
+2026-01,Galletas integrales,Marta,402,3.2
+2026-01,Jugo natural 1 L,Ana,490,2.8
+2026-01,Barra de cereal,Luis,629,1.5
+2026-02,Café molido 250 g,Luis,361,6.5
+2026-02,Té verde,Marta,173,4.0
+2026-02,Galletas integrales,Ana,385,3.2
+2026-02,Jugo natural 1 L,Luis,421,2.8
+2026-02,Barra de cereal,Marta,680,1.5
+2026-03,Café molido 250 g,Marta,374,6.5
+2026-03,Té verde,Ana,160,4.0
+2026-03,Galletas integrales,Luis,393,3.2
+2026-03,Jugo natural 1 L,Marta,316,2.8
+2026-03,Barra de cereal,Ana,732,1.5
+2026-04,Café molido 250 g,Ana,292,6.5
+2026-04,Té verde,Luis,114,4.0
+2026-04,Galletas integrales,Marta,304,3.2
+2026-04,Jugo natural 1 L,Ana,219,2.8
+2026-04,Barra de cereal,Luis,692,1.5
+2026-05,Café molido 250 g,Luis,394,6.5
+2026-05,Té verde,Marta,134,4.0
+2026-05,Galletas integrales,Ana,436,3.2
+2026-05,Jugo natural 1 L,Luis,228,2.8
+2026-05,Barra de cereal,Marta,899,1.5
+2026-06,Café molido 250 g,Marta,360,6.5
+2026-06,Té verde,Ana,118,4.0
+2026-06,Galletas integrales,Luis,451,3.2
+2026-06,Jugo natural 1 L,Marta,199,2.8
+2026-06,Barra de cereal,Ana,911,1.5
