@@ -16,6 +16,7 @@ subtitle: "Material de la asignatura"
 - [Clase 5](slides/05-prompt-2.html)
 - [Clase 6](slides/06-python-1.html)
 - [Clase 7](slides/07-python-2.html)
+- [Clase 8](slides/08-analisis-1.html)
 
 
 ## Prácticas
