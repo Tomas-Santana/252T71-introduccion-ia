@@ -29,3 +29,7 @@ subtitle: "Material de la asignatura"
 ## Enunciados de Actividades
 
 - [Actividad 2](homework/02.pdf)
+
+## Taller
+
+- [Unidad 3](workshop/01-python.qmd)
