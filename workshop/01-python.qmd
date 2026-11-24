@@ -16,9 +16,9 @@ lang: es
 ## Instrucciones generales
 
 - La evaluación se realiza en parejas y dura una hora.
-- Cada pareja resuelve un caso, de acuerdo con la carrera indicada por el docente.
+- Cada pareja resuelve un caso, de acuerdo a su carrera. Si cada integrante de la pareja es de una carrera distinta, escoger una.
 - Se permite usar [Gemini](https://gemini.google.com) y [JupyterLite](https://jupyter.org/try-jupyter/lab/). Se debe seguir el mismo proceso del laboratorio: entender, planificar, construir y comprobar.
-- Las preguntas finales se responden sin usar la IA. Se indicará cuándo cerrarlo.
+- Las preguntas finales se responden sin usar la IA. 
 - El trabajo se guarda solo en el navegador. Deben descargarlo al finalizar.
 
 ## Qué debe contener el cuaderno
@@ -31,11 +31,15 @@ El cuaderno debe tener, en este orden:
 4. **El cambio de requisito**, cuando el docente lo indique.
 5. **Las respuestas a las preguntas finales**, en celdas de texto.
 
+## Quienes entregan online: qué entregar
+
+Únicamente 1 archivo: el cuaderno (.ipynb) descargado de JupyterLite. 
+
 ::: {.callout-warning title="Revisar"}
 Que el programa no tenga errores no significa que sea correcto. Cada resultado debe tener sentido y coincidir con el dato de control.
 :::
 
-## Casos
+## Casos (escoger 1 de acuerdo a las instrucciones)
 
 ### Derecho: obligación de manutención
 
@@ -195,7 +199,7 @@ Las facturas pagadas con retraso tienen un recargo del 2 % de su monto. Agregar 
 
 ## Preguntas finales
 
-::: {.callout-important title="Sin Gemini"}
+::: {.callout-important title="Sin ayuda de Gemini"}
 Estas preguntas se responden sin usar la IA, en celdas de texto al final del cuaderno. Cada respuesta debe tener entre 1 y 3 oraciones y referirse al cuaderno de la pareja.
 :::
 
@@ -209,7 +213,7 @@ Estas preguntas se responden sin usar la IA, en celdas de texto al final del cua
 
 1. Nombrar el cuaderno con la carrera y los apellidos de la pareja, por ejemplo: `derecho_perez_gonzalez.ipynb`.
 2. En JupyterLite, elegir **File → Download**. Se descarga un archivo `.ipynb`.
-3. Entregar el archivo al docente antes de terminar la hora.
+3. Entregar el archivo. Quienes presenten online deben hacerlo por classroom. 
 
 ### Evaluación
 
