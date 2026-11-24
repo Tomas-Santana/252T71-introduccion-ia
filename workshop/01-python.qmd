@@ -1,0 +1,226 @@
+---
+title: "Evaluación: programación asistida con IA"
+lang: es
+---
+
+**Unidad 3 · Introducción a la Inteligencia Artificial**
+
+## Contenido
+
+- [Instrucciones generales](#instrucciones-generales)
+- [Qué debe contener el cuaderno](#qué-debe-contener-el-cuaderno)
+- [Casos](#casos)
+- [Preguntas finales](#preguntas-finales)
+- [Entrega](#entrega)
+
+## Instrucciones generales
+
+- La evaluación se realiza en parejas y dura una hora.
+- Cada pareja resuelve un caso, de acuerdo con la carrera indicada por el docente.
+- Se permite usar [Gemini](https://gemini.google.com) y [JupyterLite](https://jupyter.org/try-jupyter/lab/). Se debe seguir el mismo proceso del laboratorio: entender, planificar, construir y comprobar.
+- Las preguntas finales se responden sin usar la IA. Se indicará cuándo cerrarlo.
+- El trabajo se guarda solo en el navegador. Deben descargarlo al finalizar.
+
+## Qué debe contener el cuaderno
+
+El cuaderno debe tener, en este orden:
+
+1. **Una celda de texto con el plan.** Los pasos del programa en lenguaje natural y la pregunta de Gemini (o la aclaración de la pareja) que cambió el plan, copiada textualmente.
+2. **Las celdas de código** que responden las tres preguntas del caso. No borrar las celdas que tuvieron errores.
+3. **La comprobación:** el resultado del programa comparado con el dato de control.
+4. **El cambio de requisito**, cuando el docente lo indique.
+5. **Las respuestas a las preguntas finales**, en celdas de texto.
+
+::: {.callout-warning title="Revisar"}
+Que el programa no tenga errores no significa que sea correcto. Cada resultado debe tener sentido y coincidir con el dato de control.
+:::
+
+## Casos
+
+### Derecho: obligación de manutención
+
+Un tribunal de protección revisa el cumplimiento de 12 obligaciones de manutención entre enero y octubre de 2026. **El análisis lo solicita el juez del tribunal.**
+
+**Datos:** [pagos_manutencion.csv](https://uru.tomassantana.com/introai/labs/datos/pagos_manutencion.csv), 120 filas.
+
+| Columna | Descripción |
+|---|---|
+| `expediente` | Código del expediente |
+| `mes` | Mes del pago (AAAA-MM) |
+| `monto_fijado` | Monto mensual fijado por el tribunal, en dólares |
+| `monto_pagado` | Monto pagado ese mes, en dólares |
+
+**Preguntas:**
+
+1. ¿Cuál es la deuda acumulada de cada expediente?
+2. ¿Cuántos meses con pago incompleto hubo en total?
+3. ¿Qué expedientes tuvieron 3 o más meses seguidos de pago incompleto?
+
+**Reglas:**
+
+- Deuda = total fijado − total pagado. Un pago mayor al fijado se abona a la deuda.
+- Si el total pagado supera el total fijado, la deuda es 0.
+- Un pago igual al monto fijado es un pago completo.
+
+**Dato de control:** el expediente MAN-001 tiene una deuda de 140 dólares.
+
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+A partir de julio de 2026, el monto fijado aumenta un 10 %. ¿Cuánto aumenta la deuda de cada expediente? ¿Qué expedientes que no tenían deuda ahora la tienen?
+:::
+
+### Ingeniería: control de calidad de piezas
+
+Tres máquinas fabrican ejes durante una semana, en dos turnos. **El análisis lo solicita el jefe de planta.**
+
+**Datos:** [mediciones_piezas.csv](https://uru.tomassantana.com/introai/labs/datos/mediciones_piezas.csv), 172 piezas.
+
+| Columna | Descripción |
+|---|---|
+| `pieza` | Código de la pieza |
+| `fecha` | Fecha de fabricación |
+| `turno` | mañana o tarde |
+| `maquina` | A, B o C |
+| `diametro_mm` | Diámetro medido, en milímetros |
+
+**Preguntas:**
+
+1. ¿Qué porcentaje de rechazo tuvo cada máquina?
+2. ¿Qué turno tuvo la mayor tasa de rechazo?
+3. ¿Qué máquinas superan el límite de 5 % de rechazo?
+
+**Reglas:**
+
+- El diámetro aceptado va de 24,95 a 25,05 mm, con los extremos incluidos.
+- Porcentaje de rechazo = piezas rechazadas ÷ piezas totales.
+
+**Dato de control:** la máquina A tiene 1 pieza rechazada de 53 (1,89 %).
+
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+A partir del 5 de noviembre de 2026, el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. ¿Qué máquinas superan ahora el límite de 5 %?
+:::
+
+### Producción animal: producción lechera
+
+Un rebaño de 15 vacas se ordeña dos veces al día durante una semana. **El análisis lo solicita el médico veterinario de la finca.**
+
+**Datos:** [ordeno.csv](https://uru.tomassantana.com/introai/labs/datos/ordeno.csv), 210 filas.
+
+| Columna | Descripción |
+|---|---|
+| `vaca` | Código del animal |
+| `partos` | Número de partos de la vaca |
+| `fecha` | Fecha del ordeño |
+| `ordeno` | mañana o tarde |
+| `litros` | Litros obtenidos en ese ordeño |
+
+**Preguntas:**
+
+1. ¿Cuál es la producción diaria promedio de cada vaca?
+2. ¿Qué vacas quedaron por debajo de la meta?
+3. ¿Qué día tuvo la menor producción total del rebaño?
+
+**Reglas:**
+
+- La producción de un día es la suma de los dos ordeños.
+- Producción diaria promedio = total de litros ÷ número de días.
+- La meta es 12 L/día. Una vaca está por debajo de la meta solo si produce menos de 12 L/día.
+
+**Dato de control:** la vaca V-04 produce 14,26 L/día en promedio.
+
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+Las vacas de primer parto (`partos` igual a 1) tienen una meta de 10 L/día. ¿Qué vacas dejan de estar por debajo de la meta?
+:::
+
+### Psicología: tiempos de reacción
+
+En un experimento, 20 participantes realizan 10 ensayos sin distractor y 10 ensayos con distractor. **El análisis lo solicita la coordinadora del estudio.**
+
+**Datos:** [tiempos_reaccion.csv](https://uru.tomassantana.com/introai/labs/datos/tiempos_reaccion.csv), 400 filas.
+
+| Columna | Descripción |
+|---|---|
+| `participante` | Código del participante |
+| `condicion` | control o distraccion |
+| `ensayo` | Número del ensayo (1 a 10) |
+| `tiempo_ms` | Tiempo de reacción, en milisegundos |
+| `correcto` | 1 si la respuesta fue correcta, 0 si no |
+
+**Preguntas:**
+
+1. ¿Qué porcentaje de aciertos tuvo cada participante y quiénes se excluyen?
+2. ¿Cuál es el tiempo de reacción medio de cada participante en cada condición?
+3. Considerando solo a los participantes incluidos, ¿el grupo es más lento con distractor?
+
+**Reglas:**
+
+- Se excluye a quien tenga menos del 70 % de aciertos. Con 70 % exacto, el participante se incluye.
+- El tiempo medio se calcula solo con los ensayos correctos.
+
+**Dato de control:** el tiempo medio de S01 en la condición control es 475,0 ms.
+
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+Se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. ¿Cambia la conclusión de la pregunta 3?
+:::
+
+### Administración: cuentas por cobrar
+
+Una distribuidora revisa las facturas emitidas entre agosto y octubre de 2026. La fecha de corte es el 20 de noviembre de 2026. **El análisis lo solicita el gerente de la empresa.**
+
+**Datos:** [facturas.csv](https://uru.tomassantana.com/introai/labs/datos/facturas.csv), 40 facturas de 5 clientes.
+
+| Columna | Descripción |
+|---|---|
+| `factura` | Número de la factura |
+| `cliente` | Nombre del cliente |
+| `fecha_emision` | Fecha de emisión |
+| `monto` | Monto de la factura, en dólares |
+| `fecha_pago` | Fecha de pago (vacía si la factura no se ha pagado) |
+
+**Preguntas:**
+
+1. ¿Cuánto debe cada cliente en facturas pendientes?
+2. ¿Qué facturas se pagaron con retraso?
+3. Para cada cliente, ¿qué porcentaje del monto pagado se cobró a tiempo?
+
+**Reglas:**
+
+- El plazo de pago es de 30 días corridos desde la emisión. Una factura pagada a los 30 días exactos se pagó a tiempo.
+- El porcentaje se calcula sobre el monto, no sobre la cantidad de facturas.
+
+**Dato de control:** Ferretería Lara cobró a tiempo el 56,9 % de su monto pagado.
+
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+Las facturas pagadas con retraso tienen un recargo del 2 % de su monto. Agregar un bloque que calcule el recargo total de cada cliente.
+:::
+
+## Preguntas finales
+
+::: {.callout-important title="Sin Gemini"}
+Estas preguntas se responden sin usar la IA, en celdas de texto al final del cuaderno. Cada respuesta debe tener entre 1 y 3 oraciones y referirse al cuaderno de la pareja.
+:::
+
+1. **Regla clave.** ¿Qué regla del caso era más fácil de aplicar mal? Explicar cómo se calcula correctamente y qué resultado se habría obtenido al aplicarla mal.
+2. **Caso límite.** Indicar un dato que esté justo en el borde de una regla. ¿Cómo lo trató el programa? ¿En qué celda y con qué condición se decide?
+3. **Verificación.** ¿El programa obtuvo el dato de control en el primer intento? Si no, ¿qué estaba mal y cómo se corrigió? ¿Qué otra revisión se hizo para confirmar que los resultados tienen sentido?
+4. **Cambio de requisito.** ¿Qué celdas se modificaron y cuáles se agregaron? ¿Por qué?
+5. **Recomendación.** Escribir, sin términos de programación, lo que se le diría a la persona que solicitó el análisis: qué se encontró y qué se recomienda.
+
+## Entrega
+
+1. Nombrar el cuaderno con la carrera y los apellidos de la pareja, por ejemplo: `derecho_perez_gonzalez.ipynb`.
+2. En JupyterLite, elegir **File → Download**. Se descarga un archivo `.ipynb`.
+3. Entregar el archivo al docente antes de terminar la hora.
+
+### Evaluación
+
+| Parte | Puntos |
+|---|---|
+| Plan | 3 |
+| Código que responde las tres preguntas | 6 |
+| Código del cambio de requisito | 2 |
+| Pregunta 1 | 2 |
+| Pregunta 2 | 2 |
+| Pregunta 3 | 2 |
+| Pregunta 4 | 1 |
+| Pregunta 5 | 2 |
+| **Total** | **20** |
