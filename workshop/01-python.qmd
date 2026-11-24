@@ -30,7 +30,7 @@ El cuaderno debe tener, en este orden:
 1. **Una celda de texto con el plan.** Los pasos del programa en lenguaje natural y la pregunta de Gemini (o la aclaración de la pareja) que cambió el plan, copiada textualmente.
 2. **Las celdas de código** que responden las tres preguntas del caso. No borrar las celdas que tuvieron errores.
 3. **La comprobación:** el resultado del programa comparado con el dato de control.
-4. **El cambio de requisito**, cuando el docente lo indique.
+4. **El cambio de requisito**, cuando el docente lo indique. Quienes trabajan online lo abren al terminar las tres preguntas del caso.
 5. **Las respuestas a las preguntas finales**, en celdas de texto.
 
 ::: {.callout-warning title="Revisar"}
@@ -68,7 +68,7 @@ Un tribunal de protección revisa el cumplimiento de 12 obligaciones de manutenc
 
 **Dato de control:** el expediente MAN-001 tiene una deuda de 140 dólares.
 
-::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique; online: al terminar las tres preguntas del caso)" collapse="true"}
 A partir de julio de 2026, el monto fijado aumenta un 10 %. ¿Cuánto aumenta la deuda de cada expediente? ¿Qué expedientes que no tenían deuda ahora la tienen?
 :::
 
@@ -99,7 +99,7 @@ Tres máquinas fabrican ejes del 2 al 6 de noviembre de 2026, en dos turnos. **E
 
 **Dato de control:** la máquina A tiene 1 pieza rechazada de 53 (1,89 %).
 
-::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique; online: al terminar las tres preguntas del caso)" collapse="true"}
 Para las piezas fabricadas desde el 5 de noviembre de 2026 (inclusive), el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. Las piezas anteriores se siguen evaluando con el rango original. ¿Qué máquinas superan ahora el límite de 5 %?
 :::
 
@@ -131,7 +131,7 @@ Un rebaño de 15 vacas se ordeña dos veces al día durante una semana. **El an�
 
 **Dato de control:** la vaca V-04 produce 14,26 L/día en promedio.
 
-::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique; online: al terminar las tres preguntas del caso)" collapse="true"}
 Las vacas de primer parto (`partos` igual a 1) tienen una meta de 10 L/día. ¿Qué vacas dejan de estar por debajo de la meta?
 :::
 
@@ -162,7 +162,7 @@ En un experimento, 20 participantes realizan 10 ensayos sin distractor y 10 ensa
 
 **Dato de control:** el tiempo medio de S01 en la condición control es 475,0 ms.
 
-::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique; online: al terminar las tres preguntas del caso)" collapse="true"}
 Para calcular el tiempo medio, se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. El porcentaje de aciertos y la lista de excluidos no cambian. ¿Cambia la conclusión de la pregunta 3?
 :::
 
@@ -193,7 +193,7 @@ Una distribuidora revisa las facturas emitidas entre agosto y octubre de 2026. L
 
 **Dato de control:** Ferretería Lara cobró a tiempo el 56,9 % de su monto pagado.
 
-::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
+::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique; online: al terminar las tres preguntas del caso)" collapse="true"}
 Las facturas pagadas con retraso tienen un recargo del 2 % de su monto. Agregar un bloque que calcule el recargo total de cada cliente.
 :::
 
