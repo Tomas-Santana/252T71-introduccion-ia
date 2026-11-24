@@ -1,0 +1,401 @@
+id,carrera,semestre,edad,trabaja,horas_sueno,horas_estudio,uso_ia,nota
+E001,Administración,8,21,Sí,8,24,A veces,18
+E002,Derecho,7,22,Sí,9,15,A veces,9
+E003,Administración,5,21,No,9,9,Frecuentemente,13
+E004,Ingeniería,3,19,Sí,8,11,Frecuentemente,10
+E005,Psicología,6,19,Sí,5,19,Frecuentemente,6
+E006,Ingeniería,1,19,No,7,13,Nunca,11
+E007,Ingeniería,7,20,No,8,4,A veces,10
+E008,Administración,2,18,No,6,22,A veces,14
+E009,Contaduría,4,20,Sí,7,4,Nunca,11
+E010,Administración,1,17,No,7,26,A veces,15
+E011,Contaduría,2,18,Sí,5,14,Frecuentemente,7
+E012,Ingeniería,4,19,No,8,25,Frecuentemente,14
+E013,Ingeniería,4,20,No,7,15,Frecuentemente,14
+E014,Contaduría,3,21,Sí,5,4,A veces,7
+E015,Psicología,5,23,Sí,5,31,A veces,8
+E016,Ingeniería,2,20,No,7,9,Frecuentemente,13
+E017,Artes,1,17,No,6,9,A veces,14
+E018,Administración,2,20,No,6,12,Frecuentemente,11
+E019,Contaduría,1,17,Sí,5,14,Nunca,8
+E020,Administración,7,22,Sí,5,8,Nunca,8
+E021,Administración,7,22,Sí,5,18,A veces,12
+E022,Derecho,7,22,Sí,4,3,A veces,7
+E023,Psicología,1,18,No,6,12,Nunca,12
+E024,Contaduría,8,20,Sí,5,25,A veces,7
+E025,Contaduría,5,21,No,7,7,A veces,15
+E026,Administración,3,18,No,8,11,A veces,13
+E027,Artes,3,19,Sí,5,23,Nunca,13
+E028,Derecho,7,21,Sí,6,19,Frecuentemente,11
+E029,Derecho,9,24,No,6,4,Frecuentemente,10
+E030,Administración,8,22,No,5,7,Frecuentemente,7
+E031,Ingeniería,1,18,Sí,8,19,A veces,15
+E032,Administración,5,19,No,7,9,Frecuentemente,12
+E033,Administración,8,20,No,7,16,Frecuentemente,10
+E034,Contaduría,10,21,Sí,7,6,A veces,9
+E035,Psicología,7,23,No,7,12,Frecuentemente,14
+E036,Psicología,2,17,Sí,6,11,A veces,9
+E037,Administración,5,19,No,7,12,A veces,13
+E038,Derecho,8,21,Sí,5,25,Nunca,10
+E039,Contaduría,2,17,No,7,9,Frecuentemente,14
+E040,Contaduría,6,20,Sí,6,6,Frecuentemente,
+E041,Contaduría,8,21,No,4,12,A veces,11
+E042,Ingeniería,8,21,No,5,7,A veces,10
+E043,Psicología,8,22,No,6,17,Frecuentemente,
+E044,Ingeniería,7,20,Sí,7,24,A veces,12
+E045,Contaduría,7,20,No,7,10,A veces,15
+E046,Administración,5,22,No,8,7,Nunca,15
+E047,Derecho,1,19,No,8,22,Frecuentemente,13
+E048,Administración,9,22,Sí,5,22,A veces,11
+E049,Psicología,4,19,No,6,5,A veces,12
+E050,Derecho,10,23,No,6,14,Nunca,11
+E051,Derecho,2,20,No,8,10,A veces,11
+E052,Derecho,6,19,No,7,5,A veces,
+E053,Administración,10,22,Sí,6,23,A veces,
+E054,Administración,5,19,No,7,7,A veces,11
+E055,Derecho,1,17,No,8,10,Nunca,13
+E056,Administración,8,20,No,6,7,A veces,12
+E057,Contaduría,1,19,No,8,6,Frecuentemente,12
+E058,Psicología,3,20,No,4,15,Frecuentemente,11
+E059,Administración,2,17,No,6,16,Frecuentemente,13
+E060,Administración,1,17,No,7,10,Frecuentemente,11
+E061,Derecho,6,21,Sí,7,16,Nunca,13
+E062,Ingeniería,10,22,Sí,6,6,A veces,10
+E063,Derecho,4,18,No,9,20,Nunca,14
+E064,Ingeniería,2,20,Sí,6,20,Frecuentemente,14
+E065,Psicología,7,21,No,5,6,A veces,10
+E066,Ingeniería,3,19,No,7,22,Frecuentemente,13
+E067,Derecho,9,24,No,6,7,A veces,11
+E068,Psicología,8,20,No,7,11,Nunca,12
+E069,Administración,5,21,Sí,6,25,Frecuentemente,12
+E070,Artes,7,22,Sí,5,11,A veces,10
+E071,Derecho,3,20,No,7,10,A veces,15
+E072,Administración,2,17,No,6,10,A veces,10
+E073,Contaduría,10,21,No,6,4,Frecuentemente,11
+E074,Artes,10,23,No,6,5,A veces,15
+E075,Contaduría,9,22,No,7,12,Frecuentemente,11
+E076,Derecho,2,19,Sí,7,5,Frecuentemente,9
+E077,Psicología,6,20,Sí,6,18,Frecuentemente,12
+E078,Psicología,10,24,Sí,5,4,Frecuentemente,3
+E079,Psicología,8,22,Sí,6,24,Nunca,11
+E080,Psicología,5,19,No,9,10,Frecuentemente,14
+E081,Administración,4,20,No,9,15,A veces,13
+E082,Administración,10,21,No,6,6,Frecuentemente,10
+E083,Contaduría,1,17,Sí,5,11,A veces,7
+E084,Ingeniería,7,21,No,5,33,Frecuentemente,15
+E085,Administración,3,18,Sí,6,3,A veces,12
+E086,Ingeniería,6,21,No,9,22,Frecuentemente,11
+E087,Ingeniería,1,19,No,8,17,Frecuentemente,16
+E088,Ingeniería,2,18,No,6,12,Frecuentemente,13
+E089,Ingeniería,8,21,No,7,24,A veces,17
+E090,Psicología,9,23,No,8,7,A veces,10
+E091,Contaduría,8,22,Sí,6,16,A veces,10
+E092,Psicología,4,23,No,6,6,A veces,10
+E093,Administración,3,20,Sí,6,13,A veces,8
+E094,Psicología,5,19,Sí,7,17,Frecuentemente,10
+E095,Administración,6,23,Sí,7,7,A veces,12
+E096,Derecho,5,25,No,7,18,A veces,14
+E097,Derecho,1,18,No,6,11,A veces,8
+E098,Psicología,1,17,Sí,6,19,A veces,12
+E099,Ingeniería,6,19,Sí,6,20,Frecuentemente,10
+E100,Psicología,10,23,Sí,6,5,A veces,9
+E101,Derecho,10,21,No,7,14,A veces,11
+E102,Contaduría,8,20,No,7,3,A veces,10
+E103,Contaduría,10,21,Sí,8,18,Frecuentemente,9
+E104,Ingeniería,5,19,No,7,7,A veces,13
+E105,Administración,1,19,Sí,4,10,Frecuentemente,7
+E106,Ingeniería,4,19,No,6,6,A veces,7
+E107,Administración,2,18,No,7,12,A veces,15
+E108,Ingeniería,7,23,Sí,7,13,A veces,12
+E109,Artes,5,21,No,7,29,A veces,16
+E110,Administración,3,21,Sí,6,12,A veces,11
+E111,Contaduría,4,19,No,6,16,Nunca,12
+E112,Psicología,2,21,No,7,12,Frecuentemente,11
+E113,Administración,1,18,No,4,5,Nunca,9
+E114,Psicología,4,20,Sí,6,16,A veces,10
+E115,Administración,2,19,Sí,5,8,A veces,11
+E116,Psicología,4,21,Sí,5,16,Nunca,11
+E117,Administración,5,20,Sí,7,3,Frecuentemente,8
+E118,Derecho,6,21,Sí,5,10,A veces,7
+E119,Ingeniería,3,20,No,7,10,Frecuentemente,11
+E120,Contaduría,5,20,No,6,5,Frecuentemente,10
+E121,Derecho,9,22,No,6,10,A veces,12
+E122,Derecho,4,21,No,8,5,A veces,10
+E123,Derecho,1,18,No,6,21,A veces,15
+E124,Psicología,2,19,No,8,16,Nunca,13
+E125,Ingeniería,2,17,No,8,18,Nunca,14
+E126,Ingeniería,9,21,Sí,5,12,Nunca,7
+E127,Derecho,7,,Sí,5,5,Nunca,8
+E128,Derecho,8,20,No,4,11,Frecuentemente,11
+E129,Ingeniería,8,21,No,6,11,A veces,10
+E130,Derecho,6,22,No,4,15,Frecuentemente,11
+E131,Derecho,1,17,No,6,8,A veces,14
+E132,Derecho,4,19,No,7,8,A veces,13
+E133,Ingeniería,9,21,No,7,3,Frecuentemente,13
+E134,Administración,4,20,Sí,6,10,Frecuentemente,11
+E135,Administración,5,19,No,6,13,Nunca,11
+E136,Derecho,2,17,No,8,10,A veces,14
+E137,Derecho,3,18,No,5,8,Frecuentemente,10
+E138,Administración,2,18,Sí,5,7,A veces,8
+E139,Psicología,7,21,No,7,12,Frecuentemente,13
+E140,Psicología,2,18,No,5,10,A veces,13
+E141,Ingeniería,3,18,Sí,7,9,A veces,13
+E142,Derecho,7,23,Sí,7,7,A veces,12
+E143,Derecho,7,21,Sí,6,7,Nunca,12
+E144,Contaduría,1,20,Sí,5,10,A veces,7
+E145,Derecho,10,22,Sí,6,6,A veces,10
+E146,Ingeniería,9,23,No,7,16,A veces,13
+E147,Ingeniería,10,23,Sí,7,16,Nunca,13
+E148,Administración,2,19,Sí,7,14,A veces,12
+E149,Contaduría,9,24,Sí,6,7,Frecuentemente,9
+E150,Derecho,5,19,No,7,11,Frecuentemente,13
+E151,Contaduría,7,22,Sí,7,23,A veces,14
+E152,Administración,1,19,No,5,15,Frecuentemente,11
+E153,Contaduría,8,21,No,7,21,A veces,17
+E154,Administración,8,24,No,8,15,Nunca,
+E155,Ingeniería,10,22,No,8,11,A veces,13
+E156,Contaduría,3,19,No,6,16,A veces,11
+E157,Derecho,5,19,No,5,15,A veces,11
+E158,Administración,6,20,No,7,6,Frecuentemente,15
+E159,Psicología,1,21,Sí,4,5,A veces,4
+E160,Ingeniería,1,18,Sí,6,15,Frecuentemente,8
+E161,Psicología,2,19,No,8,6,Frecuentemente,15
+E162,Psicología,6,22,Sí,5,18,Frecuentemente,6
+E163,Psicología,7,21,No,7,13,Nunca,15
+E164,Contaduría,5,20,Sí,8,9,Nunca,11
+E165,Psicología,5,19,No,6,6,A veces,9
+E166,Contaduría,7,21,Sí,9,17,Nunca,13
+E167,Administración,7,22,No,5,10,Nunca,11
+E168,Psicología,8,24,No,6,19,Frecuentemente,7
+E169,Contaduría,1,18,No,7,5,A veces,10
+E170,Contaduría,8,21,Sí,7,10,Frecuentemente,11
+E171,Derecho,6,20,No,6,30,A veces,
+E172,Derecho,9,24,No,6,7,A veces,10
+E173,Psicología,6,19,No,7,4,A veces,15
+E174,Derecho,8,22,No,7,9,Frecuentemente,15
+E175,Ingeniería,10,22,No,7,16,A veces,10
+E176,Ingeniería,7,20,Sí,5,11,Frecuentemente,2
+E177,Psicología,9,23,No,5,19,A veces,10
+E178,Ingeniería,6,19,No,7,11,Frecuentemente,12
+E179,Ingeniería,2,19,No,7,2,A veces,10
+E180,Ingeniería,9,23,No,7,20,A veces,11
+E181,Psicología,10,23,No,7,22,Frecuentemente,13
+E182,Derecho,9,24,No,7,12,Frecuentemente,10
+E183,Ingeniería,4,18,No,6,9,Nunca,15
+E184,Contaduría,5,20,No,7,23,Nunca,16
+E185,Contaduría,1,18,No,6,22,A veces,14
+E186,Administración,3,19,Sí,5,12,A veces,7
+E187,Administración,5,20,Sí,8,14,A veces,
+E188,Administración,1,17,No,6,13,Frecuentemente,8
+E189,Derecho,10,22,No,7,9,Nunca,12
+E190,Ingeniería,5,19,No,7,8,A veces,8
+E191,Psicología,1,18,Sí,6,11,A veces,10
+E192,Derecho,2,19,No,8,10,Frecuentemente,10
+E193,Contaduría,8,20,Sí,5,8,Frecuentemente,10
+E194,Contaduría,5,21,No,5,11,A veces,4
+E195,Psicología,2,17,No,7,9,Nunca,12
+E196,Derecho,4,18,Sí,7,25,Nunca,11
+E197,Contaduría,7,20,Sí,6,23,Frecuentemente,9
+E198,Administración,8,22,No,6,8,A veces,12
+E199,Administración,7,20,Sí,6,11,Frecuentemente,15
+E200,Derecho,7,20,No,7,15,Frecuentemente,15
+E201,Derecho,6,23,No,6,5,A veces,12
+E202,Administración,10,22,No,8,17,Frecuentemente,11
+E203,Administración,6,19,No,8,17,A veces,13
+E204,Contaduría,4,20,Sí,7,10,A veces,14
+E205,Psicología,4,19,No,6,11,Frecuentemente,13
+E206,Administración,10,22,Sí,6,17,Nunca,8
+E207,Ingeniería,2,18,Sí,6,12,A veces,9
+E208,Ingeniería,4,19,No,7,9,Frecuentemente,12
+E209,Psicología,4,18,No,8,11,Nunca,15
+E210,Psicología,3,19,No,5,8,A veces,10
+E211,Administración,8,22,No,7,13,A veces,17
+E212,Ingeniería,3,21,Sí,7,21,A veces,11
+E213,Psicología,2,19,No,5,13,A veces,9
+E214,Contaduría,2,20,Sí,6,10,Nunca,6
+E215,Ingeniería,1,17,No,6,21,A veces,12
+E216,Psicología,5,20,No,8,7,A veces,13
+E217,Administración,3,18,No,5,14,A veces,9
+E218,Derecho,1,19,No,5,7,A veces,9
+E219,Ingeniería,8,24,Sí,5,16,Frecuentemente,10
+E220,Psicología,4,19,Sí,5,10,Nunca,8
+E221,Psicología,3,22,Sí,9,10,A veces,8
+E222,Ingeniería,8,21,No,7,6,A veces,19
+E223,Derecho,1,18,Sí,7,13,Frecuentemente,10
+E224,Ingeniería,8,20,No,5,13,A veces,11
+E225,Administración,8,21,No,8,32,A veces,14
+E226,Administración,3,20,No,7,12,Frecuentemente,12
+E227,Administración,4,20,No,6,11,A veces,12
+E228,Psicología,9,22,Sí,6,11,Frecuentemente,10
+E229,Contaduría,4,18,Sí,4,13,Frecuentemente,
+E230,Administración,1,17,Sí,6,12,Nunca,12
+E231,Administración,10,21,Sí,4,22,A veces,11
+E232,Administración,10,23,No,7,7,Nunca,12
+E233,Derecho,8,22,No,7,8,A veces,11
+E234,Contaduría,1,18,No,7,6,A veces,12
+E235,Administración,2,17,No,8,10,Nunca,14
+E236,Ingeniería,5,20,No,8,14,Frecuentemente,15
+E237,Administración,1,18,Sí,7,7,Frecuentemente,12
+E238,Psicología,10,22,Sí,6,26,A veces,10
+E239,Ingeniería,5,20,No,5,8,A veces,11
+E240,Contaduría,9,22,No,8,9,A veces,14
+E241,Administración,7,20,No,6,8,A veces,11
+E242,Ingeniería,2,20,Sí,5,9,Frecuentemente,9
+E243,Ingeniería,1,18,No,7,9,Frecuentemente,14
+E244,Derecho,5,19,No,6,15,Frecuentemente,12
+E245,Ingeniería,8,22,Sí,6,23,A veces,9
+E246,Psicología,1,19,Sí,5,17,A veces,10
+E247,Contaduría,6,21,No,8,10,Frecuentemente,12
+E248,Contaduría,1,17,No,7,6,A veces,15
+E249,Ingeniería,4,19,No,7,18,Frecuentemente,16
+E250,Derecho,6,20,No,6,18,A veces,12
+E251,Contaduría,7,20,Sí,7,9,Frecuentemente,10
+E252,Psicología,1,21,No,6,20,Frecuentemente,14
+E253,Psicología,2,19,No,8,6,A veces,11
+E254,Administración,2,17,No,7,7,Frecuentemente,10
+E255,Contaduría,2,18,No,7,20,Frecuentemente,15
+E256,Derecho,6,21,No,6,14,Frecuentemente,12
+E257,Psicología,8,21,No,7,17,Frecuentemente,14
+E258,Administración,2,17,Sí,7,17,Frecuentemente,14
+E259,Psicología,1,18,No,8,23,A veces,18
+E260,Administración,2,19,No,6,16,Nunca,14
+E261,Administración,7,20,Sí,7,10,A veces,11
+E262,Derecho,3,20,No,8,8,Frecuentemente,11
+E263,Ingeniería,9,24,No,6,23,Frecuentemente,13
+E264,Contaduría,6,19,Sí,7,,A veces,12
+E265,Contaduría,4,20,No,6,9,Frecuentemente,10
+E266,Administración,7,20,Sí,5,27,Frecuentemente,11
+E267,Derecho,5,19,Sí,4,11,Frecuentemente,8
+E268,Ingeniería,10,21,Sí,4,35,A veces,12
+E269,Administración,6,19,No,7,8,A veces,17
+E270,Administración,3,20,No,6,15,Nunca,11
+E271,Administración,5,20,No,7,7,Frecuentemente,8
+E272,Derecho,7,23,No,6,7,Frecuentemente,14
+E273,Psicología,8,22,No,4,15,A veces,11
+E274,Administración,5,20,No,5,7,Frecuentemente,5
+E275,Derecho,4,18,No,8,11,A veces,15
+E276,Administración,4,19,No,6,15,A veces,10
+E277,Derecho,9,21,No,6,21,A veces,11
+E278,Contaduría,8,21,Sí,4,5,A veces,6
+E279,Contaduría,3,20,No,5,5,Nunca,11
+E280,Derecho,5,19,No,7,7,A veces,9
+E281,Psicología,1,17,Sí,9,15,A veces,7
+E282,Ingeniería,9,23,No,7,19,A veces,16
+E283,Administración,8,20,Sí,6,17,A veces,11
+E284,Derecho,3,20,No,7,7,Frecuentemente,12
+E285,Derecho,6,20,No,8,16,A veces,15
+E286,Psicología,1,18,No,5,12,A veces,8
+E287,Ingeniería,6,19,Sí,4,12,Nunca,
+E288,Derecho,2,18,No,6,14,Nunca,11
+E289,Derecho,2,18,No,8,18,A veces,11
+E290,Ingeniería,8,21,No,8,13,A veces,11
+E291,Administración,5,19,No,5,8,A veces,10
+E292,Contaduría,5,20,No,7,14,A veces,13
+E293,Derecho,7,23,Sí,7,5,A veces,5
+E294,Administración,10,23,No,6,31,A veces,13
+E295,Contaduría,7,22,Sí,6,11,A veces,7
+E296,Derecho,9,21,Sí,7,11,A veces,14
+E297,Ingeniería,5,21,No,6,13,A veces,14
+E298,Contaduría,10,21,Sí,7,16,Nunca,10
+E299,Psicología,5,19,No,6,7,Frecuentemente,15
+E300,Contaduría,7,23,Sí,7,20,Frecuentemente,12
+E301,Ingeniería,5,21,No,5,29,A veces,12
+E302,Administración,8,22,Sí,5,11,A veces,5
+E303,Contaduría,5,20,No,7,8,Nunca,11
+E304,Administración,2,17,No,8,4,Frecuentemente,14
+E305,Psicología,9,22,Sí,8,8,A veces,16
+E306,Derecho,2,19,Sí,5,28,A veces,11
+E307,Psicología,1,17,No,5,9,Frecuentemente,9
+E308,Ingeniería,4,20,No,9,12,A veces,11
+E309,Derecho,3,18,No,7,9,Nunca,10
+E310,Ingeniería,2,17,No,7,7,Frecuentemente,16
+E311,Derecho,1,18,No,6,16,Frecuentemente,12
+E312,Ingeniería,7,21,No,7,9,A veces,18
+E313,Derecho,1,20,No,7,21,A veces,11
+E314,Psicología,4,20,No,6,6,A veces,9
+E315,Ingeniería,1,19,No,5,33,A veces,11
+E316,Ingeniería,6,22,Sí,6,18,A veces,12
+E317,Administración,1,18,No,8,20,A veces,14
+E318,Derecho,3,20,Sí,6,10,A veces,9
+E319,Psicología,1,20,No,6,11,Nunca,10
+E320,Contaduría,1,18,Sí,5,12,Nunca,6
+E321,Contaduría,7,22,No,6,28,A veces,16
+E322,Contaduría,2,20,No,6,19,Frecuentemente,11
+E323,Ingeniería,2,19,Sí,7,2,Nunca,13
+E324,Administración,3,19,No,6,18,Nunca,12
+E325,Derecho,8,22,No,7,14,A veces,12
+E326,Contaduría,10,22,Sí,5,4,Nunca,6
+E327,Ingeniería,3,20,No,8,21,A veces,11
+E328,Administración,10,22,No,5,12,Frecuentemente,10
+E329,Derecho,7,21,Sí,6,5,Nunca,6
+E330,Ingeniería,7,21,Sí,6,27,Frecuentemente,11
+E331,Administración,6,,Sí,7,16,A veces,11
+E332,Ingeniería,1,18,No,6,6,A veces,9
+E333,Psicología,7,21,No,6,9,A veces,12
+E334,Ingeniería,10,24,Sí,6,11,A veces,7
+E335,Administración,8,21,No,9,13,A veces,11
+E336,Ingeniería,4,18,Sí,7,12,A veces,12
+E337,Contaduría,8,20,Sí,7,16,A veces,9
+E338,Administración,1,18,No,8,27,Frecuentemente,15
+E339,Derecho,8,22,No,6,9,Frecuentemente,12
+E340,Ingeniería,5,20,No,7,7,A veces,13
+E341,Administración,1,17,Sí,4,14,A veces,11
+E342,Psicología,4,20,No,7,20,A veces,14
+E343,Administración,8,21,Sí,6,14,A veces,10
+E344,Contaduría,7,21,No,5,11,Nunca,10
+E345,Psicología,10,22,Sí,5,8,A veces,9
+E346,Derecho,4,19,Sí,7,14,A veces,11
+E347,Ingeniería,4,18,No,6,5,Frecuentemente,9
+E348,Artes,9,22,Sí,8,5,A veces,13
+E349,Contaduría,2,18,Sí,5,5,A veces,6
+E350,Ingeniería,3,18,No,5,14,Frecuentemente,9
+E351,Ingeniería,3,20,Sí,5,11,Frecuentemente,7
+E352,Ingeniería,3,18,No,6,10,Frecuentemente,13
+E353,Derecho,6,19,No,6,8,A veces,14
+E354,Administración,5,21,Sí,6,3,Frecuentemente,8
+E355,Contaduría,5,21,Sí,8,11,Nunca,12
+E356,Ingeniería,10,23,Sí,5,14,Frecuentemente,8
+E357,Ingeniería,5,19,No,7,9,Frecuentemente,14
+E358,Ingeniería,10,23,No,6,11,Frecuentemente,16
+E359,Derecho,9,22,No,6,16,Nunca,11
+E360,Ingeniería,4,20,Sí,5,5,A veces,7
+E361,Derecho,2,19,No,8,26,Frecuentemente,12
+E362,Ingeniería,2,18,Sí,7,21,A veces,10
+E363,Contaduría,2,17,No,9,11,A veces,12
+E364,Artes,4,19,No,6,22,Frecuentemente,18
+E365,Ingeniería,3,19,Sí,5,12,A veces,10
+E366,Ingeniería,2,18,Sí,7,10,A veces,10
+E367,Administración,3,18,No,4,4,Nunca,6
+E368,Contaduría,8,23,Sí,6,6,Frecuentemente,9
+E369,Contaduría,8,20,No,6,8,A veces,12
+E370,Ingeniería,1,20,No,9,7,Frecuentemente,12
+E371,Administración,3,19,No,7,5,A veces,10
+E372,Ingeniería,7,22,Sí,4,4,A veces,5
+E373,Administración,4,20,No,6,12,A veces,14
+E374,Contaduría,4,18,No,5,13,A veces,8
+E375,Ingeniería,10,23,Sí,9,11,Nunca,6
+E376,Ingeniería,1,17,No,6,10,Nunca,13
+E377,Artes,9,21,Sí,5,10,Frecuentemente,13
+E378,Derecho,7,22,Sí,7,6,A veces,
+E379,Ingeniería,1,17,Sí,5,10,A veces,8
+E380,Ingeniería,1,18,No,6,15,Frecuentemente,13
+E381,Psicología,8,20,No,6,5,A veces,
+E382,Psicología,2,18,Sí,8,18,A veces,15
+E383,Ingeniería,5,21,No,7,13,A veces,15
+E384,Psicología,10,27,No,8,10,Frecuentemente,13
+E385,Ingeniería,1,18,No,7,7,A veces,13
+E386,Administración,8,20,No,6,5,Frecuentemente,10
+E387,Psicología,6,20,No,7,2,A veces,16
+E388,Derecho,9,22,No,6,11,A veces,11
+E389,Psicología,5,20,Sí,4,14,Frecuentemente,5
+E390,Psicología,4,19,No,7,11,Frecuentemente,9
+E391,Psicología,2,19,No,5,10,A veces,9
+E392,Administración,3,19,No,7,30,Frecuentemente,18
+E393,Ingeniería,8,24,Sí,6,4,A veces,11
+E394,Administración,8,21,No,6,3,A veces,11
+E395,Psicología,2,19,Sí,8,20,A veces,14
+E396,Derecho,2,17,No,7,20,Nunca,14
+E397,Ingeniería,2,17,No,7,9,Frecuentemente,13
+E398,Ingeniería,9,22,No,7,15,Nunca,14
+E399,Administración,2,17,Sí,5,6,Frecuentemente,4
+E400,Psicología,8,20,No,6,14,Nunca,10
