@@ -1,6 +1,8 @@
 ---
 title: "Evaluación: programación asistida con IA"
 lang: es
+resources:
+  - datos/*.csv
 ---
 
 **Unidad 3 · Introducción a la Inteligencia Artificial**
@@ -12,11 +14,11 @@ lang: es
 - [Casos](#casos)
 - [Preguntas finales](#preguntas-finales)
 - [Entrega](#entrega)
+- [Evaluación](#evaluación)
 
 ## Instrucciones generales
 
-- La evaluación se realiza en parejas y dura una hora.
-- Cada pareja resuelve un caso, de acuerdo a su carrera. Si cada integrante de la pareja es de una carrera distinta, escoger una.
+- Cada pareja resuelve un caso, de acuerdo con su carrera. Si cada integrante de la pareja es de una carrera distinta, escoger una.
 - Se permite usar [Gemini](https://gemini.google.com) y [JupyterLite](https://jupyter.org/try-jupyter/lab/). Se debe seguir el mismo proceso del laboratorio: entender, planificar, construir y comprobar.
 - Las preguntas finales se responden sin usar la IA. 
 - El trabajo se guarda solo en el navegador. Deben descargarlo al finalizar.
@@ -31,21 +33,19 @@ El cuaderno debe tener, en este orden:
 4. **El cambio de requisito**, cuando el docente lo indique.
 5. **Las respuestas a las preguntas finales**, en celdas de texto.
 
-## Quienes entregan online: qué entregar
-
-Únicamente 1 archivo: el cuaderno (.ipynb) descargado de JupyterLite. 
-
 ::: {.callout-warning title="Revisar"}
 Que el programa no tenga errores no significa que sea correcto. Cada resultado debe tener sentido y coincidir con el dato de control.
 :::
 
-## Casos (escoger 1 de acuerdo a las instrucciones)
+## Casos
+
+Escoger un caso de acuerdo con las [instrucciones generales](#instrucciones-generales).
 
 ### Derecho: obligación de manutención
 
 Un tribunal de protección revisa el cumplimiento de 12 obligaciones de manutención entre enero y octubre de 2026. **El análisis lo solicita el juez del tribunal.**
 
-**Datos:** [pagos_manutencion.csv](https://uru.tomassantana.com/introai/labs/datos/pagos_manutencion.csv), 120 filas.
+**Datos:** [pagos_manutencion.csv](datos/pagos_manutencion.csv), 120 filas.
 
 | Columna | Descripción |
 |---|---|
@@ -74,9 +74,9 @@ A partir de julio de 2026, el monto fijado aumenta un 10 %. ¿Cuánto aumenta la
 
 ### Ingeniería: control de calidad de piezas
 
-Tres máquinas fabrican ejes durante una semana, en dos turnos. **El análisis lo solicita el jefe de planta.**
+Tres máquinas fabrican ejes del 2 al 6 de noviembre de 2026, en dos turnos. **El análisis lo solicita el jefe de planta.**
 
-**Datos:** [mediciones_piezas.csv](https://uru.tomassantana.com/introai/labs/datos/mediciones_piezas.csv), 172 piezas.
+**Datos:** [mediciones_piezas.csv](datos/mediciones_piezas.csv), 172 piezas.
 
 | Columna | Descripción |
 |---|---|
@@ -100,14 +100,14 @@ Tres máquinas fabrican ejes durante una semana, en dos turnos. **El análisis l
 **Dato de control:** la máquina A tiene 1 pieza rechazada de 53 (1,89 %).
 
 ::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
-A partir del 5 de noviembre de 2026, el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. ¿Qué máquinas superan ahora el límite de 5 %?
+Para las piezas fabricadas desde el 5 de noviembre de 2026 (inclusive), el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. Las piezas anteriores se siguen evaluando con el rango original. ¿Qué máquinas superan ahora el límite de 5 %?
 :::
 
 ### Producción animal: producción lechera
 
 Un rebaño de 15 vacas se ordeña dos veces al día durante una semana. **El análisis lo solicita el médico veterinario de la finca.**
 
-**Datos:** [ordeno.csv](https://uru.tomassantana.com/introai/labs/datos/ordeno.csv), 210 filas.
+**Datos:** [ordeno.csv](datos/ordeno.csv), 210 filas.
 
 | Columna | Descripción |
 |---|---|
@@ -139,7 +139,7 @@ Las vacas de primer parto (`partos` igual a 1) tienen una meta de 10 L/día. ¿Q
 
 En un experimento, 20 participantes realizan 10 ensayos sin distractor y 10 ensayos con distractor. **El análisis lo solicita la coordinadora del estudio.**
 
-**Datos:** [tiempos_reaccion.csv](https://uru.tomassantana.com/introai/labs/datos/tiempos_reaccion.csv), 400 filas.
+**Datos:** [tiempos_reaccion.csv](datos/tiempos_reaccion.csv), 400 filas.
 
 | Columna | Descripción |
 |---|---|
@@ -163,14 +163,14 @@ En un experimento, 20 participantes realizan 10 ensayos sin distractor y 10 ensa
 **Dato de control:** el tiempo medio de S01 en la condición control es 475,0 ms.
 
 ::: {.callout-important title="Cambio de requisito (abrir cuando el docente lo indique)" collapse="true"}
-Se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. ¿Cambia la conclusión de la pregunta 3?
+Para calcular el tiempo medio, se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. El porcentaje de aciertos y la lista de excluidos no cambian. ¿Cambia la conclusión de la pregunta 3?
 :::
 
 ### Administración: cuentas por cobrar
 
 Una distribuidora revisa las facturas emitidas entre agosto y octubre de 2026. La fecha de corte es el 20 de noviembre de 2026. **El análisis lo solicita el gerente de la empresa.**
 
-**Datos:** [facturas.csv](https://uru.tomassantana.com/introai/labs/datos/facturas.csv), 40 facturas de 5 clientes.
+**Datos:** [facturas.csv](datos/facturas.csv), 40 facturas de 5 clientes.
 
 | Columna | Descripción |
 |---|---|
@@ -213,7 +213,7 @@ Estas preguntas se responden sin usar la IA, en celdas de texto al final del cua
 
 1. Nombrar el cuaderno con la carrera y los apellidos de la pareja, por ejemplo: `derecho_perez_gonzalez.ipynb`.
 2. En JupyterLite, elegir **File → Download**. Se descarga un archivo `.ipynb`.
-3. Entregar el archivo. Quienes presenten online deben hacerlo por classroom. 
+3. Entregar el archivo. Quienes presenten online entregan únicamente el cuaderno (`.ipynb`) por Classroom.
 
 ### Evaluación
 

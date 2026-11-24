@@ -116,13 +116,13 @@ ul.task-list li input[type="checkbox"] {
 <li><a href="#casos">Casos</a></li>
 <li><a href="#preguntas-finales">Preguntas finales</a></li>
 <li><a href="#entrega">Entrega</a></li>
+<li><a href="#evaluación">Evaluación</a></li>
 </ul>
 </section>
 <section id="instrucciones-generales" class="level2">
 <h2 class="anchored" data-anchor-id="instrucciones-generales">Instrucciones generales</h2>
 <ul>
-<li>La evaluación se realiza en parejas y dura una hora.</li>
-<li>Cada pareja resuelve un caso, de acuerdo a su carrera. Si cada integrante de la pareja es de una carrera distinta, escoger una.</li>
+<li>Cada pareja resuelve un caso, de acuerdo con su carrera. Si cada integrante de la pareja es de una carrera distinta, escoger una.</li>
 <li>Se permite usar <a href="https://gemini.google.com">Gemini</a> y <a href="https://jupyter.org/try-jupyter/lab/">JupyterLite</a>. Se debe seguir el mismo proceso del laboratorio: entender, planificar, construir y comprobar.</li>
 <li>Las preguntas finales se responden sin usar la IA.</li>
 <li>El trabajo se guarda solo en el navegador. Deben descargarlo al finalizar.</li>
@@ -138,10 +138,6 @@ ul.task-list li input[type="checkbox"] {
 <li><strong>El cambio de requisito</strong>, cuando el docente lo indique.</li>
 <li><strong>Las respuestas a las preguntas finales</strong>, en celdas de texto.</li>
 </ol>
-</section>
-<section id="quienes-entregan-online-qué-entregar" class="level2">
-<h2 class="anchored" data-anchor-id="quienes-entregan-online-qué-entregar">Quienes entregan online: qué entregar</h2>
-<p>Únicamente 1 archivo: el cuaderno (.ipynb) descargado de JupyterLite.</p>
 <div class="callout callout-style-default callout-warning callout-titled" title="Revisar">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -156,12 +152,13 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </section>
-<section id="casos-escoger-1-de-acuerdo-a-las-instrucciones" class="level2">
-<h2 class="anchored" data-anchor-id="casos-escoger-1-de-acuerdo-a-las-instrucciones">Casos (escoger 1 de acuerdo a las instrucciones)</h2>
+<section id="casos" class="level2">
+<h2 class="anchored" data-anchor-id="casos">Casos</h2>
+<p>Escoger un caso de acuerdo con las <a href="#instrucciones-generales">instrucciones generales</a>.</p>
 <section id="derecho-obligación-de-manutención" class="level3">
 <h3 class="anchored" data-anchor-id="derecho-obligación-de-manutención">Derecho: obligación de manutención</h3>
 <p>Un tribunal de protección revisa el cumplimiento de 12 obligaciones de manutención entre enero y octubre de 2026. <strong>El análisis lo solicita el juez del tribunal.</strong></p>
-<p><strong>Datos:</strong> <a href="https://uru.tomassantana.com/introai/labs/datos/pagos_manutencion.csv">pagos_manutencion.csv</a>, 120 filas.</p>
+<p><strong>Datos:</strong> <a href="datos/pagos_manutencion.csv">pagos_manutencion.csv</a>, 120 filas.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -220,8 +217,8 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="ingeniería-control-de-calidad-de-piezas" class="level3">
 <h3 class="anchored" data-anchor-id="ingeniería-control-de-calidad-de-piezas">Ingeniería: control de calidad de piezas</h3>
-<p>Tres máquinas fabrican ejes durante una semana, en dos turnos. <strong>El análisis lo solicita el jefe de planta.</strong></p>
-<p><strong>Datos:</strong> <a href="https://uru.tomassantana.com/introai/labs/datos/mediciones_piezas.csv">mediciones_piezas.csv</a>, 172 piezas.</p>
+<p>Tres máquinas fabrican ejes del 2 al 6 de noviembre de 2026, en dos turnos. <strong>El análisis lo solicita el jefe de planta.</strong></p>
+<p><strong>Datos:</strong> <a href="datos/mediciones_piezas.csv">mediciones_piezas.csv</a>, 172 piezas.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -276,7 +273,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>A partir del 5 de noviembre de 2026, el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. ¿Qué máquinas superan ahora el límite de 5 %?</p>
+<p>Para las piezas fabricadas desde el 5 de noviembre de 2026 (inclusive), el diámetro aceptado pasa a ser de 24,96 a 25,04 mm. Las piezas anteriores se siguen evaluando con el rango original. ¿Qué máquinas superan ahora el límite de 5 %?</p>
 </div>
 </div>
 </div>
@@ -284,7 +281,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="producción-animal-producción-lechera" class="level3">
 <h3 class="anchored" data-anchor-id="producción-animal-producción-lechera">Producción animal: producción lechera</h3>
 <p>Un rebaño de 15 vacas se ordeña dos veces al día durante una semana. <strong>El análisis lo solicita el médico veterinario de la finca.</strong></p>
-<p><strong>Datos:</strong> <a href="https://uru.tomassantana.com/introai/labs/datos/ordeno.csv">ordeno.csv</a>, 210 filas.</p>
+<p><strong>Datos:</strong> <a href="datos/ordeno.csv">ordeno.csv</a>, 210 filas.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -348,7 +345,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="psicología-tiempos-de-reacción" class="level3">
 <h3 class="anchored" data-anchor-id="psicología-tiempos-de-reacción">Psicología: tiempos de reacción</h3>
 <p>En un experimento, 20 participantes realizan 10 ensayos sin distractor y 10 ensayos con distractor. <strong>El análisis lo solicita la coordinadora del estudio.</strong></p>
-<p><strong>Datos:</strong> <a href="https://uru.tomassantana.com/introai/labs/datos/tiempos_reaccion.csv">tiempos_reaccion.csv</a>, 400 filas.</p>
+<p><strong>Datos:</strong> <a href="datos/tiempos_reaccion.csv">tiempos_reaccion.csv</a>, 400 filas.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -403,7 +400,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>Se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. ¿Cambia la conclusión de la pregunta 3?</p>
+<p>Para calcular el tiempo medio, se descartan los ensayos con tiempos menores de 200 ms o mayores de 2000 ms. El porcentaje de aciertos y la lista de excluidos no cambian. ¿Cambia la conclusión de la pregunta 3?</p>
 </div>
 </div>
 </div>
@@ -411,7 +408,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="administración-cuentas-por-cobrar" class="level3">
 <h3 class="anchored" data-anchor-id="administración-cuentas-por-cobrar">Administración: cuentas por cobrar</h3>
 <p>Una distribuidora revisa las facturas emitidas entre agosto y octubre de 2026. La fecha de corte es el 20 de noviembre de 2026. <strong>El análisis lo solicita el gerente de la empresa.</strong></p>
-<p><strong>Datos:</strong> <a href="https://uru.tomassantana.com/introai/labs/datos/facturas.csv">facturas.csv</a>, 40 facturas de 5 clientes.</p>
+<p><strong>Datos:</strong> <a href="datos/facturas.csv">facturas.csv</a>, 40 facturas de 5 clientes.</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
@@ -500,7 +497,7 @@ ul.task-list li input[type="checkbox"] {
 <ol type="1">
 <li>Nombrar el cuaderno con la carrera y los apellidos de la pareja, por ejemplo: <code>derecho_perez_gonzalez.ipynb</code>.</li>
 <li>En JupyterLite, elegir <strong>File → Download</strong>. Se descarga un archivo <code>.ipynb</code>.</li>
-<li>Entregar el archivo. Quienes presenten online deben hacerlo por classroom.</li>
+<li>Entregar el archivo. Quienes presenten online entregan únicamente el cuaderno (<code>.ipynb</code>) por Classroom.</li>
 </ol>
 <section id="evaluación" class="level3">
 <h3 class="anchored" data-anchor-id="evaluación">Evaluación</h3>
