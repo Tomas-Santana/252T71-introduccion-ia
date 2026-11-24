@@ -1,0 +1,164 @@
+---
+title: "Laboratorio: limpiar datos antes de analizarlos"
+subtitle: "Unidad 4 · Semana 10 · Introducción a la Inteligencia Artificial"
+resources:
+  - datos/*.csv
+format:
+  html:
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    toc-title: "Actividades"
+    toc-depth: 2
+---
+
+La coordinación de Bienestar aplicó una encuesta sobre hábitos de estudio a 400 estudiantes. Quiere saber si el sueño, el trabajo y el uso de IA tienen relación con las notas. Pero los datos vienen sucios: así salen casi siempre de un formulario.
+
+Hoy se limpian con Python y se cargan en Power BI. El análisis queda para la próxima clase.
+
+## Antes de empezar
+
+- Trabajar en parejas, como en los laboratorios anteriores.
+- Abrir [gemini.google.com](https://gemini.google.com) y [JupyterLite](https://jupyter.org/try-jupyter/lab/) (**Python (Pyodide)**).
+- Descargar la encuesta: [encuesta_habitos.csv](datos/encuesta_habitos.csv) y subirla a JupyterLite.
+
+## Actividad 1. Explorar
+
+Cargar los datos:
+
+```{.python}
+import pandas as pd
+
+datos = pd.read_csv("encuesta_habitos.csv")
+datos.head()
+```
+
+Pedirle a Gemini un bloque que muestre los problemas, sin corregirlos todavía.
+
+Prompt 1A
+
+```{.markdown}
+Tengo una encuesta en un archivo encuesta_habitos.csv, ya cargada con pandas en una variable llamada datos. Columnas:
+- id: código del estudiante
+- carrera: Administración, Derecho, Ingeniería, Psicología, Contaduría o Artes
+- semestre: de 1 a 10
+- edad: en años
+- trabaja: Sí o No
+- horas_sueno: horas que duerme por noche, número entero
+- horas_estudio: horas de estudio por semana
+- uso_ia: Nunca, A veces o Frecuentemente
+- nota: promedio del semestre, de 1 a 20
+
+Escribe un solo bloque de código para JupyterLite que muestre los problemas de calidad de estos datos. No corrijas nada.
+```
+
+::: {.callout-warning}
+## Revisar
+Anotar cada problema encontrado. Hay al menos seis tipos distintos. Si el bloque de Gemini no los muestra todos, preguntarle qué otra revisión falta.
+:::
+
+## Actividad 2. Decidir y limpiar
+
+Prompt 2A
+
+```{.markdown}
+Estos son los problemas que encontramos:
+[Pegar la lista]
+
+Propón un plan de limpieza en pasos, sin código. Para cada problema, di qué harías. Si hay más de una opción razonable, no decidas: pregúntanos.
+```
+
+::: {.callout-note}
+## Decidir en pareja
+Hay valores imposibles: notas por encima de 20, edades que no tienen sentido, horas de estudio absurdas. ¿Qué se hace con ellos?
+
+- ¿Eliminar toda la fila?
+- ¿Cambiar el valor por otro? ¿Por cuál?
+- ¿Dejar la celda vacía?
+
+La coordinación pide una regla: **no inventar datos y no perder estudiantes**. Si no se sabe el valor correcto, la celda queda vacía y el resto de la fila se conserva. Las filas duplicadas sí se eliminan. Si Gemini propuso otra cosa, decírselo.
+:::
+
+Construir paso a paso, como en el laboratorio anterior.
+
+Prompt 2B
+
+```{.markdown}
+Escribe solo el código del paso ___ del plan. Al final del bloque, muestra el resultado para que pueda revisarlo.
+```
+
+::: {.callout-warning}
+## Revisar después de cada bloque
+- ¿Cuántas filas quedan? Si bajó de 400, se borró algo que no eran duplicados.
+- En `horas_sueno` hay valores como `7 horas`. ¿Quedaron como el número 7 o quedaron vacíos?
+:::
+
+Al terminar, guardar el archivo limpio con este bloque:
+
+```{.python}
+enteros = ["edad", "horas_sueno", "horas_estudio", "nota"]
+datos[enteros] = datos[enteros].astype("Int64")
+datos.to_csv("encuesta_limpia.csv", index=False, encoding="utf-8-sig")
+```
+
+La segunda línea guarda los números como enteros, para que Power BI no lea `14.0` como 140. Si da error, alguna de esas columnas todavía tiene texto.
+
+Para descargar el archivo: en el panel de la izquierda de JupyterLite, clic derecho sobre `encuesta_limpia.csv` → **Download**.
+
+## Actividad 3. Comprobar
+
+Ejecutar en una celda nueva. Si el programa usa otro nombre en vez de `datos`, cambiarlo.
+
+```{.python}
+print("Filas:", len(datos))
+print("Duplicados:", datos.duplicated().sum())
+print(datos["carrera"].value_counts(), "\n")
+print(datos["trabaja"].value_counts(), "\n")
+print(datos["uso_ia"].value_counts(), "\n")
+print("Celdas vacías por columna:")
+print(datos.isna().sum())
+datos.describe()
+```
+
+::: {.callout-warning}
+## Revisar
+- **400 filas**, ningún duplicado.
+- Seis carreras, dos valores en `trabaja` y tres en `uso_ia`. Ingeniería tiene **92 estudiantes**.
+- `horas_sueno` no tiene celdas vacías.
+- En `describe()`, ningún máximo es imposible.
+:::
+
+## Actividad 4. Primera carga en Power BI
+
+::: {.callout-important collapse="true"}
+## Si no terminaron la limpieza
+Usar este archivo para continuar: [encuesta_habitos_limpia.csv](datos/encuesta_habitos_limpia.csv). Terminar la limpieza en casa.
+:::
+
+1. Abrir Power BI Desktop → **Obtener datos** → **Texto o CSV** → elegir `encuesta_limpia.csv`.
+2. Revisar la vista previa y pulsar **Cargar**.
+3. Crear una **tarjeta** con el promedio de la nota.
+4. Crear un **gráfico de barras** con la nota por carrera.
+
+Si se traban, preguntarle a Gemini antes que al docente.
+
+Prompt 4A
+
+```{.markdown}
+Estoy en Power BI Desktop, en español. ¿Cómo hago esto?: [describir]. Dame pasos cortos.
+```
+
+::: {.callout-warning}
+## Revisar
+- ¿Las tildes se ven bien en la vista previa? Si aparece `IngenierÃ­a`, cambiar **Origen del archivo** a `65001: Unicode (UTF-8)`.
+- ¿La tarjeta muestra un número de miles? Power BI **suma** por defecto. Cambiarla a **Promedio**. El promedio correcto es cercano a 11.
+- ¿Los menús que nombró Gemini existen en su Power BI?
+:::
+
+## Para cerrar
+
+::: {.callout-tip}
+## Conversar en pareja
+- ¿Qué decidió Gemini sin preguntarles?
+- ¿Qué error habría pasado a Power BI sin la actividad 3?
+:::
